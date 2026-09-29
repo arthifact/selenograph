@@ -1,0 +1,6 @@
+# Keep the app local: reference maps may have private/CUI sharing restrictions.
+[server]
+address = "localhost"
+
+[browser]
+gatherUsageStats = false

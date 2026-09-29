@@ -1,0 +1,26 @@
+# Large source observations, private references and prepared data.
+/data/raw_data/
+/data/reference_data/
+/data/processed_data/
+
+# User work and local reports are not part of the clean source distribution.
+/output/
+/models/
+/reports/
+/poster/results/
+/poster/experiments/
+/poster/legacy/
+*.log
+.streamlit/secrets.toml
+
+# Computer-specific environments and developer tools.
+.venv/
+.uv-cache/
+.agents/
+.claude/
+__pycache__/
+*.pyc
+.pytest_cache/
+.selenograph-json-*
+.DS_Store
+._*
