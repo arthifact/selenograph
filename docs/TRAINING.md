@@ -54,9 +54,8 @@ files—causes the entire map to be skipped; partially seeded pairs are not fill
 Browsing creates no directories and trains no models. Observation rasters stay in
 `data/` and are never copied or linked into output.
 
-Old evaluation reports and generated poster assets have been cleared. Evaluation
-JSONs now live under `output/evaluations/`; poster scripts and outputs live under
-`poster/`. Storage cleanup does not retrain the installed model or change paintings.
+Evaluation JSONs live under `output/evaluations/`. Storage cleanup does not
+retrain the installed model or change paintings.
 
 ## Start with reviewed unit definitions
 
@@ -179,7 +178,6 @@ model archives, arrays, per-run directories or latest-pointer files are written.
 **Progress** displays the latest completed report and offers a JSON download.
 Browsing and planning are read-only. There is no separate Independent checks section
 or persistent test-map chooser. Evaluation never changes the active training set.
-Optional poster generation remains in [poster/](../poster/README.md).
 
 ## Which layers should become training inputs?
 
@@ -205,13 +203,6 @@ The current app checks finite terrain and label confidence; public quality maps 
 preserved but **not wired into automatic training screening/weights**. Choose and
 validate that policy explicitly rather than inventing universal quality thresholds.
 Hillshade is a visualization, not an additional independent sensor.
-
-## Optional poster tools
-
-The scripts, tests and instructions for poster results and figures live in
-[poster/](../poster/README.md). They read app code and data without changing them;
-all generated files stay under `poster/`. The application does not import that
-package, and deleting it does not affect training, evaluation or app tests.
 
 ## Before reporting research results
 
@@ -243,5 +234,5 @@ its declared whole-input sources; limited surrounding context can affect boundar
 and sky-view estimates. Define a consistent context policy before claiming fine-scale
 generalization, and report missing linked-feature coverage rather than filling it.
 
-Keep original datasets and processed bundles unchanged. Back up new `output/`,
-`models/` and `poster/` work separately, and review permissions before sharing any of it.
+Keep original datasets and processed bundles unchanged. Back up new `output/`
+and `models/` work separately, and review permissions before sharing any of it.

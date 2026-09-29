@@ -7,9 +7,8 @@
 /output/
 /models/
 /reports/
-/poster/results/
-/poster/experiments/
-/poster/legacy/
+# Temporary poster work stays local; it is not part of the app.
+/poster/
 *.log
 .streamlit/secrets.toml
 

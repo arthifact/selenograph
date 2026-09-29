@@ -12,7 +12,7 @@ paintings, exported maps and trained models stay local and are not included.
   `.streamlit/config.toml`, dataset manifests, provenance and source citations.
 - Recipients create their own environment. Exclude `.venv/`, `.uv-cache/`, Python
   caches, `.agents/`, `.claude/` and secrets from shared copies.
-- Review `data/`, `output/`, `models/` and `poster/` before sharing. Private references,
+- Review `data/`, `output/` and `models/` before sharing. Private references,
   their trained models and exports still require permission; Verified is not
   publication approval. Do not load untrusted model files. These workflows upload nothing.
 - For approved data sharing, copy the whole `data/processed_data/` tree as regular
@@ -74,7 +74,6 @@ output/paintings/            Saved paintings, flags, metadata and gallery thumbn
 output/maps/                 Saved GeoTIFFs for GIS; mirrored DEM parent paths
 output/evaluations/          One JSON per evaluation, including results and provenance
 models/                      Active assistant
-poster/                     Optional poster scripts, tests, results and figures
 ```
 
 `output/` stores evaluations in **`evaluations/`**, paintings in **`paintings/`**
@@ -111,7 +110,6 @@ seeded pair. Observation rasters are never copied or linked into output, and bro
 creates no output directories. See the
 [storage and bootstrap contract](data/README.md#per-map-output-layout).
 
-Old evaluation reports, poster assets and archived evaluation models were cleared.
 New evaluations save only one JSON file under `output/evaluations/`.
 
 There is no public or reference wrapper under `processed_data/`. The development workspace has
@@ -155,11 +153,6 @@ ZIPs, arrays, per-run model archives or pointer files. Progress reads the latest
 valid report and provides a JSON download.
 
 Progress contains a single Evaluation workflow; it does not configure persistent test maps.
-
-Poster generation is separate: [poster/README.md](poster/README.md) documents the
-optional scripts and tests. They reuse app code and source data read-only and
-write inside `poster/`. Deleting the entire `poster/` folder leaves the app,
-its evaluation workflow and its tests working.
 
 Maintainers: `uv run --no-project python -B -m unittest discover -s tests -v`.
 The installed-data smoke check is read-only: `uv run --no-project python -B -m tests.smoke_app_layout`.

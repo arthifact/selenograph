@@ -18,7 +18,6 @@ Section. There are no public or reference wrapper directories. The app discovers
 | `../output/maps/` | GeoTIFF exports of painted labels and model predictions, replaced on Save |
 | `../output/evaluations/evaluation-<run_id>.json` | One JSON per evaluation, with results and provenance |
 | `../models/` | Active assistant |
-| `../poster/` | Optional, removable poster scripts and their results/figures |
 
 Obtain permission before sharing private data, derived models or exports. Copy the
 whole approved processed tree with a **regular-file copy**, preserving paths and
@@ -114,8 +113,7 @@ work, compare it for equality or fill a partially seeded saved/draft pair.
 Old evaluation artifacts have been cleared. Each new evaluation saves one JSON
 at `output/evaluations/evaluation-<run_id>.json`, without images, arrays, model
 archives or pointer files. `output/test_maps.json` remains a root-level selection
-file. The active model stays in `models/`; optional poster scripts and generated
-figures stay in the independently removable `poster/` directory.
+file. The active model stays in `models/`.
 
 ## Installed layout
 
