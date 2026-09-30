@@ -1,0 +1,802 @@
+[
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r000-c000/quality/zenodo-malapert_massif-r000-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r000-c000/quality/zenodo-malapert_massif-r000-c000_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r000-c000/imagery/zenodo-malapert_massif-r000-c000_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r000-c000/elevation/zenodo-malapert_massif-r000-c000.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r000-c000/quality/zenodo-malapert_massif-r000-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r000-c000/quality/zenodo-malapert_massif-r000-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r000-c000/quality/zenodo-malapert_massif-r000-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r000-c000/quality/zenodo-malapert_massif-r000-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1048576,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r000-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -11000.0,
+      0.0,
+      -5.0,
+      132000.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1046529,
+    "working_dem": "tiles/zenodo-malapert_massif-r000-c000/elevation/zenodo-malapert_massif-r000-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r000-c001/quality/zenodo-malapert_massif-r000-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r000-c001/quality/zenodo-malapert_massif-r000-c001_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r000-c001/imagery/zenodo-malapert_massif-r000-c001_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r000-c001/elevation/zenodo-malapert_massif-r000-c001.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r000-c001/quality/zenodo-malapert_massif-r000-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r000-c001/quality/zenodo-malapert_massif-r000-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r000-c001/quality/zenodo-malapert_massif-r000-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r000-c001/quality/zenodo-malapert_massif-r000-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1048576,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r000-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -5880.0,
+      0.0,
+      -5.0,
+      132000.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-malapert_massif-r000-c001/elevation/zenodo-malapert_massif-r000-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r000-c002/quality/zenodo-malapert_massif-r000-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r000-c002/quality/zenodo-malapert_massif-r000-c002_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r000-c002/imagery/zenodo-malapert_massif-r000-c002_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r000-c002/elevation/zenodo-malapert_massif-r000-c002.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r000-c002/quality/zenodo-malapert_massif-r000-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r000-c002/quality/zenodo-malapert_massif-r000-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r000-c002/quality/zenodo-malapert_massif-r000-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r000-c002/quality/zenodo-malapert_massif-r000-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1048576,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r000-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -760.0,
+      0.0,
+      -5.0,
+      132000.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-malapert_massif-r000-c002/elevation/zenodo-malapert_massif-r000-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r000-c003/quality/zenodo-malapert_massif-r000-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r000-c003/quality/zenodo-malapert_massif-r000-c003_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r000-c003/imagery/zenodo-malapert_massif-r000-c003_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r000-c003/elevation/zenodo-malapert_massif-r000-c003.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r000-c003/quality/zenodo-malapert_massif-r000-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r000-c003/quality/zenodo-malapert_massif-r000-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r000-c003/quality/zenodo-malapert_massif-r000-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r000-c003/quality/zenodo-malapert_massif-r000-c003_valid_data.tif"
+    },
+    "sfs_support_count": 1048576,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r000-c003",
+    "transform": [
+      5.0,
+      0.0,
+      4360.0,
+      0.0,
+      -5.0,
+      132000.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-malapert_massif-r000-c003/elevation/zenodo-malapert_massif-r000-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r000-c004/quality/zenodo-malapert_massif-r000-c004_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r000-c004/quality/zenodo-malapert_massif-r000-c004_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r000-c004/imagery/zenodo-malapert_massif-r000-c004_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r000-c004/elevation/zenodo-malapert_massif-r000-c004.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r000-c004/quality/zenodo-malapert_massif-r000-c004_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r000-c004/quality/zenodo-malapert_massif-r000-c004_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r000-c004/quality/zenodo-malapert_massif-r000-c004_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r000-c004/quality/zenodo-malapert_massif-r000-c004_valid_data.tif"
+    },
+    "sfs_support_count": 106496,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      104
+    ],
+    "tile_id": "zenodo-malapert_massif-r000-c004",
+    "transform": [
+      5.0,
+      0.0,
+      9480.0,
+      0.0,
+      -5.0,
+      132000.0
+    ],
+    "valid_count": 106496,
+    "valid_data_count": 104346,
+    "working_dem": "tiles/zenodo-malapert_massif-r000-c004/elevation/zenodo-malapert_massif-r000-c004.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r001-c000/quality/zenodo-malapert_massif-r001-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r001-c000/quality/zenodo-malapert_massif-r001-c000_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r001-c000/imagery/zenodo-malapert_massif-r001-c000_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r001-c000/elevation/zenodo-malapert_massif-r001-c000.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r001-c000/quality/zenodo-malapert_massif-r001-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r001-c000/quality/zenodo-malapert_massif-r001-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r001-c000/quality/zenodo-malapert_massif-r001-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r001-c000/quality/zenodo-malapert_massif-r001-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1047379,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r001-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -11000.0,
+      0.0,
+      -5.0,
+      126880.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-malapert_massif-r001-c000/elevation/zenodo-malapert_massif-r001-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r001-c001/quality/zenodo-malapert_massif-r001-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r001-c001/quality/zenodo-malapert_massif-r001-c001_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r001-c001/imagery/zenodo-malapert_massif-r001-c001_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r001-c001/elevation/zenodo-malapert_massif-r001-c001.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r001-c001/quality/zenodo-malapert_massif-r001-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r001-c001/quality/zenodo-malapert_massif-r001-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r001-c001/quality/zenodo-malapert_massif-r001-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r001-c001/quality/zenodo-malapert_massif-r001-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1045165,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r001-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -5880.0,
+      0.0,
+      -5.0,
+      126880.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-malapert_massif-r001-c001/elevation/zenodo-malapert_massif-r001-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r001-c002/quality/zenodo-malapert_massif-r001-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r001-c002/quality/zenodo-malapert_massif-r001-c002_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r001-c002/imagery/zenodo-malapert_massif-r001-c002_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r001-c002/elevation/zenodo-malapert_massif-r001-c002.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r001-c002/quality/zenodo-malapert_massif-r001-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r001-c002/quality/zenodo-malapert_massif-r001-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r001-c002/quality/zenodo-malapert_massif-r001-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r001-c002/quality/zenodo-malapert_massif-r001-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1045189,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r001-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -760.0,
+      0.0,
+      -5.0,
+      126880.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-malapert_massif-r001-c002/elevation/zenodo-malapert_massif-r001-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r001-c003/quality/zenodo-malapert_massif-r001-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r001-c003/quality/zenodo-malapert_massif-r001-c003_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r001-c003/imagery/zenodo-malapert_massif-r001-c003_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r001-c003/elevation/zenodo-malapert_massif-r001-c003.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r001-c003/quality/zenodo-malapert_massif-r001-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r001-c003/quality/zenodo-malapert_massif-r001-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r001-c003/quality/zenodo-malapert_massif-r001-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r001-c003/quality/zenodo-malapert_massif-r001-c003_valid_data.tif"
+    },
+    "sfs_support_count": 1046848,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r001-c003",
+    "transform": [
+      5.0,
+      0.0,
+      4360.0,
+      0.0,
+      -5.0,
+      126880.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-malapert_massif-r001-c003/elevation/zenodo-malapert_massif-r001-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r001-c004/quality/zenodo-malapert_massif-r001-c004_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r001-c004/quality/zenodo-malapert_massif-r001-c004_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r001-c004/imagery/zenodo-malapert_massif-r001-c004_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r001-c004/elevation/zenodo-malapert_massif-r001-c004.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r001-c004/quality/zenodo-malapert_massif-r001-c004_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r001-c004/quality/zenodo-malapert_massif-r001-c004_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r001-c004/quality/zenodo-malapert_massif-r001-c004_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r001-c004/quality/zenodo-malapert_massif-r001-c004_valid_data.tif"
+    },
+    "sfs_support_count": 106496,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      104
+    ],
+    "tile_id": "zenodo-malapert_massif-r001-c004",
+    "transform": [
+      5.0,
+      0.0,
+      9480.0,
+      0.0,
+      -5.0,
+      126880.0
+    ],
+    "valid_count": 106496,
+    "valid_data_count": 104448,
+    "working_dem": "tiles/zenodo-malapert_massif-r001-c004/elevation/zenodo-malapert_massif-r001-c004.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r002-c000/quality/zenodo-malapert_massif-r002-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r002-c000/quality/zenodo-malapert_massif-r002-c000_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r002-c000/imagery/zenodo-malapert_massif-r002-c000_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r002-c000/elevation/zenodo-malapert_massif-r002-c000.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r002-c000/quality/zenodo-malapert_massif-r002-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r002-c000/quality/zenodo-malapert_massif-r002-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r002-c000/quality/zenodo-malapert_massif-r002-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r002-c000/quality/zenodo-malapert_massif-r002-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1048549,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r002-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -11000.0,
+      0.0,
+      -5.0,
+      121760.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-malapert_massif-r002-c000/elevation/zenodo-malapert_massif-r002-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r002-c001/quality/zenodo-malapert_massif-r002-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r002-c001/quality/zenodo-malapert_massif-r002-c001_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r002-c001/imagery/zenodo-malapert_massif-r002-c001_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r002-c001/elevation/zenodo-malapert_massif-r002-c001.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r002-c001/quality/zenodo-malapert_massif-r002-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r002-c001/quality/zenodo-malapert_massif-r002-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r002-c001/quality/zenodo-malapert_massif-r002-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r002-c001/quality/zenodo-malapert_massif-r002-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1043200,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r002-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -5880.0,
+      0.0,
+      -5.0,
+      121760.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-malapert_massif-r002-c001/elevation/zenodo-malapert_massif-r002-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r002-c002/quality/zenodo-malapert_massif-r002-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r002-c002/quality/zenodo-malapert_massif-r002-c002_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r002-c002/imagery/zenodo-malapert_massif-r002-c002_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r002-c002/elevation/zenodo-malapert_massif-r002-c002.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r002-c002/quality/zenodo-malapert_massif-r002-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r002-c002/quality/zenodo-malapert_massif-r002-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r002-c002/quality/zenodo-malapert_massif-r002-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r002-c002/quality/zenodo-malapert_massif-r002-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1034929,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r002-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -760.0,
+      0.0,
+      -5.0,
+      121760.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-malapert_massif-r002-c002/elevation/zenodo-malapert_massif-r002-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r002-c003/quality/zenodo-malapert_massif-r002-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r002-c003/quality/zenodo-malapert_massif-r002-c003_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r002-c003/imagery/zenodo-malapert_massif-r002-c003_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r002-c003/elevation/zenodo-malapert_massif-r002-c003.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r002-c003/quality/zenodo-malapert_massif-r002-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r002-c003/quality/zenodo-malapert_massif-r002-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r002-c003/quality/zenodo-malapert_massif-r002-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r002-c003/quality/zenodo-malapert_massif-r002-c003_valid_data.tif"
+    },
+    "sfs_support_count": 1018570,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r002-c003",
+    "transform": [
+      5.0,
+      0.0,
+      4360.0,
+      0.0,
+      -5.0,
+      121760.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-malapert_massif-r002-c003/elevation/zenodo-malapert_massif-r002-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r002-c004/quality/zenodo-malapert_massif-r002-c004_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r002-c004/quality/zenodo-malapert_massif-r002-c004_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r002-c004/imagery/zenodo-malapert_massif-r002-c004_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r002-c004/elevation/zenodo-malapert_massif-r002-c004.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r002-c004/quality/zenodo-malapert_massif-r002-c004_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r002-c004/quality/zenodo-malapert_massif-r002-c004_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r002-c004/quality/zenodo-malapert_massif-r002-c004_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r002-c004/quality/zenodo-malapert_massif-r002-c004_valid_data.tif"
+    },
+    "sfs_support_count": 106496,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      104
+    ],
+    "tile_id": "zenodo-malapert_massif-r002-c004",
+    "transform": [
+      5.0,
+      0.0,
+      9480.0,
+      0.0,
+      -5.0,
+      121760.0
+    ],
+    "valid_count": 106496,
+    "valid_data_count": 104448,
+    "working_dem": "tiles/zenodo-malapert_massif-r002-c004/elevation/zenodo-malapert_massif-r002-c004.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r003-c000/quality/zenodo-malapert_massif-r003-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r003-c000/quality/zenodo-malapert_massif-r003-c000_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r003-c000/imagery/zenodo-malapert_massif-r003-c000_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r003-c000/elevation/zenodo-malapert_massif-r003-c000.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r003-c000/quality/zenodo-malapert_massif-r003-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r003-c000/quality/zenodo-malapert_massif-r003-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r003-c000/quality/zenodo-malapert_massif-r003-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r003-c000/quality/zenodo-malapert_massif-r003-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1020256,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r003-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -11000.0,
+      0.0,
+      -5.0,
+      116640.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-malapert_massif-r003-c000/elevation/zenodo-malapert_massif-r003-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r003-c001/quality/zenodo-malapert_massif-r003-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r003-c001/quality/zenodo-malapert_massif-r003-c001_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r003-c001/imagery/zenodo-malapert_massif-r003-c001_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r003-c001/elevation/zenodo-malapert_massif-r003-c001.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r003-c001/quality/zenodo-malapert_massif-r003-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r003-c001/quality/zenodo-malapert_massif-r003-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r003-c001/quality/zenodo-malapert_massif-r003-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r003-c001/quality/zenodo-malapert_massif-r003-c001_valid_data.tif"
+    },
+    "sfs_support_count": 985895,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r003-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -5880.0,
+      0.0,
+      -5.0,
+      116640.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-malapert_massif-r003-c001/elevation/zenodo-malapert_massif-r003-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r003-c002/quality/zenodo-malapert_massif-r003-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r003-c002/quality/zenodo-malapert_massif-r003-c002_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r003-c002/imagery/zenodo-malapert_massif-r003-c002_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r003-c002/elevation/zenodo-malapert_massif-r003-c002.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r003-c002/quality/zenodo-malapert_massif-r003-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r003-c002/quality/zenodo-malapert_massif-r003-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r003-c002/quality/zenodo-malapert_massif-r003-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r003-c002/quality/zenodo-malapert_massif-r003-c002_valid_data.tif"
+    },
+    "sfs_support_count": 990540,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r003-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -760.0,
+      0.0,
+      -5.0,
+      116640.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-malapert_massif-r003-c002/elevation/zenodo-malapert_massif-r003-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r003-c003/quality/zenodo-malapert_massif-r003-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r003-c003/quality/zenodo-malapert_massif-r003-c003_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r003-c003/imagery/zenodo-malapert_massif-r003-c003_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r003-c003/elevation/zenodo-malapert_massif-r003-c003.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r003-c003/quality/zenodo-malapert_massif-r003-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r003-c003/quality/zenodo-malapert_massif-r003-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r003-c003/quality/zenodo-malapert_massif-r003-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r003-c003/quality/zenodo-malapert_massif-r003-c003_valid_data.tif"
+    },
+    "sfs_support_count": 1041211,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r003-c003",
+    "transform": [
+      5.0,
+      0.0,
+      4360.0,
+      0.0,
+      -5.0,
+      116640.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-malapert_massif-r003-c003/elevation/zenodo-malapert_massif-r003-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r003-c004/quality/zenodo-malapert_massif-r003-c004_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r003-c004/quality/zenodo-malapert_massif-r003-c004_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r003-c004/imagery/zenodo-malapert_massif-r003-c004_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r003-c004/elevation/zenodo-malapert_massif-r003-c004.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r003-c004/quality/zenodo-malapert_massif-r003-c004_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r003-c004/quality/zenodo-malapert_massif-r003-c004_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r003-c004/quality/zenodo-malapert_massif-r003-c004_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r003-c004/quality/zenodo-malapert_massif-r003-c004_valid_data.tif"
+    },
+    "sfs_support_count": 106460,
+    "site": "malapert_massif",
+    "size": [
+      1024,
+      104
+    ],
+    "tile_id": "zenodo-malapert_massif-r003-c004",
+    "transform": [
+      5.0,
+      0.0,
+      9480.0,
+      0.0,
+      -5.0,
+      116640.0
+    ],
+    "valid_count": 106496,
+    "valid_data_count": 104448,
+    "working_dem": "tiles/zenodo-malapert_massif-r003-c004/elevation/zenodo-malapert_massif-r003-c004.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r004-c000/quality/zenodo-malapert_massif-r004-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r004-c000/quality/zenodo-malapert_massif-r004-c000_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r004-c000/imagery/zenodo-malapert_massif-r004-c000_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r004-c000/elevation/zenodo-malapert_massif-r004-c000.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r004-c000/quality/zenodo-malapert_massif-r004-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r004-c000/quality/zenodo-malapert_massif-r004-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r004-c000/quality/zenodo-malapert_massif-r004-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r004-c000/quality/zenodo-malapert_massif-r004-c000_valid_data.tif"
+    },
+    "sfs_support_count": 74435,
+    "site": "malapert_massif",
+    "size": [
+      104,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r004-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -11000.0,
+      0.0,
+      -5.0,
+      111520.0
+    ],
+    "valid_count": 106496,
+    "valid_data_count": 104346,
+    "working_dem": "tiles/zenodo-malapert_massif-r004-c000/elevation/zenodo-malapert_massif-r004-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r004-c001/quality/zenodo-malapert_massif-r004-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r004-c001/quality/zenodo-malapert_massif-r004-c001_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r004-c001/imagery/zenodo-malapert_massif-r004-c001_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r004-c001/elevation/zenodo-malapert_massif-r004-c001.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r004-c001/quality/zenodo-malapert_massif-r004-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r004-c001/quality/zenodo-malapert_massif-r004-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r004-c001/quality/zenodo-malapert_massif-r004-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r004-c001/quality/zenodo-malapert_massif-r004-c001_valid_data.tif"
+    },
+    "sfs_support_count": 105268,
+    "site": "malapert_massif",
+    "size": [
+      104,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r004-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -5880.0,
+      0.0,
+      -5.0,
+      111520.0
+    ],
+    "valid_count": 106496,
+    "valid_data_count": 104448,
+    "working_dem": "tiles/zenodo-malapert_massif-r004-c001/elevation/zenodo-malapert_massif-r004-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r004-c002/quality/zenodo-malapert_massif-r004-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r004-c002/quality/zenodo-malapert_massif-r004-c002_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r004-c002/imagery/zenodo-malapert_massif-r004-c002_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r004-c002/elevation/zenodo-malapert_massif-r004-c002.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r004-c002/quality/zenodo-malapert_massif-r004-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r004-c002/quality/zenodo-malapert_massif-r004-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r004-c002/quality/zenodo-malapert_massif-r004-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r004-c002/quality/zenodo-malapert_massif-r004-c002_valid_data.tif"
+    },
+    "sfs_support_count": 91794,
+    "site": "malapert_massif",
+    "size": [
+      104,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r004-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -760.0,
+      0.0,
+      -5.0,
+      111520.0
+    ],
+    "valid_count": 106496,
+    "valid_data_count": 104448,
+    "working_dem": "tiles/zenodo-malapert_massif-r004-c002/elevation/zenodo-malapert_massif-r004-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r004-c003/quality/zenodo-malapert_massif-r004-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r004-c003/quality/zenodo-malapert_massif-r004-c003_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r004-c003/imagery/zenodo-malapert_massif-r004-c003_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r004-c003/elevation/zenodo-malapert_massif-r004-c003.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r004-c003/quality/zenodo-malapert_massif-r004-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r004-c003/quality/zenodo-malapert_massif-r004-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r004-c003/quality/zenodo-malapert_massif-r004-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r004-c003/quality/zenodo-malapert_massif-r004-c003_valid_data.tif"
+    },
+    "sfs_support_count": 97697,
+    "site": "malapert_massif",
+    "size": [
+      104,
+      1024
+    ],
+    "tile_id": "zenodo-malapert_massif-r004-c003",
+    "transform": [
+      5.0,
+      0.0,
+      4360.0,
+      0.0,
+      -5.0,
+      111520.0
+    ],
+    "valid_count": 106496,
+    "valid_data_count": 104448,
+    "working_dem": "tiles/zenodo-malapert_massif-r004-c003/elevation/zenodo-malapert_massif-r004-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "malapert_massif",
+    "layers": {
+      "best_resolution": "tiles/zenodo-malapert_massif-r004-c004/quality/zenodo-malapert_massif-r004-c004_best_resolution.tif",
+      "image_count": "tiles/zenodo-malapert_massif-r004-c004/quality/zenodo-malapert_massif-r004-c004_image_count.tif",
+      "nac": "tiles/zenodo-malapert_massif-r004-c004/imagery/zenodo-malapert_massif-r004-c004_nac.tif",
+      "sfs": "tiles/zenodo-malapert_massif-r004-c004/elevation/zenodo-malapert_massif-r004-c004.tif",
+      "sfs_support": "tiles/zenodo-malapert_massif-r004-c004/quality/zenodo-malapert_massif-r004-c004_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-malapert_massif-r004-c004/quality/zenodo-malapert_massif-r004-c004_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-malapert_massif-r004-c004/quality/zenodo-malapert_massif-r004-c004_uncertainty.tif",
+      "valid_data": "tiles/zenodo-malapert_massif-r004-c004/quality/zenodo-malapert_massif-r004-c004_valid_data.tif"
+    },
+    "sfs_support_count": 10816,
+    "site": "malapert_massif",
+    "size": [
+      104,
+      104
+    ],
+    "tile_id": "zenodo-malapert_massif-r004-c004",
+    "transform": [
+      5.0,
+      0.0,
+      9480.0,
+      0.0,
+      -5.0,
+      111520.0
+    ],
+    "valid_count": 10816,
+    "valid_data_count": 10404,
+    "working_dem": "tiles/zenodo-malapert_massif-r004-c004/elevation/zenodo-malapert_massif-r004-c004.tif"
+  }
+]

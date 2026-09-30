@@ -2,10 +2,12 @@
 
 Interactive training calls retrain(), rebuilding samples from all currently verified
 paintings. A prediction becomes a training label only when you approve it, and then
-counts at half weight (core.APPROVED). No test map, nor any map touching one
-(core.held_out_maps()), ever becomes training data. Artifacts are local trusted files.
+counts at half weight (core.APPROVED). The app uses per-map evaluation without a
+persistent test set. Historical update/refit helpers remain for offline callers.
+Artifacts are local trusted files.
 """
 import datetime
+import functools
 import hashlib
 import os
 import uuid
@@ -206,22 +208,36 @@ def trainable_samples(samples, held=None):
 @core.catalog_snapshot()
 def verified_maps():
     """Installed, verified maps available for an explicit full model update."""
-    held = core.held_out_maps()
     return {core.dem_name(path): path for path in core.dem_files()
-            if core.dem_name(path) not in held and core.meta_get(core.dem_name(path)).get("verified") is True}
+            if core.meta_get(core.dem_name(path)).get("verified") is True}
 
 
 def _training_sources(previous, maps):
-    sources = {name: _provenance(name, previous.get(name, {}), core.site_id(path), None, path)
-               for name, path in maps.items()}
-    return retained_samples(sources)
+    return {name: _provenance(name, previous.get(name, {}), core.site_id(path), None, path)
+            for name, path in maps.items()}
+
+
+@functools.lru_cache(maxsize=2048)
+def _source_hash(path, size, modified, changed):
+    """Content identity, cached until local file stats change."""
+    with open(path, "rb") as source:
+        return hashlib.file_digest(source, "sha256").hexdigest()
 
 
 def _training_input(path, cells, confidence, accepted):
     order, dependencies = core._feature_plan(path)
+    def relative(source):
+        return Path(os.path.relpath(source, core.DEM_DIR)).as_posix()
+
+    revisions = []
+    for source in order:
+        stat = os.stat(source)
+        revisions.append((relative(source), _source_hash(
+            source, stat.st_size, stat.st_mtime_ns, stat.st_ctime_ns)))
     return dict(painting_hash=painting_hash(cells, confidence, accepted),
-                source_revision=[(p, os.stat(p).st_mtime_ns, os.stat(p).st_size) for p in order],
-                feature_graph=dependencies)
+                source_revision=revisions,
+                feature_graph={relative(p): [relative(child) for child in children]
+                               for p, children in dependencies.items()})
 
 
 @core.catalog_snapshot()
@@ -254,8 +270,8 @@ def training_changed(bundle, maps=None):
 def retrain(progress=None):
     """Rebuild from current verified paintings and publish only the model.
 
-    No remembered label/feature arrays are reused. Unverified, removed, cleared and
-    held-out maps cannot survive in training memory. Painting drafts are read but
+    No remembered label/feature arrays are reused. Unverified, removed and cleared
+    maps cannot survive in training memory. Painting drafts are read but
     never written here; prediction and evaluation remain separate operations.
     """
     maps = verified_maps()

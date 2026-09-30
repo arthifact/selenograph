@@ -1,15 +1,21 @@
-# Large source observations, private references and prepared data.
-/data/raw_data/
+# Original downloads and private source collections stay local.
+/data/raw_data/*
+!/data/raw_data/.gitkeep
 /data/reference_data/
-/data/processed_data/
 
-# User work and local reports are not part of the clean source distribution.
-/output/
-/models/
+# Active processed data, outputs and models are tracked. Historical backups are not.
+/data/processed_data/.*/
+/output/.*/
+/models/.*/
+/output/test_maps.json
 /reports/
 # Temporary poster work stays local; it is not part of the app.
 /poster/
 *.log
+*.tmp
+*.aux.xml
+.dataset.lock
+.prepare.lock
 .streamlit/secrets.toml
 
 # Computer-specific environments and developer tools.

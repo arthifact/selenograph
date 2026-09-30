@@ -1,0 +1,122 @@
+{
+  "name": "zenodo-leibnitz_beta_plateau-r000-c000",
+  "label_source": "Imported painting",
+  "restricted": true,
+  "verified": true,
+  "reference_maps": [
+    "MM026"
+  ],
+  "provenance": {
+    "operation": "painting_merge",
+    "sources": [
+      {
+        "tile_id": "mons-mouton-0001",
+        "map_id": "MM026",
+        "group": "mons-mouton",
+        "verified_saved": true,
+        "verified_draft": true,
+        "saved_metadata": {
+          "verified": true,
+          "label_status": "User-marked verified; preserved unreviewed historical snapshot; not independent certification",
+          "restricted": true,
+          "provenance": {
+            "accepted_observed": {
+              "draft": false,
+              "saved": false
+            },
+            "confidence_observed": false,
+            "confidence_status": "unknown",
+            "known_accepted_cells_union": 0,
+            "original_provenance": {
+              "labels_path": "sites/mons-mouton/tiles/mons-mouton-0001/annotations/seed/saved/mons-mouton-labels-0001.tif",
+              "labels_sha256": "a14c74144cea8ce39705f330c7f9442ac4f2bcb40ed5c23fd4e8dbddd744cd74",
+              "provenance_path": "sites/mons-mouton/tiles/mons-mouton-0001/annotations/seed/saved/provenance.json",
+              "provenance_sha256": "14d33c4cd492a750161f7f9c3e07fdbacb89345c9a6cd886bb92d6bb7afc5b79"
+            },
+            "snapshot": "saved",
+            "snapshots": {
+              "draft": {
+                "labels_path": "sites/mons-mouton/tiles/mons-mouton-0001/annotations/seed/draft/mons-mouton-labels-0001.tif",
+                "labels_sha256": "60007d268b6d5edcd53fb4ec83c33b4c6ff09c176331aad6b8bf51c7be578573",
+                "provenance_path": "sites/mons-mouton/tiles/mons-mouton-0001/annotations/seed/draft/provenance.json",
+                "provenance_sha256": "a60c8893525dfaf08ed175a25e6f2f24227b645e90fcdf1ea6829ab0def84dbf"
+              },
+              "saved": {
+                "labels_path": "sites/mons-mouton/tiles/mons-mouton-0001/annotations/seed/saved/mons-mouton-labels-0001.tif",
+                "labels_sha256": "a14c74144cea8ce39705f330c7f9442ac4f2bcb40ed5c23fd4e8dbddd744cd74",
+                "provenance_path": "sites/mons-mouton/tiles/mons-mouton-0001/annotations/seed/saved/provenance.json",
+                "provenance_sha256": "14d33c4cd492a750161f7f9c3e07fdbacb89345c9a6cd886bb92d6bb7afc5b79"
+              }
+            },
+            "source_root": "/Users/torus/Desktop/Research/selenograph/data/reference_data/professor_geologic_maps",
+            "source_tile": {
+              "path": "sites/mons-mouton/tiles/mons-mouton-0001/tile.json",
+              "sha256": "a020e31ec5e210dc3958810eec7ea2a4e1a4b2ec6d1658befae65128119e7be2"
+            },
+            "verification": {
+              "basis": "user_requested",
+              "independent_certification": false,
+              "reason": "Explicit importer verified=True user request"
+            }
+          }
+        },
+        "draft_metadata": {
+          "verified": true,
+          "label_status": "User-marked verified; preserved unreviewed historical snapshot; not independent certification",
+          "restricted": true,
+          "provenance": {
+            "accepted_observed": {
+              "draft": false,
+              "saved": false
+            },
+            "confidence_observed": false,
+            "confidence_status": "unknown",
+            "known_accepted_cells_union": 0,
+            "original_provenance": {
+              "labels_path": "sites/mons-mouton/tiles/mons-mouton-0001/annotations/seed/saved/mons-mouton-labels-0001.tif",
+              "labels_sha256": "a14c74144cea8ce39705f330c7f9442ac4f2bcb40ed5c23fd4e8dbddd744cd74",
+              "provenance_path": "sites/mons-mouton/tiles/mons-mouton-0001/annotations/seed/saved/provenance.json",
+              "provenance_sha256": "14d33c4cd492a750161f7f9c3e07fdbacb89345c9a6cd886bb92d6bb7afc5b79"
+            },
+            "snapshot": "saved",
+            "snapshots": {
+              "draft": {
+                "labels_path": "sites/mons-mouton/tiles/mons-mouton-0001/annotations/seed/draft/mons-mouton-labels-0001.tif",
+                "labels_sha256": "60007d268b6d5edcd53fb4ec83c33b4c6ff09c176331aad6b8bf51c7be578573",
+                "provenance_path": "sites/mons-mouton/tiles/mons-mouton-0001/annotations/seed/draft/provenance.json",
+                "provenance_sha256": "a60c8893525dfaf08ed175a25e6f2f24227b645e90fcdf1ea6829ab0def84dbf"
+              },
+              "saved": {
+                "labels_path": "sites/mons-mouton/tiles/mons-mouton-0001/annotations/seed/saved/mons-mouton-labels-0001.tif",
+                "labels_sha256": "a14c74144cea8ce39705f330c7f9442ac4f2bcb40ed5c23fd4e8dbddd744cd74",
+                "provenance_path": "sites/mons-mouton/tiles/mons-mouton-0001/annotations/seed/saved/provenance.json",
+                "provenance_sha256": "14d33c4cd492a750161f7f9c3e07fdbacb89345c9a6cd886bb92d6bb7afc5b79"
+              }
+            },
+            "source_root": "/Users/torus/Desktop/Research/selenograph/data/reference_data/professor_geologic_maps",
+            "source_tile": {
+              "path": "sites/mons-mouton/tiles/mons-mouton-0001/tile.json",
+              "sha256": "a020e31ec5e210dc3958810eec7ea2a4e1a4b2ec6d1658befae65128119e7be2"
+            },
+            "verification": {
+              "basis": "user_requested",
+              "independent_certification": false,
+              "reason": "Explicit importer verified=True user request"
+            }
+          }
+        },
+        "source_refs": {
+          "download_allowed": false,
+          "restricted": true,
+          "root": "/Users/torus/Desktop/Research/selenograph/data/reference_data/professor_geologic_maps",
+          "sha256": "a020e31ec5e210dc3958810eec7ea2a4e1a4b2ec6d1658befae65128119e7be2",
+          "tile": "sites/mons-mouton/tiles/mons-mouton-0001/tile.json"
+        }
+      }
+    ],
+    "archive": "/Users/torus/Desktop/Research/selenograph/data/processed_data/.reference-merge-backups/20260929T215002.758181Z",
+    "coverage_threshold": 0.5,
+    "label_rule": "strict majority of known pixels",
+    "flags": "weakest contributing certainty; any accepted contribution remains accepted"
+  }
+}

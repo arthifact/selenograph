@@ -6,7 +6,6 @@ numpy==2.5.3
 scipy==1.18.1
 rasterio==1.5.1
 pillow==11.3.0
-lightgbm==4.7.0              # macOS: requires libomp for the optional GBM backend
 scikit-learn==1.9.1
 joblib==1.6.0
 streamlit==1.64.0

@@ -1,0 +1,1154 @@
+[
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r000-c000/quality/zenodo-haworth-r000-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r000-c000/quality/zenodo-haworth-r000-c000_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r000-c000/imagery/zenodo-haworth-r000-c000_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r000-c000/elevation/zenodo-haworth-r000-c000.tif",
+      "sfs_support": "tiles/zenodo-haworth-r000-c000/quality/zenodo-haworth-r000-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r000-c000/quality/zenodo-haworth-r000-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r000-c000/quality/zenodo-haworth-r000-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r000-c000/quality/zenodo-haworth-r000-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1048549,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r000-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -52900.0,
+      0.0,
+      -5.0,
+      105400.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1045504,
+    "working_dem": "tiles/zenodo-haworth-r000-c000/elevation/zenodo-haworth-r000-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r000-c001/quality/zenodo-haworth-r000-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r000-c001/quality/zenodo-haworth-r000-c001_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r000-c001/imagery/zenodo-haworth-r000-c001_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r000-c001/elevation/zenodo-haworth-r000-c001.tif",
+      "sfs_support": "tiles/zenodo-haworth-r000-c001/quality/zenodo-haworth-r000-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r000-c001/quality/zenodo-haworth-r000-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r000-c001/quality/zenodo-haworth-r000-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r000-c001/quality/zenodo-haworth-r000-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1043510,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r000-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -47780.0,
+      0.0,
+      -5.0,
+      105400.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1045504,
+    "working_dem": "tiles/zenodo-haworth-r000-c001/elevation/zenodo-haworth-r000-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r000-c002/quality/zenodo-haworth-r000-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r000-c002/quality/zenodo-haworth-r000-c002_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r000-c002/imagery/zenodo-haworth-r000-c002_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r000-c002/elevation/zenodo-haworth-r000-c002.tif",
+      "sfs_support": "tiles/zenodo-haworth-r000-c002/quality/zenodo-haworth-r000-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r000-c002/quality/zenodo-haworth-r000-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r000-c002/quality/zenodo-haworth-r000-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r000-c002/quality/zenodo-haworth-r000-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1030896,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r000-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -42660.0,
+      0.0,
+      -5.0,
+      105400.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1045504,
+    "working_dem": "tiles/zenodo-haworth-r000-c002/elevation/zenodo-haworth-r000-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r000-c003/quality/zenodo-haworth-r000-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r000-c003/quality/zenodo-haworth-r000-c003_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r000-c003/imagery/zenodo-haworth-r000-c003_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r000-c003/elevation/zenodo-haworth-r000-c003.tif",
+      "sfs_support": "tiles/zenodo-haworth-r000-c003/quality/zenodo-haworth-r000-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r000-c003/quality/zenodo-haworth-r000-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r000-c003/quality/zenodo-haworth-r000-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r000-c003/quality/zenodo-haworth-r000-c003_valid_data.tif"
+    },
+    "sfs_support_count": 1000905,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r000-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -37540.0,
+      0.0,
+      -5.0,
+      105400.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1045504,
+    "working_dem": "tiles/zenodo-haworth-r000-c003/elevation/zenodo-haworth-r000-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r000-c004/quality/zenodo-haworth-r000-c004_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r000-c004/quality/zenodo-haworth-r000-c004_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r000-c004/imagery/zenodo-haworth-r000-c004_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r000-c004/elevation/zenodo-haworth-r000-c004.tif",
+      "sfs_support": "tiles/zenodo-haworth-r000-c004/quality/zenodo-haworth-r000-c004_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r000-c004/quality/zenodo-haworth-r000-c004_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r000-c004/quality/zenodo-haworth-r000-c004_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r000-c004/quality/zenodo-haworth-r000-c004_valid_data.tif"
+    },
+    "sfs_support_count": 782504,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r000-c004",
+    "transform": [
+      5.0,
+      0.0,
+      -32420.0,
+      0.0,
+      -5.0,
+      105400.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1045504,
+    "working_dem": "tiles/zenodo-haworth-r000-c004/elevation/zenodo-haworth-r000-c004.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r000-c005/quality/zenodo-haworth-r000-c005_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r000-c005/quality/zenodo-haworth-r000-c005_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r000-c005/imagery/zenodo-haworth-r000-c005_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r000-c005/elevation/zenodo-haworth-r000-c005.tif",
+      "sfs_support": "tiles/zenodo-haworth-r000-c005/quality/zenodo-haworth-r000-c005_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r000-c005/quality/zenodo-haworth-r000-c005_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r000-c005/quality/zenodo-haworth-r000-c005_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r000-c005/quality/zenodo-haworth-r000-c005_valid_data.tif"
+    },
+    "sfs_support_count": 818626,
+    "site": "haworth",
+    "size": [
+      1024,
+      840
+    ],
+    "tile_id": "zenodo-haworth-r000-c005",
+    "transform": [
+      5.0,
+      0.0,
+      -27300.0,
+      0.0,
+      -5.0,
+      105400.0
+    ],
+    "valid_count": 860160,
+    "valid_data_count": 853556,
+    "working_dem": "tiles/zenodo-haworth-r000-c005/elevation/zenodo-haworth-r000-c005.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r001-c000/quality/zenodo-haworth-r001-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r001-c000/quality/zenodo-haworth-r001-c000_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r001-c000/imagery/zenodo-haworth-r001-c000_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r001-c000/elevation/zenodo-haworth-r001-c000.tif",
+      "sfs_support": "tiles/zenodo-haworth-r001-c000/quality/zenodo-haworth-r001-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r001-c000/quality/zenodo-haworth-r001-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r001-c000/quality/zenodo-haworth-r001-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r001-c000/quality/zenodo-haworth-r001-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1045180,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r001-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -52900.0,
+      0.0,
+      -5.0,
+      100280.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r001-c000/elevation/zenodo-haworth-r001-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r001-c001/quality/zenodo-haworth-r001-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r001-c001/quality/zenodo-haworth-r001-c001_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r001-c001/imagery/zenodo-haworth-r001-c001_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r001-c001/elevation/zenodo-haworth-r001-c001.tif",
+      "sfs_support": "tiles/zenodo-haworth-r001-c001/quality/zenodo-haworth-r001-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r001-c001/quality/zenodo-haworth-r001-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r001-c001/quality/zenodo-haworth-r001-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r001-c001/quality/zenodo-haworth-r001-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1038294,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r001-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -47780.0,
+      0.0,
+      -5.0,
+      100280.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r001-c001/elevation/zenodo-haworth-r001-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r001-c002/quality/zenodo-haworth-r001-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r001-c002/quality/zenodo-haworth-r001-c002_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r001-c002/imagery/zenodo-haworth-r001-c002_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r001-c002/elevation/zenodo-haworth-r001-c002.tif",
+      "sfs_support": "tiles/zenodo-haworth-r001-c002/quality/zenodo-haworth-r001-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r001-c002/quality/zenodo-haworth-r001-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r001-c002/quality/zenodo-haworth-r001-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r001-c002/quality/zenodo-haworth-r001-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1020362,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r001-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -42660.0,
+      0.0,
+      -5.0,
+      100280.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r001-c002/elevation/zenodo-haworth-r001-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r001-c003/quality/zenodo-haworth-r001-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r001-c003/quality/zenodo-haworth-r001-c003_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r001-c003/imagery/zenodo-haworth-r001-c003_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r001-c003/elevation/zenodo-haworth-r001-c003.tif",
+      "sfs_support": "tiles/zenodo-haworth-r001-c003/quality/zenodo-haworth-r001-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r001-c003/quality/zenodo-haworth-r001-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r001-c003/quality/zenodo-haworth-r001-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r001-c003/quality/zenodo-haworth-r001-c003_valid_data.tif"
+    },
+    "sfs_support_count": 984035,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r001-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -37540.0,
+      0.0,
+      -5.0,
+      100280.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r001-c003/elevation/zenodo-haworth-r001-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r001-c004/quality/zenodo-haworth-r001-c004_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r001-c004/quality/zenodo-haworth-r001-c004_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r001-c004/imagery/zenodo-haworth-r001-c004_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r001-c004/elevation/zenodo-haworth-r001-c004.tif",
+      "sfs_support": "tiles/zenodo-haworth-r001-c004/quality/zenodo-haworth-r001-c004_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r001-c004/quality/zenodo-haworth-r001-c004_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r001-c004/quality/zenodo-haworth-r001-c004_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r001-c004/quality/zenodo-haworth-r001-c004_valid_data.tif"
+    },
+    "sfs_support_count": 904797,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r001-c004",
+    "transform": [
+      5.0,
+      0.0,
+      -32420.0,
+      0.0,
+      -5.0,
+      100280.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r001-c004/elevation/zenodo-haworth-r001-c004.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r001-c005/quality/zenodo-haworth-r001-c005_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r001-c005/quality/zenodo-haworth-r001-c005_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r001-c005/imagery/zenodo-haworth-r001-c005_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r001-c005/elevation/zenodo-haworth-r001-c005.tif",
+      "sfs_support": "tiles/zenodo-haworth-r001-c005/quality/zenodo-haworth-r001-c005_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r001-c005/quality/zenodo-haworth-r001-c005_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r001-c005/quality/zenodo-haworth-r001-c005_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r001-c005/quality/zenodo-haworth-r001-c005_valid_data.tif"
+    },
+    "sfs_support_count": 751393,
+    "site": "haworth",
+    "size": [
+      1024,
+      840
+    ],
+    "tile_id": "zenodo-haworth-r001-c005",
+    "transform": [
+      5.0,
+      0.0,
+      -27300.0,
+      0.0,
+      -5.0,
+      100280.0
+    ],
+    "valid_count": 860160,
+    "valid_data_count": 856064,
+    "working_dem": "tiles/zenodo-haworth-r001-c005/elevation/zenodo-haworth-r001-c005.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r002-c000/quality/zenodo-haworth-r002-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r002-c000/quality/zenodo-haworth-r002-c000_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r002-c000/imagery/zenodo-haworth-r002-c000_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r002-c000/elevation/zenodo-haworth-r002-c000.tif",
+      "sfs_support": "tiles/zenodo-haworth-r002-c000/quality/zenodo-haworth-r002-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r002-c000/quality/zenodo-haworth-r002-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r002-c000/quality/zenodo-haworth-r002-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r002-c000/quality/zenodo-haworth-r002-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1020835,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r002-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -52900.0,
+      0.0,
+      -5.0,
+      95160.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r002-c000/elevation/zenodo-haworth-r002-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r002-c001/quality/zenodo-haworth-r002-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r002-c001/quality/zenodo-haworth-r002-c001_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r002-c001/imagery/zenodo-haworth-r002-c001_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r002-c001/elevation/zenodo-haworth-r002-c001.tif",
+      "sfs_support": "tiles/zenodo-haworth-r002-c001/quality/zenodo-haworth-r002-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r002-c001/quality/zenodo-haworth-r002-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r002-c001/quality/zenodo-haworth-r002-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r002-c001/quality/zenodo-haworth-r002-c001_valid_data.tif"
+    },
+    "sfs_support_count": 986713,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r002-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -47780.0,
+      0.0,
+      -5.0,
+      95160.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r002-c001/elevation/zenodo-haworth-r002-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r002-c002/quality/zenodo-haworth-r002-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r002-c002/quality/zenodo-haworth-r002-c002_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r002-c002/imagery/zenodo-haworth-r002-c002_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r002-c002/elevation/zenodo-haworth-r002-c002.tif",
+      "sfs_support": "tiles/zenodo-haworth-r002-c002/quality/zenodo-haworth-r002-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r002-c002/quality/zenodo-haworth-r002-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r002-c002/quality/zenodo-haworth-r002-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r002-c002/quality/zenodo-haworth-r002-c002_valid_data.tif"
+    },
+    "sfs_support_count": 918841,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r002-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -42660.0,
+      0.0,
+      -5.0,
+      95160.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r002-c002/elevation/zenodo-haworth-r002-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r002-c003/quality/zenodo-haworth-r002-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r002-c003/quality/zenodo-haworth-r002-c003_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r002-c003/imagery/zenodo-haworth-r002-c003_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r002-c003/elevation/zenodo-haworth-r002-c003.tif",
+      "sfs_support": "tiles/zenodo-haworth-r002-c003/quality/zenodo-haworth-r002-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r002-c003/quality/zenodo-haworth-r002-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r002-c003/quality/zenodo-haworth-r002-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r002-c003/quality/zenodo-haworth-r002-c003_valid_data.tif"
+    },
+    "sfs_support_count": 954826,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r002-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -37540.0,
+      0.0,
+      -5.0,
+      95160.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r002-c003/elevation/zenodo-haworth-r002-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r002-c004/quality/zenodo-haworth-r002-c004_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r002-c004/quality/zenodo-haworth-r002-c004_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r002-c004/imagery/zenodo-haworth-r002-c004_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r002-c004/elevation/zenodo-haworth-r002-c004.tif",
+      "sfs_support": "tiles/zenodo-haworth-r002-c004/quality/zenodo-haworth-r002-c004_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r002-c004/quality/zenodo-haworth-r002-c004_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r002-c004/quality/zenodo-haworth-r002-c004_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r002-c004/quality/zenodo-haworth-r002-c004_valid_data.tif"
+    },
+    "sfs_support_count": 1019740,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r002-c004",
+    "transform": [
+      5.0,
+      0.0,
+      -32420.0,
+      0.0,
+      -5.0,
+      95160.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r002-c004/elevation/zenodo-haworth-r002-c004.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r002-c005/quality/zenodo-haworth-r002-c005_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r002-c005/quality/zenodo-haworth-r002-c005_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r002-c005/imagery/zenodo-haworth-r002-c005_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r002-c005/elevation/zenodo-haworth-r002-c005.tif",
+      "sfs_support": "tiles/zenodo-haworth-r002-c005/quality/zenodo-haworth-r002-c005_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r002-c005/quality/zenodo-haworth-r002-c005_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r002-c005/quality/zenodo-haworth-r002-c005_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r002-c005/quality/zenodo-haworth-r002-c005_valid_data.tif"
+    },
+    "sfs_support_count": 832522,
+    "site": "haworth",
+    "size": [
+      1024,
+      840
+    ],
+    "tile_id": "zenodo-haworth-r002-c005",
+    "transform": [
+      5.0,
+      0.0,
+      -27300.0,
+      0.0,
+      -5.0,
+      95160.0
+    ],
+    "valid_count": 860160,
+    "valid_data_count": 856064,
+    "working_dem": "tiles/zenodo-haworth-r002-c005/elevation/zenodo-haworth-r002-c005.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r003-c000/quality/zenodo-haworth-r003-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r003-c000/quality/zenodo-haworth-r003-c000_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r003-c000/imagery/zenodo-haworth-r003-c000_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r003-c000/elevation/zenodo-haworth-r003-c000.tif",
+      "sfs_support": "tiles/zenodo-haworth-r003-c000/quality/zenodo-haworth-r003-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r003-c000/quality/zenodo-haworth-r003-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r003-c000/quality/zenodo-haworth-r003-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r003-c000/quality/zenodo-haworth-r003-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1015177,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r003-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -52900.0,
+      0.0,
+      -5.0,
+      90040.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r003-c000/elevation/zenodo-haworth-r003-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r003-c001/quality/zenodo-haworth-r003-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r003-c001/quality/zenodo-haworth-r003-c001_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r003-c001/imagery/zenodo-haworth-r003-c001_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r003-c001/elevation/zenodo-haworth-r003-c001.tif",
+      "sfs_support": "tiles/zenodo-haworth-r003-c001/quality/zenodo-haworth-r003-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r003-c001/quality/zenodo-haworth-r003-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r003-c001/quality/zenodo-haworth-r003-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r003-c001/quality/zenodo-haworth-r003-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1034815,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r003-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -47780.0,
+      0.0,
+      -5.0,
+      90040.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r003-c001/elevation/zenodo-haworth-r003-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r003-c002/quality/zenodo-haworth-r003-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r003-c002/quality/zenodo-haworth-r003-c002_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r003-c002/imagery/zenodo-haworth-r003-c002_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r003-c002/elevation/zenodo-haworth-r003-c002.tif",
+      "sfs_support": "tiles/zenodo-haworth-r003-c002/quality/zenodo-haworth-r003-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r003-c002/quality/zenodo-haworth-r003-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r003-c002/quality/zenodo-haworth-r003-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r003-c002/quality/zenodo-haworth-r003-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1029334,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r003-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -42660.0,
+      0.0,
+      -5.0,
+      90040.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r003-c002/elevation/zenodo-haworth-r003-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r003-c003/quality/zenodo-haworth-r003-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r003-c003/quality/zenodo-haworth-r003-c003_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r003-c003/imagery/zenodo-haworth-r003-c003_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r003-c003/elevation/zenodo-haworth-r003-c003.tif",
+      "sfs_support": "tiles/zenodo-haworth-r003-c003/quality/zenodo-haworth-r003-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r003-c003/quality/zenodo-haworth-r003-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r003-c003/quality/zenodo-haworth-r003-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r003-c003/quality/zenodo-haworth-r003-c003_valid_data.tif"
+    },
+    "sfs_support_count": 991963,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r003-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -37540.0,
+      0.0,
+      -5.0,
+      90040.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r003-c003/elevation/zenodo-haworth-r003-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r003-c004/quality/zenodo-haworth-r003-c004_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r003-c004/quality/zenodo-haworth-r003-c004_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r003-c004/imagery/zenodo-haworth-r003-c004_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r003-c004/elevation/zenodo-haworth-r003-c004.tif",
+      "sfs_support": "tiles/zenodo-haworth-r003-c004/quality/zenodo-haworth-r003-c004_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r003-c004/quality/zenodo-haworth-r003-c004_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r003-c004/quality/zenodo-haworth-r003-c004_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r003-c004/quality/zenodo-haworth-r003-c004_valid_data.tif"
+    },
+    "sfs_support_count": 1023031,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r003-c004",
+    "transform": [
+      5.0,
+      0.0,
+      -32420.0,
+      0.0,
+      -5.0,
+      90040.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r003-c004/elevation/zenodo-haworth-r003-c004.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r003-c005/quality/zenodo-haworth-r003-c005_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r003-c005/quality/zenodo-haworth-r003-c005_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r003-c005/imagery/zenodo-haworth-r003-c005_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r003-c005/elevation/zenodo-haworth-r003-c005.tif",
+      "sfs_support": "tiles/zenodo-haworth-r003-c005/quality/zenodo-haworth-r003-c005_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r003-c005/quality/zenodo-haworth-r003-c005_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r003-c005/quality/zenodo-haworth-r003-c005_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r003-c005/quality/zenodo-haworth-r003-c005_valid_data.tif"
+    },
+    "sfs_support_count": 855796,
+    "site": "haworth",
+    "size": [
+      1024,
+      840
+    ],
+    "tile_id": "zenodo-haworth-r003-c005",
+    "transform": [
+      5.0,
+      0.0,
+      -27300.0,
+      0.0,
+      -5.0,
+      90040.0
+    ],
+    "valid_count": 860160,
+    "valid_data_count": 856064,
+    "working_dem": "tiles/zenodo-haworth-r003-c005/elevation/zenodo-haworth-r003-c005.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r004-c000/quality/zenodo-haworth-r004-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r004-c000/quality/zenodo-haworth-r004-c000_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r004-c000/imagery/zenodo-haworth-r004-c000_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r004-c000/elevation/zenodo-haworth-r004-c000.tif",
+      "sfs_support": "tiles/zenodo-haworth-r004-c000/quality/zenodo-haworth-r004-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r004-c000/quality/zenodo-haworth-r004-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r004-c000/quality/zenodo-haworth-r004-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r004-c000/quality/zenodo-haworth-r004-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1015180,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r004-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -52900.0,
+      0.0,
+      -5.0,
+      84920.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r004-c000/elevation/zenodo-haworth-r004-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r004-c001/quality/zenodo-haworth-r004-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r004-c001/quality/zenodo-haworth-r004-c001_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r004-c001/imagery/zenodo-haworth-r004-c001_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r004-c001/elevation/zenodo-haworth-r004-c001.tif",
+      "sfs_support": "tiles/zenodo-haworth-r004-c001/quality/zenodo-haworth-r004-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r004-c001/quality/zenodo-haworth-r004-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r004-c001/quality/zenodo-haworth-r004-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r004-c001/quality/zenodo-haworth-r004-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1041250,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r004-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -47780.0,
+      0.0,
+      -5.0,
+      84920.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r004-c001/elevation/zenodo-haworth-r004-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r004-c002/quality/zenodo-haworth-r004-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r004-c002/quality/zenodo-haworth-r004-c002_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r004-c002/imagery/zenodo-haworth-r004-c002_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r004-c002/elevation/zenodo-haworth-r004-c002.tif",
+      "sfs_support": "tiles/zenodo-haworth-r004-c002/quality/zenodo-haworth-r004-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r004-c002/quality/zenodo-haworth-r004-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r004-c002/quality/zenodo-haworth-r004-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r004-c002/quality/zenodo-haworth-r004-c002_valid_data.tif"
+    },
+    "sfs_support_count": 991531,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r004-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -42660.0,
+      0.0,
+      -5.0,
+      84920.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r004-c002/elevation/zenodo-haworth-r004-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r004-c003/quality/zenodo-haworth-r004-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r004-c003/quality/zenodo-haworth-r004-c003_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r004-c003/imagery/zenodo-haworth-r004-c003_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r004-c003/elevation/zenodo-haworth-r004-c003.tif",
+      "sfs_support": "tiles/zenodo-haworth-r004-c003/quality/zenodo-haworth-r004-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r004-c003/quality/zenodo-haworth-r004-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r004-c003/quality/zenodo-haworth-r004-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r004-c003/quality/zenodo-haworth-r004-c003_valid_data.tif"
+    },
+    "sfs_support_count": 1029589,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r004-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -37540.0,
+      0.0,
+      -5.0,
+      84920.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r004-c003/elevation/zenodo-haworth-r004-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r004-c004/quality/zenodo-haworth-r004-c004_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r004-c004/quality/zenodo-haworth-r004-c004_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r004-c004/imagery/zenodo-haworth-r004-c004_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r004-c004/elevation/zenodo-haworth-r004-c004.tif",
+      "sfs_support": "tiles/zenodo-haworth-r004-c004/quality/zenodo-haworth-r004-c004_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r004-c004/quality/zenodo-haworth-r004-c004_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r004-c004/quality/zenodo-haworth-r004-c004_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r004-c004/quality/zenodo-haworth-r004-c004_valid_data.tif"
+    },
+    "sfs_support_count": 916051,
+    "site": "haworth",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r004-c004",
+    "transform": [
+      5.0,
+      0.0,
+      -32420.0,
+      0.0,
+      -5.0,
+      84920.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-haworth-r004-c004/elevation/zenodo-haworth-r004-c004.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r004-c005/quality/zenodo-haworth-r004-c005_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r004-c005/quality/zenodo-haworth-r004-c005_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r004-c005/imagery/zenodo-haworth-r004-c005_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r004-c005/elevation/zenodo-haworth-r004-c005.tif",
+      "sfs_support": "tiles/zenodo-haworth-r004-c005/quality/zenodo-haworth-r004-c005_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r004-c005/quality/zenodo-haworth-r004-c005_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r004-c005/quality/zenodo-haworth-r004-c005_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r004-c005/quality/zenodo-haworth-r004-c005_valid_data.tif"
+    },
+    "sfs_support_count": 853573,
+    "site": "haworth",
+    "size": [
+      1024,
+      840
+    ],
+    "tile_id": "zenodo-haworth-r004-c005",
+    "transform": [
+      5.0,
+      0.0,
+      -27300.0,
+      0.0,
+      -5.0,
+      84920.0
+    ],
+    "valid_count": 860160,
+    "valid_data_count": 856064,
+    "working_dem": "tiles/zenodo-haworth-r004-c005/elevation/zenodo-haworth-r004-c005.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r005-c000/quality/zenodo-haworth-r005-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r005-c000/quality/zenodo-haworth-r005-c000_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r005-c000/imagery/zenodo-haworth-r005-c000_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r005-c000/elevation/zenodo-haworth-r005-c000.tif",
+      "sfs_support": "tiles/zenodo-haworth-r005-c000/quality/zenodo-haworth-r005-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r005-c000/quality/zenodo-haworth-r005-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r005-c000/quality/zenodo-haworth-r005-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r005-c000/quality/zenodo-haworth-r005-c000_valid_data.tif"
+    },
+    "sfs_support_count": 793825,
+    "site": "haworth",
+    "size": [
+      840,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r005-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -52900.0,
+      0.0,
+      -5.0,
+      79800.0
+    ],
+    "valid_count": 860160,
+    "valid_data_count": 859136,
+    "working_dem": "tiles/zenodo-haworth-r005-c000/elevation/zenodo-haworth-r005-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r005-c001/quality/zenodo-haworth-r005-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r005-c001/quality/zenodo-haworth-r005-c001_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r005-c001/imagery/zenodo-haworth-r005-c001_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r005-c001/elevation/zenodo-haworth-r005-c001.tif",
+      "sfs_support": "tiles/zenodo-haworth-r005-c001/quality/zenodo-haworth-r005-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r005-c001/quality/zenodo-haworth-r005-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r005-c001/quality/zenodo-haworth-r005-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r005-c001/quality/zenodo-haworth-r005-c001_valid_data.tif"
+    },
+    "sfs_support_count": 839350,
+    "site": "haworth",
+    "size": [
+      840,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r005-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -47780.0,
+      0.0,
+      -5.0,
+      79800.0
+    ],
+    "valid_count": 860160,
+    "valid_data_count": 859136,
+    "working_dem": "tiles/zenodo-haworth-r005-c001/elevation/zenodo-haworth-r005-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r005-c002/quality/zenodo-haworth-r005-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r005-c002/quality/zenodo-haworth-r005-c002_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r005-c002/imagery/zenodo-haworth-r005-c002_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r005-c002/elevation/zenodo-haworth-r005-c002.tif",
+      "sfs_support": "tiles/zenodo-haworth-r005-c002/quality/zenodo-haworth-r005-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r005-c002/quality/zenodo-haworth-r005-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r005-c002/quality/zenodo-haworth-r005-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r005-c002/quality/zenodo-haworth-r005-c002_valid_data.tif"
+    },
+    "sfs_support_count": 849001,
+    "site": "haworth",
+    "size": [
+      840,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r005-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -42660.0,
+      0.0,
+      -5.0,
+      79800.0
+    ],
+    "valid_count": 860160,
+    "valid_data_count": 859136,
+    "working_dem": "tiles/zenodo-haworth-r005-c002/elevation/zenodo-haworth-r005-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r005-c003/quality/zenodo-haworth-r005-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r005-c003/quality/zenodo-haworth-r005-c003_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r005-c003/imagery/zenodo-haworth-r005-c003_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r005-c003/elevation/zenodo-haworth-r005-c003.tif",
+      "sfs_support": "tiles/zenodo-haworth-r005-c003/quality/zenodo-haworth-r005-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r005-c003/quality/zenodo-haworth-r005-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r005-c003/quality/zenodo-haworth-r005-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r005-c003/quality/zenodo-haworth-r005-c003_valid_data.tif"
+    },
+    "sfs_support_count": 855016,
+    "site": "haworth",
+    "size": [
+      840,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r005-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -37540.0,
+      0.0,
+      -5.0,
+      79800.0
+    ],
+    "valid_count": 860160,
+    "valid_data_count": 859136,
+    "working_dem": "tiles/zenodo-haworth-r005-c003/elevation/zenodo-haworth-r005-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r005-c004/quality/zenodo-haworth-r005-c004_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r005-c004/quality/zenodo-haworth-r005-c004_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r005-c004/imagery/zenodo-haworth-r005-c004_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r005-c004/elevation/zenodo-haworth-r005-c004.tif",
+      "sfs_support": "tiles/zenodo-haworth-r005-c004/quality/zenodo-haworth-r005-c004_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r005-c004/quality/zenodo-haworth-r005-c004_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r005-c004/quality/zenodo-haworth-r005-c004_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r005-c004/quality/zenodo-haworth-r005-c004_valid_data.tif"
+    },
+    "sfs_support_count": 667825,
+    "site": "haworth",
+    "size": [
+      840,
+      1024
+    ],
+    "tile_id": "zenodo-haworth-r005-c004",
+    "transform": [
+      5.0,
+      0.0,
+      -32420.0,
+      0.0,
+      -5.0,
+      79800.0
+    ],
+    "valid_count": 860160,
+    "valid_data_count": 859136,
+    "working_dem": "tiles/zenodo-haworth-r005-c004/elevation/zenodo-haworth-r005-c004.tif"
+  },
+  {
+    "collection": "public",
+    "group": "haworth",
+    "layers": {
+      "best_resolution": "tiles/zenodo-haworth-r005-c005/quality/zenodo-haworth-r005-c005_best_resolution.tif",
+      "image_count": "tiles/zenodo-haworth-r005-c005/quality/zenodo-haworth-r005-c005_image_count.tif",
+      "nac": "tiles/zenodo-haworth-r005-c005/imagery/zenodo-haworth-r005-c005_nac.tif",
+      "sfs": "tiles/zenodo-haworth-r005-c005/elevation/zenodo-haworth-r005-c005.tif",
+      "sfs_support": "tiles/zenodo-haworth-r005-c005/quality/zenodo-haworth-r005-c005_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-haworth-r005-c005/quality/zenodo-haworth-r005-c005_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-haworth-r005-c005/quality/zenodo-haworth-r005-c005_uncertainty.tif",
+      "valid_data": "tiles/zenodo-haworth-r005-c005/quality/zenodo-haworth-r005-c005_valid_data.tif"
+    },
+    "sfs_support_count": 671419,
+    "site": "haworth",
+    "size": [
+      840,
+      840
+    ],
+    "tile_id": "zenodo-haworth-r005-c005",
+    "transform": [
+      5.0,
+      0.0,
+      -27300.0,
+      0.0,
+      -5.0,
+      79800.0
+    ],
+    "valid_count": 705600,
+    "valid_data_count": 701404,
+    "working_dem": "tiles/zenodo-haworth-r005-c005/elevation/zenodo-haworth-r005-c005.tif"
+  }
+]

@@ -1,5 +1,6 @@
 """Regression checks for explicit model updates and dataset isolation."""
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import tempfile
@@ -44,7 +45,7 @@ class AssistantTests(unittest.TestCase):
                                     (paths, "LEGACY_DRAFT_DIR", self.root / "output/drafts"),
                                     (paths, "LEGACY_MIRRORED_DIR", self.root / "output"),
                                     (paths, "POSTER_DIR", self.root / "poster"),
-                                    (core, "MODEL", "gbm"),
+                                    (core, "MODEL", "rf"),
                                     (assistant, "MODEL_DIR", str(self.root / "models")),
                                     (evaluate.reference, "REFERENCE_ROOT", self.root / "references"),
                                     (evaluate.reference, "EXTRA", {
@@ -68,7 +69,8 @@ class AssistantTests(unittest.TestCase):
         return (Path(assistant.MODEL_DIR) / f"{core.MODEL}.joblib").read_bytes()
 
     def test_persisted_prediction_for_both_pixel_backends(self):
-        for backend in ("gbm", "rf"):
+        backends = ["rf"] + (["gbm"] if importlib.util.find_spec("lightgbm") else [])
+        for backend in backends:
             with self.subTest(backend=backend), patch.object(core, "MODEL", backend):
                 bundle, preview = self.update("a", self.cells)
                 self.assertIsNotNone(bundle["model"])
@@ -322,7 +324,7 @@ class AssistantTests(unittest.TestCase):
             reports = list((paths.OUTPUT_DIR / "evaluations").iterdir())
             self.assertEqual(len(reports), 2)
             self.assertTrue(all(p.suffix == ".json" for p in reports))
-            self.assertEqual({p.name for p in Path(assistant.MODEL_DIR).iterdir()}, {"gbm.joblib"})
+            self.assertEqual({p.name for p in Path(assistant.MODEL_DIR).iterdir()}, {f"{core.MODEL}.joblib"})
         with patch.object(core, "test_maps", return_value=["t1"]):   # other test maps:
             self.assertEqual(evaluate.history(), [])                  # not comparable
 
@@ -494,7 +496,7 @@ class AssistantTests(unittest.TestCase):
         bundle = assistant.retrain()
         self.assertFalse(assistant.training_changed(bundle))
         core.set_test_maps(["b"])
-        self.assertTrue(assistant.training_changed(bundle))
+        self.assertFalse(assistant.training_changed(bundle))
 
     def test_training_status_remembers_a_painting_with_no_usable_samples(self):
         self.write_dem("a", 0)
@@ -510,7 +512,7 @@ class AssistantTests(unittest.TestCase):
         core.save_painting("a", changed)
         self.assertTrue(assistant.training_changed(bundle))
 
-    def test_test_maps_and_their_neighbours_are_not_listed(self):
+    def test_legacy_test_maps_and_neighbours_remain_available(self):
         for name, shift, x in (("a", 0, 1000), ("b", 1, 20000), ("c", 2, 21200),
                                ("d", 3, 23600)):
             self.write_dem(name, shift, x)                    # c touches b; d is further
@@ -519,7 +521,7 @@ class AssistantTests(unittest.TestCase):
         core.set_test_maps(["b"])
         app = open_app()
         self.assertFalse(app.exception)
-        self.assertEqual(app.selectbox(key="selected_map").options, ["a", "d"])
+        self.assertEqual(app.selectbox(key="selected_map").options, ["a", "b", "c", "d"])
 
     def test_model_update_does_not_run_evaluation(self):
         self.write_dem("a", 0)
@@ -752,6 +754,7 @@ class AssistantTests(unittest.TestCase):
             app.pills(key="layers").set_value(["Prediction", "Painting"]).run()
             both = shots[-1]
             self.assertEqual(len({both, prediction, painting}), 3)
+            self.assertEqual(extras[-1]["legend"], "Yellow: disagreement")
             app.pills(key="layers").set_value([]).run()
             self.assertFalse(app.exception)
             self.assertNotEqual(shots[-1], prediction)
@@ -760,7 +763,7 @@ class AssistantTests(unittest.TestCase):
 
             # Any model input can replace the hillshade under the units, and Space shows it.
             hillshade = extras[-1]["terrain"].tobytes()
-            self.assertEqual(extras[-1]["legend"], "")
+            self.assertEqual(extras[-1]["legend"], "Yellow: disagreement")
             app.segmented_control(key="background").set_value("svf").run()
             self.assertFalse(app.exception)
             self.assertNotEqual(extras[-1]["terrain"].tobytes(), hillshade)

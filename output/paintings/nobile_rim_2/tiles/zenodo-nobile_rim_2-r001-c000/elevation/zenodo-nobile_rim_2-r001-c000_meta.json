@@ -1,0 +1,122 @@
+{
+  "name": "zenodo-nobile_rim_2-r001-c000",
+  "label_source": "Imported painting",
+  "restricted": true,
+  "verified": true,
+  "reference_maps": [
+    "N2005"
+  ],
+  "provenance": {
+    "operation": "painting_merge",
+    "sources": [
+      {
+        "tile_id": "nobile2-0001",
+        "map_id": "N2005",
+        "group": "nobile-2",
+        "verified_saved": true,
+        "verified_draft": true,
+        "saved_metadata": {
+          "verified": true,
+          "label_status": "User-marked verified; preserved unreviewed historical snapshot; not independent certification",
+          "restricted": true,
+          "provenance": {
+            "accepted_observed": {
+              "draft": false,
+              "saved": false
+            },
+            "confidence_observed": false,
+            "confidence_status": "unknown",
+            "known_accepted_cells_union": 0,
+            "original_provenance": {
+              "labels_path": "sites/nobile2/tiles/nobile2-0001/annotations/seed/saved/nobile2-labels-0001.tif",
+              "labels_sha256": "1da4c4cbe15fa3ca845e7dbe32fddfc7a46153be76b2d6c152c107584529d9b8",
+              "provenance_path": "sites/nobile2/tiles/nobile2-0001/annotations/seed/saved/provenance.json",
+              "provenance_sha256": "5095774c80df7d7ed8c9c053c85da218fd62cae7307e96a9b8d5f34bdb8351c0"
+            },
+            "snapshot": "saved",
+            "snapshots": {
+              "draft": {
+                "labels_path": "sites/nobile2/tiles/nobile2-0001/annotations/seed/draft/nobile2-labels-0001.tif",
+                "labels_sha256": "7262af16f551cb2ff5fc7c2a1d31cb3464e4f1287993b7ebd7e923fe0126d21d",
+                "provenance_path": "sites/nobile2/tiles/nobile2-0001/annotations/seed/draft/provenance.json",
+                "provenance_sha256": "ddf64704176c09c49ab53f6e96637f26085345a2a84c7c3e4bcbf7fd685b3488"
+              },
+              "saved": {
+                "labels_path": "sites/nobile2/tiles/nobile2-0001/annotations/seed/saved/nobile2-labels-0001.tif",
+                "labels_sha256": "1da4c4cbe15fa3ca845e7dbe32fddfc7a46153be76b2d6c152c107584529d9b8",
+                "provenance_path": "sites/nobile2/tiles/nobile2-0001/annotations/seed/saved/provenance.json",
+                "provenance_sha256": "5095774c80df7d7ed8c9c053c85da218fd62cae7307e96a9b8d5f34bdb8351c0"
+              }
+            },
+            "source_root": "/Users/torus/Desktop/Research/selenograph/data/reference_data/professor_geologic_maps",
+            "source_tile": {
+              "path": "sites/nobile2/tiles/nobile2-0001/tile.json",
+              "sha256": "4de68546fd21cda65ae288ade860ca5e9d8eb5977d8c6a02b8fd1b36d6f9fbda"
+            },
+            "verification": {
+              "basis": "user_requested",
+              "independent_certification": false,
+              "reason": "Explicit importer verified=True user request"
+            }
+          }
+        },
+        "draft_metadata": {
+          "verified": true,
+          "label_status": "User-marked verified; preserved unreviewed historical snapshot; not independent certification",
+          "restricted": true,
+          "provenance": {
+            "accepted_observed": {
+              "draft": false,
+              "saved": false
+            },
+            "confidence_observed": false,
+            "confidence_status": "unknown",
+            "known_accepted_cells_union": 0,
+            "original_provenance": {
+              "labels_path": "sites/nobile2/tiles/nobile2-0001/annotations/seed/saved/nobile2-labels-0001.tif",
+              "labels_sha256": "1da4c4cbe15fa3ca845e7dbe32fddfc7a46153be76b2d6c152c107584529d9b8",
+              "provenance_path": "sites/nobile2/tiles/nobile2-0001/annotations/seed/saved/provenance.json",
+              "provenance_sha256": "5095774c80df7d7ed8c9c053c85da218fd62cae7307e96a9b8d5f34bdb8351c0"
+            },
+            "snapshot": "saved",
+            "snapshots": {
+              "draft": {
+                "labels_path": "sites/nobile2/tiles/nobile2-0001/annotations/seed/draft/nobile2-labels-0001.tif",
+                "labels_sha256": "7262af16f551cb2ff5fc7c2a1d31cb3464e4f1287993b7ebd7e923fe0126d21d",
+                "provenance_path": "sites/nobile2/tiles/nobile2-0001/annotations/seed/draft/provenance.json",
+                "provenance_sha256": "ddf64704176c09c49ab53f6e96637f26085345a2a84c7c3e4bcbf7fd685b3488"
+              },
+              "saved": {
+                "labels_path": "sites/nobile2/tiles/nobile2-0001/annotations/seed/saved/nobile2-labels-0001.tif",
+                "labels_sha256": "1da4c4cbe15fa3ca845e7dbe32fddfc7a46153be76b2d6c152c107584529d9b8",
+                "provenance_path": "sites/nobile2/tiles/nobile2-0001/annotations/seed/saved/provenance.json",
+                "provenance_sha256": "5095774c80df7d7ed8c9c053c85da218fd62cae7307e96a9b8d5f34bdb8351c0"
+              }
+            },
+            "source_root": "/Users/torus/Desktop/Research/selenograph/data/reference_data/professor_geologic_maps",
+            "source_tile": {
+              "path": "sites/nobile2/tiles/nobile2-0001/tile.json",
+              "sha256": "4de68546fd21cda65ae288ade860ca5e9d8eb5977d8c6a02b8fd1b36d6f9fbda"
+            },
+            "verification": {
+              "basis": "user_requested",
+              "independent_certification": false,
+              "reason": "Explicit importer verified=True user request"
+            }
+          }
+        },
+        "source_refs": {
+          "download_allowed": false,
+          "restricted": true,
+          "root": "/Users/torus/Desktop/Research/selenograph/data/reference_data/professor_geologic_maps",
+          "sha256": "4de68546fd21cda65ae288ade860ca5e9d8eb5977d8c6a02b8fd1b36d6f9fbda",
+          "tile": "sites/nobile2/tiles/nobile2-0001/tile.json"
+        }
+      }
+    ],
+    "archive": "/Users/torus/Desktop/Research/selenograph/data/processed_data/.reference-merge-backups/20260929T215002.758181Z",
+    "coverage_threshold": 0.5,
+    "label_rule": "strict majority of known pixels",
+    "flags": "weakest contributing certainty; any accepted contribution remains accepted"
+  }
+}

@@ -57,11 +57,9 @@ FEATURE_VERSION = 6 # join adjoining source terrain before computing neighbourho
 # The windows are round (Gaussian), with the same spread as a square this wide. A square
 # window turned every steep spot into a hard-edged square aligned with the grid.
 
-# Test maps: independent checks the model is scored on, chosen on the Progress page and
-# kept in this file. They and the maps touching them are left out of training and out
-# of the painter. The professor's maps all train the model; the Progress page validates
-# it by rotation instead (evaluation.run).
-TEST_MAPS_FILE = paths.TEST_MAPS_FILE              # output/test_maps.json in the app
+# Historical offline evaluation helpers only. Paint, Gallery, Update model and
+# Progress do not use this persistent selection; Progress rotates individual maps.
+TEST_MAPS_FILE = paths.TEST_MAPS_FILE
 DEFAULT_TEST_MAPS = []                             # until test maps are chosen
 APPROVED = 0.5     # how much a prediction you approved counts when the model learns
 

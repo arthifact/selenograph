@@ -1,0 +1,514 @@
+[
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r000-c000/quality/zenodo-connecting_ridge_extension-r000-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r000-c000/quality/zenodo-connecting_ridge_extension-r000-c000_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r000-c000/imagery/zenodo-connecting_ridge_extension-r000-c000_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r000-c000/elevation/zenodo-connecting_ridge_extension-r000-c000.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r000-c000/quality/zenodo-connecting_ridge_extension-r000-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r000-c000/quality/zenodo-connecting_ridge_extension-r000-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r000-c000/quality/zenodo-connecting_ridge_extension-r000-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r000-c000/quality/zenodo-connecting_ridge_extension-r000-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1046494,
+    "site": "connecting_ridge_extension",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r000-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -38700.0,
+      0.0,
+      -5.0,
+      3900.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048410,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r000-c000/elevation/zenodo-connecting_ridge_extension-r000-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r000-c001/quality/zenodo-connecting_ridge_extension-r000-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r000-c001/quality/zenodo-connecting_ridge_extension-r000-c001_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r000-c001/imagery/zenodo-connecting_ridge_extension-r000-c001_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r000-c001/elevation/zenodo-connecting_ridge_extension-r000-c001.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r000-c001/quality/zenodo-connecting_ridge_extension-r000-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r000-c001/quality/zenodo-connecting_ridge_extension-r000-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r000-c001/quality/zenodo-connecting_ridge_extension-r000-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r000-c001/quality/zenodo-connecting_ridge_extension-r000-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1022452,
+    "site": "connecting_ridge_extension",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r000-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -33580.0,
+      0.0,
+      -5.0,
+      3900.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r000-c001/elevation/zenodo-connecting_ridge_extension-r000-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r000-c002/quality/zenodo-connecting_ridge_extension-r000-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r000-c002/quality/zenodo-connecting_ridge_extension-r000-c002_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r000-c002/imagery/zenodo-connecting_ridge_extension-r000-c002_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r000-c002/elevation/zenodo-connecting_ridge_extension-r000-c002.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r000-c002/quality/zenodo-connecting_ridge_extension-r000-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r000-c002/quality/zenodo-connecting_ridge_extension-r000-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r000-c002/quality/zenodo-connecting_ridge_extension-r000-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r000-c002/quality/zenodo-connecting_ridge_extension-r000-c002_valid_data.tif"
+    },
+    "sfs_support_count": 697921,
+    "site": "connecting_ridge_extension",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r000-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -28460.0,
+      0.0,
+      -5.0,
+      3900.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r000-c002/elevation/zenodo-connecting_ridge_extension-r000-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r000-c003/quality/zenodo-connecting_ridge_extension-r000-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r000-c003/quality/zenodo-connecting_ridge_extension-r000-c003_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r000-c003/imagery/zenodo-connecting_ridge_extension-r000-c003_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r000-c003/elevation/zenodo-connecting_ridge_extension-r000-c003.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r000-c003/quality/zenodo-connecting_ridge_extension-r000-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r000-c003/quality/zenodo-connecting_ridge_extension-r000-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r000-c003/quality/zenodo-connecting_ridge_extension-r000-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r000-c003/quality/zenodo-connecting_ridge_extension-r000-c003_valid_data.tif"
+    },
+    "sfs_support_count": 868728,
+    "site": "connecting_ridge_extension",
+    "size": [
+      1024,
+      928
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r000-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -23340.0,
+      0.0,
+      -5.0,
+      3900.0
+    ],
+    "valid_count": 950272,
+    "valid_data_count": 949248,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r000-c003/elevation/zenodo-connecting_ridge_extension-r000-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r001-c000/quality/zenodo-connecting_ridge_extension-r001-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r001-c000/quality/zenodo-connecting_ridge_extension-r001-c000_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r001-c000/imagery/zenodo-connecting_ridge_extension-r001-c000_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r001-c000/elevation/zenodo-connecting_ridge_extension-r001-c000.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r001-c000/quality/zenodo-connecting_ridge_extension-r001-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r001-c000/quality/zenodo-connecting_ridge_extension-r001-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r001-c000/quality/zenodo-connecting_ridge_extension-r001-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r001-c000/quality/zenodo-connecting_ridge_extension-r001-c000_valid_data.tif"
+    },
+    "sfs_support_count": 962107,
+    "site": "connecting_ridge_extension",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r001-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -38700.0,
+      0.0,
+      -5.0,
+      -1220.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048017,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r001-c000/elevation/zenodo-connecting_ridge_extension-r001-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r001-c001/quality/zenodo-connecting_ridge_extension-r001-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r001-c001/quality/zenodo-connecting_ridge_extension-r001-c001_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r001-c001/imagery/zenodo-connecting_ridge_extension-r001-c001_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r001-c001/elevation/zenodo-connecting_ridge_extension-r001-c001.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r001-c001/quality/zenodo-connecting_ridge_extension-r001-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r001-c001/quality/zenodo-connecting_ridge_extension-r001-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r001-c001/quality/zenodo-connecting_ridge_extension-r001-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r001-c001/quality/zenodo-connecting_ridge_extension-r001-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1038529,
+    "site": "connecting_ridge_extension",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r001-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -33580.0,
+      0.0,
+      -5.0,
+      -1220.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r001-c001/elevation/zenodo-connecting_ridge_extension-r001-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r001-c002/quality/zenodo-connecting_ridge_extension-r001-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r001-c002/quality/zenodo-connecting_ridge_extension-r001-c002_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r001-c002/imagery/zenodo-connecting_ridge_extension-r001-c002_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r001-c002/elevation/zenodo-connecting_ridge_extension-r001-c002.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r001-c002/quality/zenodo-connecting_ridge_extension-r001-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r001-c002/quality/zenodo-connecting_ridge_extension-r001-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r001-c002/quality/zenodo-connecting_ridge_extension-r001-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r001-c002/quality/zenodo-connecting_ridge_extension-r001-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1032919,
+    "site": "connecting_ridge_extension",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r001-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -28460.0,
+      0.0,
+      -5.0,
+      -1220.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r001-c002/elevation/zenodo-connecting_ridge_extension-r001-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r001-c003/quality/zenodo-connecting_ridge_extension-r001-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r001-c003/quality/zenodo-connecting_ridge_extension-r001-c003_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r001-c003/imagery/zenodo-connecting_ridge_extension-r001-c003_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r001-c003/elevation/zenodo-connecting_ridge_extension-r001-c003.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r001-c003/quality/zenodo-connecting_ridge_extension-r001-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r001-c003/quality/zenodo-connecting_ridge_extension-r001-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r001-c003/quality/zenodo-connecting_ridge_extension-r001-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r001-c003/quality/zenodo-connecting_ridge_extension-r001-c003_valid_data.tif"
+    },
+    "sfs_support_count": 931461,
+    "site": "connecting_ridge_extension",
+    "size": [
+      1024,
+      928
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r001-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -23340.0,
+      0.0,
+      -5.0,
+      -1220.0
+    ],
+    "valid_count": 950272,
+    "valid_data_count": 949248,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r001-c003/elevation/zenodo-connecting_ridge_extension-r001-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r002-c000/quality/zenodo-connecting_ridge_extension-r002-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r002-c000/quality/zenodo-connecting_ridge_extension-r002-c000_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r002-c000/imagery/zenodo-connecting_ridge_extension-r002-c000_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r002-c000/elevation/zenodo-connecting_ridge_extension-r002-c000.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r002-c000/quality/zenodo-connecting_ridge_extension-r002-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r002-c000/quality/zenodo-connecting_ridge_extension-r002-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r002-c000/quality/zenodo-connecting_ridge_extension-r002-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r002-c000/quality/zenodo-connecting_ridge_extension-r002-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1047442,
+    "site": "connecting_ridge_extension",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r002-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -38700.0,
+      0.0,
+      -5.0,
+      -6340.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048109,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r002-c000/elevation/zenodo-connecting_ridge_extension-r002-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r002-c001/quality/zenodo-connecting_ridge_extension-r002-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r002-c001/quality/zenodo-connecting_ridge_extension-r002-c001_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r002-c001/imagery/zenodo-connecting_ridge_extension-r002-c001_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r002-c001/elevation/zenodo-connecting_ridge_extension-r002-c001.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r002-c001/quality/zenodo-connecting_ridge_extension-r002-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r002-c001/quality/zenodo-connecting_ridge_extension-r002-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r002-c001/quality/zenodo-connecting_ridge_extension-r002-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r002-c001/quality/zenodo-connecting_ridge_extension-r002-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1047823,
+    "site": "connecting_ridge_extension",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r002-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -33580.0,
+      0.0,
+      -5.0,
+      -6340.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r002-c001/elevation/zenodo-connecting_ridge_extension-r002-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r002-c002/quality/zenodo-connecting_ridge_extension-r002-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r002-c002/quality/zenodo-connecting_ridge_extension-r002-c002_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r002-c002/imagery/zenodo-connecting_ridge_extension-r002-c002_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r002-c002/elevation/zenodo-connecting_ridge_extension-r002-c002.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r002-c002/quality/zenodo-connecting_ridge_extension-r002-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r002-c002/quality/zenodo-connecting_ridge_extension-r002-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r002-c002/quality/zenodo-connecting_ridge_extension-r002-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r002-c002/quality/zenodo-connecting_ridge_extension-r002-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1037029,
+    "site": "connecting_ridge_extension",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r002-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -28460.0,
+      0.0,
+      -5.0,
+      -6340.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r002-c002/elevation/zenodo-connecting_ridge_extension-r002-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r002-c003/quality/zenodo-connecting_ridge_extension-r002-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r002-c003/quality/zenodo-connecting_ridge_extension-r002-c003_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r002-c003/imagery/zenodo-connecting_ridge_extension-r002-c003_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r002-c003/elevation/zenodo-connecting_ridge_extension-r002-c003.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r002-c003/quality/zenodo-connecting_ridge_extension-r002-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r002-c003/quality/zenodo-connecting_ridge_extension-r002-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r002-c003/quality/zenodo-connecting_ridge_extension-r002-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r002-c003/quality/zenodo-connecting_ridge_extension-r002-c003_valid_data.tif"
+    },
+    "sfs_support_count": 943776,
+    "site": "connecting_ridge_extension",
+    "size": [
+      1024,
+      928
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r002-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -23340.0,
+      0.0,
+      -5.0,
+      -6340.0
+    ],
+    "valid_count": 950272,
+    "valid_data_count": 949248,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r002-c003/elevation/zenodo-connecting_ridge_extension-r002-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r003-c000/quality/zenodo-connecting_ridge_extension-r003-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r003-c000/quality/zenodo-connecting_ridge_extension-r003-c000_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r003-c000/imagery/zenodo-connecting_ridge_extension-r003-c000_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r003-c000/elevation/zenodo-connecting_ridge_extension-r003-c000.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r003-c000/quality/zenodo-connecting_ridge_extension-r003-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r003-c000/quality/zenodo-connecting_ridge_extension-r003-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r003-c000/quality/zenodo-connecting_ridge_extension-r003-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r003-c000/quality/zenodo-connecting_ridge_extension-r003-c000_valid_data.tif"
+    },
+    "sfs_support_count": 937179,
+    "site": "connecting_ridge_extension",
+    "size": [
+      928,
+      1024
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r003-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -38700.0,
+      0.0,
+      -5.0,
+      -11460.0
+    ],
+    "valid_count": 950272,
+    "valid_data_count": 948813,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r003-c000/elevation/zenodo-connecting_ridge_extension-r003-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r003-c001/quality/zenodo-connecting_ridge_extension-r003-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r003-c001/quality/zenodo-connecting_ridge_extension-r003-c001_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r003-c001/imagery/zenodo-connecting_ridge_extension-r003-c001_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r003-c001/elevation/zenodo-connecting_ridge_extension-r003-c001.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r003-c001/quality/zenodo-connecting_ridge_extension-r003-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r003-c001/quality/zenodo-connecting_ridge_extension-r003-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r003-c001/quality/zenodo-connecting_ridge_extension-r003-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r003-c001/quality/zenodo-connecting_ridge_extension-r003-c001_valid_data.tif"
+    },
+    "sfs_support_count": 944691,
+    "site": "connecting_ridge_extension",
+    "size": [
+      928,
+      1024
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r003-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -33580.0,
+      0.0,
+      -5.0,
+      -11460.0
+    ],
+    "valid_count": 950272,
+    "valid_data_count": 949248,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r003-c001/elevation/zenodo-connecting_ridge_extension-r003-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r003-c002/quality/zenodo-connecting_ridge_extension-r003-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r003-c002/quality/zenodo-connecting_ridge_extension-r003-c002_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r003-c002/imagery/zenodo-connecting_ridge_extension-r003-c002_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r003-c002/elevation/zenodo-connecting_ridge_extension-r003-c002.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r003-c002/quality/zenodo-connecting_ridge_extension-r003-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r003-c002/quality/zenodo-connecting_ridge_extension-r003-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r003-c002/quality/zenodo-connecting_ridge_extension-r003-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r003-c002/quality/zenodo-connecting_ridge_extension-r003-c002_valid_data.tif"
+    },
+    "sfs_support_count": 946938,
+    "site": "connecting_ridge_extension",
+    "size": [
+      928,
+      1024
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r003-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -28460.0,
+      0.0,
+      -5.0,
+      -11460.0
+    ],
+    "valid_count": 950272,
+    "valid_data_count": 949248,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r003-c002/elevation/zenodo-connecting_ridge_extension-r003-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "connecting_ridge_extension",
+    "layers": {
+      "best_resolution": "tiles/zenodo-connecting_ridge_extension-r003-c003/quality/zenodo-connecting_ridge_extension-r003-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-connecting_ridge_extension-r003-c003/quality/zenodo-connecting_ridge_extension-r003-c003_image_count.tif",
+      "nac": "tiles/zenodo-connecting_ridge_extension-r003-c003/imagery/zenodo-connecting_ridge_extension-r003-c003_nac.tif",
+      "sfs": "tiles/zenodo-connecting_ridge_extension-r003-c003/elevation/zenodo-connecting_ridge_extension-r003-c003.tif",
+      "sfs_support": "tiles/zenodo-connecting_ridge_extension-r003-c003/quality/zenodo-connecting_ridge_extension-r003-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-connecting_ridge_extension-r003-c003/quality/zenodo-connecting_ridge_extension-r003-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-connecting_ridge_extension-r003-c003/quality/zenodo-connecting_ridge_extension-r003-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-connecting_ridge_extension-r003-c003/quality/zenodo-connecting_ridge_extension-r003-c003_valid_data.tif"
+    },
+    "sfs_support_count": 858780,
+    "site": "connecting_ridge_extension",
+    "size": [
+      928,
+      928
+    ],
+    "tile_id": "zenodo-connecting_ridge_extension-r003-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -23340.0,
+      0.0,
+      -5.0,
+      -11460.0
+    ],
+    "valid_count": 861184,
+    "valid_data_count": 859329,
+    "working_dem": "tiles/zenodo-connecting_ridge_extension-r003-c003/elevation/zenodo-connecting_ridge_extension-r003-c003.tif"
+  }
+]

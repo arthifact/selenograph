@@ -1,0 +1,225 @@
+{
+  "all_available_regions_included": true,
+  "available_regions": [
+    "amundsen_rim",
+    "connecting_ridge",
+    "connecting_ridge_extension",
+    "degerlache_kocher_massif",
+    "degerlache_rim",
+    "degerlache_rim_2",
+    "faustini_rim_a",
+    "haworth",
+    "leibnitz_beta_plateau",
+    "malapert_massif",
+    "nobile_rim_1",
+    "nobile_rim_2",
+    "peak_near_shackleton"
+  ],
+  "collection": "public",
+  "completion_scope": "requested_regions",
+  "config": {
+    "collection": "public",
+    "compression": "DEFLATE",
+    "dtype": "float32",
+    "edge_tiles": "retain_extent",
+    "grid": "native_sfs_tiles",
+    "labels": false,
+    "nodata": "NaN",
+    "resampling": "nearest",
+    "scale_offset": "preserve_metadata_do_not_apply",
+    "schema": 3,
+    "tile_size": 1024
+  },
+  "included_regions": [
+    "amundsen_rim",
+    "connecting_ridge",
+    "connecting_ridge_extension",
+    "degerlache_kocher_massif",
+    "degerlache_rim",
+    "degerlache_rim_2",
+    "faustini_rim_a",
+    "haworth",
+    "leibnitz_beta_plateau",
+    "malapert_massif",
+    "nobile_rim_1",
+    "nobile_rim_2",
+    "peak_near_shackleton"
+  ],
+  "regions": {
+    "amundsen_rim": {
+      "archive": {
+        "bytes": 1775016989,
+        "md5": "d1e12877277cf9715381b8795c0873cb",
+        "name": "A3CLR22_0_Amundsen_Rim.zip",
+        "published_md5": "d1e12877277cf9715381b8795c0873cb",
+        "sha256": "c10c5953c254884fb5b12581b6830f839da6e5ed0d49af0f327583e5d8b6a40c"
+      },
+      "metadata_sha256": "930be9ec622c54b85faecaef200c7e81576daf2c1e79117bd578b7669a9df974",
+      "tile_count": 16
+    },
+    "connecting_ridge": {
+      "archive": {
+        "bytes": 2206485514,
+        "md5": "0ad982cf42319a300f2a2cff69d39322",
+        "name": "A3CLR22_6_Connecting_Ridge.zip",
+        "published_md5": "0ad982cf42319a300f2a2cff69d39322",
+        "sha256": "3f84ac0500d1bc598acabc84700cbbf6fa9fa605dea1b1424a20d65a4d9c2248"
+      },
+      "metadata_sha256": "29841b9031575b15adc5c0a77b18d97a1b0bff6680b3c372fee47a037cbf896b",
+      "tile_count": 16
+    },
+    "connecting_ridge_extension": {
+      "archive": {
+        "bytes": 2225897760,
+        "md5": "9141ec5d298a3aebab4d3671f7f38a79",
+        "name": "A3CLR22_5_Connecting_Ridge_Extension.zip",
+        "published_md5": "9141ec5d298a3aebab4d3671f7f38a79",
+        "sha256": "eb0c77f6f1ef91f686278ca2d3409c9194f759d5356018f40c523d58be6612cd"
+      },
+      "metadata_sha256": "ce941e03f3ea784e5bbf7deecf4fac68a1549b85fdafbf950a08640b2daad5ac",
+      "tile_count": 16
+    },
+    "degerlache_kocher_massif": {
+      "archive": {
+        "bytes": 2108633565,
+        "md5": "78b8a042d0c6be2923abdd288e436c23",
+        "name": "A3CLR22_12_deGerlache_Kocher_Massif.zip",
+        "published_md5": "78b8a042d0c6be2923abdd288e436c23",
+        "sha256": "64ee4ef40eab40c1539916fa967e2f2cf5c5b921032148eb4eef3f4f8bde5ecb"
+      },
+      "metadata_sha256": "99aaa7b56a6a762a92184ae725e5f5545e7294b8d2f63411804e39161636d1da",
+      "tile_count": 16
+    },
+    "degerlache_rim": {
+      "archive": {
+        "bytes": 1340667387,
+        "md5": "a34e603e9d2c2c9a2796fc237d24b1b4",
+        "name": "A3CLR22_9_deGerlache_Rim.zip",
+        "published_md5": "a34e603e9d2c2c9a2796fc237d24b1b4",
+        "sha256": "fee538af0609c0cacbbb34df1e86aebcb4464733752c3d509010c06af0b1b8a4"
+      },
+      "metadata_sha256": "c9633038f8da69945bfe0df235a5c61c8c603c0cf8b4c6be8e6025e6f5439e30",
+      "tile_count": 16
+    },
+    "degerlache_rim_2": {
+      "archive": {
+        "bytes": 2187384204,
+        "md5": "52921a134793a6b35b0eea6f98ad79d8",
+        "name": "A3CLR22_4_deGerlache_Rim_2.zip",
+        "published_md5": "52921a134793a6b35b0eea6f98ad79d8",
+        "sha256": "c3a3201af2f7a790ae021d8a2da01a1627718208c187cb63462c4453408ee604"
+      },
+      "metadata_sha256": "45f7b78130caa5c3b59b8b7e18f88ea4342656beb92f68129eb5482fa5572972",
+      "tile_count": 16
+    },
+    "faustini_rim_a": {
+      "archive": {
+        "bytes": 1936729230,
+        "md5": "161db71236036f7c9b98b501d353482a",
+        "name": "A3CLR22_3_Faustini_Rim_A.zip",
+        "published_md5": "161db71236036f7c9b98b501d353482a",
+        "sha256": "75ffe4cc0779be922d06178886b359c845bae793de4748a39631029aa235a89a"
+      },
+      "metadata_sha256": "0cb8c744662f5206b584859889181ff24e314d5a65d80375cea70c89be6f04d0",
+      "tile_count": 16
+    },
+    "haworth": {
+      "archive": {
+        "bytes": 4353812518,
+        "md5": "e83a923c41c00be51396d06ab7cf6e9e",
+        "name": "A3CLR22_2_Haworth.zip",
+        "published_md5": "e83a923c41c00be51396d06ab7cf6e9e",
+        "sha256": "64988f09bb6f4a2d526a69406832c2c04baaa6aa7579c7353742c5918958c008"
+      },
+      "metadata_sha256": "1f608398df0ccebe31252a6f40dc59f4d7410c00c9f62c6789ee3a9d77142376",
+      "tile_count": 36
+    },
+    "leibnitz_beta_plateau": {
+      "archive": {
+        "bytes": 1050441742,
+        "md5": "b0a606e6a4ce73faf2ea68c91ce0b93e",
+        "name": "A3CLR22_10_Leibnitz_Beta_Plateau.zip",
+        "published_md5": "b0a606e6a4ce73faf2ea68c91ce0b93e",
+        "sha256": "e0eec47f2a03414892c6afe5f0b7fb43ad7dcb0c7895a85b0bea5ef5762bb0df"
+      },
+      "metadata_sha256": "99b36801eac29b01da020ff0d55696c197835a9e9e27e0679447d24a192bedf1",
+      "tile_count": 16
+    },
+    "malapert_massif": {
+      "archive": {
+        "bytes": 2213137537,
+        "md5": "772a578b8f2ebdb078c5a04a3c07182a",
+        "name": "A3CLR22_11_Malapert_Massif.zip",
+        "published_md5": "772a578b8f2ebdb078c5a04a3c07182a",
+        "sha256": "3e5f95f438cf3fdd9b3f4d27217e166a11a3b49ca9a66d5a0c5853507e8833ce"
+      },
+      "metadata_sha256": "491d34a39f47f1778304667321c05cc2645c40cf042246aba7c1ff6ba52cac35",
+      "tile_count": 25
+    },
+    "nobile_rim_1": {
+      "archive": {
+        "bytes": 1962014939,
+        "md5": "a8bcb60f432253f5fa97ff07899bd02a",
+        "name": "A3CLR22_7_Nobile_Rim_1.zip",
+        "published_md5": "a8bcb60f432253f5fa97ff07899bd02a",
+        "sha256": "9c31b074b290fbdc4a063e066c7fa5891c4280df8882bebb95ad91026b353ee1"
+      },
+      "metadata_sha256": "43c45e332bf7d1528f44dd42aba6881211efca3282cdde2d7c5c03e1803b8bc0",
+      "tile_count": 16
+    },
+    "nobile_rim_2": {
+      "archive": {
+        "bytes": 1839070131,
+        "md5": "964310cb7f2a5033e2e12cd34e7aa7b1",
+        "name": "A3CLR22_1_Nobile_Rim_2.zip",
+        "published_md5": "964310cb7f2a5033e2e12cd34e7aa7b1",
+        "sha256": "826202905aae9323baaec01ccd3c5fe784055fad390558656a677544b1e0e88c"
+      },
+      "metadata_sha256": "5e7596797ab73c9c5cfc176647f6839f9ee7fe586839e9e56569ec81715ee57b",
+      "tile_count": 16
+    },
+    "peak_near_shackleton": {
+      "archive": {
+        "bytes": 1360387336,
+        "md5": "9ac25cc18b1290e679dfad9b1eaabad7",
+        "name": "A3CLR22_8_Peak_Near_Shackleton.zip",
+        "published_md5": "9ac25cc18b1290e679dfad9b1eaabad7",
+        "sha256": "a8bb1ace4862056c91bf37a6218b1020c7603693c3a8c5898982ba2f9139ccc9"
+      },
+      "metadata_sha256": "d3abf9cd1dfbb9e6fd288a011ae05d0cc018d7a5c1fded091aec7578146d0d00",
+      "tile_count": 16
+    }
+  },
+  "requested_archives": {
+    "amundsen_rim": "A3CLR22_0_Amundsen_Rim.zip",
+    "connecting_ridge": "A3CLR22_6_Connecting_Ridge.zip",
+    "connecting_ridge_extension": "A3CLR22_5_Connecting_Ridge_Extension.zip",
+    "degerlache_kocher_massif": "A3CLR22_12_deGerlache_Kocher_Massif.zip",
+    "degerlache_rim": "A3CLR22_9_deGerlache_Rim.zip",
+    "degerlache_rim_2": "A3CLR22_4_deGerlache_Rim_2.zip",
+    "faustini_rim_a": "A3CLR22_3_Faustini_Rim_A.zip",
+    "haworth": "A3CLR22_2_Haworth.zip",
+    "leibnitz_beta_plateau": "A3CLR22_10_Leibnitz_Beta_Plateau.zip",
+    "malapert_massif": "A3CLR22_11_Malapert_Massif.zip",
+    "nobile_rim_1": "A3CLR22_7_Nobile_Rim_1.zip",
+    "nobile_rim_2": "A3CLR22_1_Nobile_Rim_2.zip",
+    "peak_near_shackleton": "A3CLR22_8_Peak_Near_Shackleton.zip"
+  },
+  "requested_regions": [
+    "amundsen_rim",
+    "connecting_ridge",
+    "connecting_ridge_extension",
+    "degerlache_kocher_massif",
+    "degerlache_rim",
+    "degerlache_rim_2",
+    "faustini_rim_a",
+    "haworth",
+    "leibnitz_beta_plateau",
+    "malapert_massif",
+    "nobile_rim_1",
+    "nobile_rim_2",
+    "peak_near_shackleton"
+  ],
+  "status": "complete",
+  "tile_count": 237
+}

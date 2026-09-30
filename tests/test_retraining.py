@@ -1,5 +1,7 @@
 """Global model updates read current verified paintings and publish only a model."""
 import unittest
+import os
+import shutil
 from pathlib import Path
 from unittest.mock import patch
 
@@ -61,16 +63,19 @@ class RetrainingTests(unittest.TestCase):
         self.assertEqual(set(result["samples"]["second"]["y"]), {1, 3})
         self.assertEqual(set(result["samples"]["first"]["y"]), {1, 2})
 
-    def test_test_location_aliases_excluded_before_features_are_read(self):
+    def test_legacy_test_selection_does_not_exclude_verified_maps_or_aliases(self):
         self.map("first")
         self.map("test", offset=1)
         self.map("test-peer", offset=2)
         self.f.records[-1]["group"] = "test"
         self.f.publish()
-        with patch.object(core, "held_out_maps", return_value={"test"}):
+        core.set_test_maps(["test"])
+        with patch.object(core, "held_out_maps", side_effect=AssertionError("No persistent holdouts")):
             result = assistant.retrain()
-        self.assertEqual(set(result["samples"]), {"first"})
-        self.assertEqual([Path(c.args[0]).stem for c in self.build.call_args_list], ["first"])
+            self.assertFalse(assistant.training_changed(result))
+        expected = {"first", "test", "test-peer"}
+        self.assertEqual(set(result["samples"]), expected)
+        self.assertEqual({Path(c.args[0]).stem for c in self.build.call_args_list}, expected)
 
     def test_failure_preserves_previous_model_and_all_paintings(self):
         self.map("first")
@@ -84,6 +89,21 @@ class RetrainingTests(unittest.TestCase):
                 self.assertRaisesRegex(RuntimeError, "fit failed"):
             assistant.retrain()
         self.assertEqual(self.f.snapshot(self.f.root), before)
+
+    def test_training_status_survives_relocation_and_new_checkout_timestamps(self):
+        self.map("first")
+        bundle = assistant.retrain()
+        moved = self.f.root / "new-computer"
+        shutil.copytree(core.DEM_DIR, moved)
+        for path in moved.rglob("*.tif"):
+            os.utime(path, (1, 1))
+        with patch.object(core, "DEM_DIR", moved):
+            self.assertFalse(assistant.training_changed(bundle))
+            dem = Path(core.dem_files()[0])
+            import rasterio
+            with rasterio.open(dem, "r+") as raster:
+                raster.write(raster.read(1) + 1, 1)
+            self.assertTrue(assistant.training_changed(bundle))
 
     def test_no_verified_maps_clears_old_training_memory(self):
         self.map("first")

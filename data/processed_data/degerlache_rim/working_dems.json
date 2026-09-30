@@ -1,0 +1,514 @@
+[
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r000-c000/quality/zenodo-degerlache_rim-r000-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r000-c000/quality/zenodo-degerlache_rim-r000-c000_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r000-c000/imagery/zenodo-degerlache_rim-r000-c000_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r000-c000/elevation/zenodo-degerlache_rim-r000-c000.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r000-c000/quality/zenodo-degerlache_rim-r000-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r000-c000/quality/zenodo-degerlache_rim-r000-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r000-c000/quality/zenodo-degerlache_rim-r000-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r000-c000/quality/zenodo-degerlache_rim-r000-c000_valid_data.tif"
+    },
+    "sfs_support_count": 965740,
+    "site": "degerlache_rim",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-degerlache_rim-r000-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -45000.0,
+      0.0,
+      -5.0,
+      23000.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1046529,
+    "working_dem": "tiles/zenodo-degerlache_rim-r000-c000/elevation/zenodo-degerlache_rim-r000-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r000-c001/quality/zenodo-degerlache_rim-r000-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r000-c001/quality/zenodo-degerlache_rim-r000-c001_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r000-c001/imagery/zenodo-degerlache_rim-r000-c001_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r000-c001/elevation/zenodo-degerlache_rim-r000-c001.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r000-c001/quality/zenodo-degerlache_rim-r000-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r000-c001/quality/zenodo-degerlache_rim-r000-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r000-c001/quality/zenodo-degerlache_rim-r000-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r000-c001/quality/zenodo-degerlache_rim-r000-c001_valid_data.tif"
+    },
+    "sfs_support_count": 922177,
+    "site": "degerlache_rim",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-degerlache_rim-r000-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -39880.0,
+      0.0,
+      -5.0,
+      23000.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-degerlache_rim-r000-c001/elevation/zenodo-degerlache_rim-r000-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r000-c002/quality/zenodo-degerlache_rim-r000-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r000-c002/quality/zenodo-degerlache_rim-r000-c002_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r000-c002/imagery/zenodo-degerlache_rim-r000-c002_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r000-c002/elevation/zenodo-degerlache_rim-r000-c002.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r000-c002/quality/zenodo-degerlache_rim-r000-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r000-c002/quality/zenodo-degerlache_rim-r000-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r000-c002/quality/zenodo-degerlache_rim-r000-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r000-c002/quality/zenodo-degerlache_rim-r000-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1044814,
+    "site": "degerlache_rim",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-degerlache_rim-r000-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -34760.0,
+      0.0,
+      -5.0,
+      23000.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-degerlache_rim-r000-c002/elevation/zenodo-degerlache_rim-r000-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r000-c003/quality/zenodo-degerlache_rim-r000-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r000-c003/quality/zenodo-degerlache_rim-r000-c003_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r000-c003/imagery/zenodo-degerlache_rim-r000-c003_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r000-c003/elevation/zenodo-degerlache_rim-r000-c003.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r000-c003/quality/zenodo-degerlache_rim-r000-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r000-c003/quality/zenodo-degerlache_rim-r000-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r000-c003/quality/zenodo-degerlache_rim-r000-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r000-c003/quality/zenodo-degerlache_rim-r000-c003_valid_data.tif"
+    },
+    "sfs_support_count": 129006,
+    "site": "degerlache_rim",
+    "size": [
+      1024,
+      128
+    ],
+    "tile_id": "zenodo-degerlache_rim-r000-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -29640.0,
+      0.0,
+      -5.0,
+      23000.0
+    ],
+    "valid_count": 131072,
+    "valid_data_count": 128898,
+    "working_dem": "tiles/zenodo-degerlache_rim-r000-c003/elevation/zenodo-degerlache_rim-r000-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r001-c000/quality/zenodo-degerlache_rim-r001-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r001-c000/quality/zenodo-degerlache_rim-r001-c000_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r001-c000/imagery/zenodo-degerlache_rim-r001-c000_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r001-c000/elevation/zenodo-degerlache_rim-r001-c000.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r001-c000/quality/zenodo-degerlache_rim-r001-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r001-c000/quality/zenodo-degerlache_rim-r001-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r001-c000/quality/zenodo-degerlache_rim-r001-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r001-c000/quality/zenodo-degerlache_rim-r001-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1040926,
+    "site": "degerlache_rim",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-degerlache_rim-r001-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -45000.0,
+      0.0,
+      -5.0,
+      17880.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-degerlache_rim-r001-c000/elevation/zenodo-degerlache_rim-r001-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r001-c001/quality/zenodo-degerlache_rim-r001-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r001-c001/quality/zenodo-degerlache_rim-r001-c001_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r001-c001/imagery/zenodo-degerlache_rim-r001-c001_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r001-c001/elevation/zenodo-degerlache_rim-r001-c001.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r001-c001/quality/zenodo-degerlache_rim-r001-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r001-c001/quality/zenodo-degerlache_rim-r001-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r001-c001/quality/zenodo-degerlache_rim-r001-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r001-c001/quality/zenodo-degerlache_rim-r001-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1043470,
+    "site": "degerlache_rim",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-degerlache_rim-r001-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -39880.0,
+      0.0,
+      -5.0,
+      17880.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-degerlache_rim-r001-c001/elevation/zenodo-degerlache_rim-r001-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r001-c002/quality/zenodo-degerlache_rim-r001-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r001-c002/quality/zenodo-degerlache_rim-r001-c002_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r001-c002/imagery/zenodo-degerlache_rim-r001-c002_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r001-c002/elevation/zenodo-degerlache_rim-r001-c002.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r001-c002/quality/zenodo-degerlache_rim-r001-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r001-c002/quality/zenodo-degerlache_rim-r001-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r001-c002/quality/zenodo-degerlache_rim-r001-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r001-c002/quality/zenodo-degerlache_rim-r001-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1035880,
+    "site": "degerlache_rim",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-degerlache_rim-r001-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -34760.0,
+      0.0,
+      -5.0,
+      17880.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-degerlache_rim-r001-c002/elevation/zenodo-degerlache_rim-r001-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r001-c003/quality/zenodo-degerlache_rim-r001-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r001-c003/quality/zenodo-degerlache_rim-r001-c003_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r001-c003/imagery/zenodo-degerlache_rim-r001-c003_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r001-c003/elevation/zenodo-degerlache_rim-r001-c003.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r001-c003/quality/zenodo-degerlache_rim-r001-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r001-c003/quality/zenodo-degerlache_rim-r001-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r001-c003/quality/zenodo-degerlache_rim-r001-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r001-c003/quality/zenodo-degerlache_rim-r001-c003_valid_data.tif"
+    },
+    "sfs_support_count": 128997,
+    "site": "degerlache_rim",
+    "size": [
+      1024,
+      128
+    ],
+    "tile_id": "zenodo-degerlache_rim-r001-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -29640.0,
+      0.0,
+      -5.0,
+      17880.0
+    ],
+    "valid_count": 131072,
+    "valid_data_count": 129024,
+    "working_dem": "tiles/zenodo-degerlache_rim-r001-c003/elevation/zenodo-degerlache_rim-r001-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r002-c000/quality/zenodo-degerlache_rim-r002-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r002-c000/quality/zenodo-degerlache_rim-r002-c000_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r002-c000/imagery/zenodo-degerlache_rim-r002-c000_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r002-c000/elevation/zenodo-degerlache_rim-r002-c000.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r002-c000/quality/zenodo-degerlache_rim-r002-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r002-c000/quality/zenodo-degerlache_rim-r002-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r002-c000/quality/zenodo-degerlache_rim-r002-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r002-c000/quality/zenodo-degerlache_rim-r002-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1044670,
+    "site": "degerlache_rim",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-degerlache_rim-r002-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -45000.0,
+      0.0,
+      -5.0,
+      12760.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-degerlache_rim-r002-c000/elevation/zenodo-degerlache_rim-r002-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r002-c001/quality/zenodo-degerlache_rim-r002-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r002-c001/quality/zenodo-degerlache_rim-r002-c001_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r002-c001/imagery/zenodo-degerlache_rim-r002-c001_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r002-c001/elevation/zenodo-degerlache_rim-r002-c001.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r002-c001/quality/zenodo-degerlache_rim-r002-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r002-c001/quality/zenodo-degerlache_rim-r002-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r002-c001/quality/zenodo-degerlache_rim-r002-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r002-c001/quality/zenodo-degerlache_rim-r002-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1048018,
+    "site": "degerlache_rim",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-degerlache_rim-r002-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -39880.0,
+      0.0,
+      -5.0,
+      12760.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-degerlache_rim-r002-c001/elevation/zenodo-degerlache_rim-r002-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r002-c002/quality/zenodo-degerlache_rim-r002-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r002-c002/quality/zenodo-degerlache_rim-r002-c002_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r002-c002/imagery/zenodo-degerlache_rim-r002-c002_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r002-c002/elevation/zenodo-degerlache_rim-r002-c002.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r002-c002/quality/zenodo-degerlache_rim-r002-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r002-c002/quality/zenodo-degerlache_rim-r002-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r002-c002/quality/zenodo-degerlache_rim-r002-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r002-c002/quality/zenodo-degerlache_rim-r002-c002_valid_data.tif"
+    },
+    "sfs_support_count": 983041,
+    "site": "degerlache_rim",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-degerlache_rim-r002-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -34760.0,
+      0.0,
+      -5.0,
+      12760.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-degerlache_rim-r002-c002/elevation/zenodo-degerlache_rim-r002-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r002-c003/quality/zenodo-degerlache_rim-r002-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r002-c003/quality/zenodo-degerlache_rim-r002-c003_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r002-c003/imagery/zenodo-degerlache_rim-r002-c003_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r002-c003/elevation/zenodo-degerlache_rim-r002-c003.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r002-c003/quality/zenodo-degerlache_rim-r002-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r002-c003/quality/zenodo-degerlache_rim-r002-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r002-c003/quality/zenodo-degerlache_rim-r002-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r002-c003/quality/zenodo-degerlache_rim-r002-c003_valid_data.tif"
+    },
+    "sfs_support_count": 125154,
+    "site": "degerlache_rim",
+    "size": [
+      1024,
+      128
+    ],
+    "tile_id": "zenodo-degerlache_rim-r002-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -29640.0,
+      0.0,
+      -5.0,
+      12760.0
+    ],
+    "valid_count": 131072,
+    "valid_data_count": 129024,
+    "working_dem": "tiles/zenodo-degerlache_rim-r002-c003/elevation/zenodo-degerlache_rim-r002-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r003-c000/quality/zenodo-degerlache_rim-r003-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r003-c000/quality/zenodo-degerlache_rim-r003-c000_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r003-c000/imagery/zenodo-degerlache_rim-r003-c000_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r003-c000/elevation/zenodo-degerlache_rim-r003-c000.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r003-c000/quality/zenodo-degerlache_rim-r003-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r003-c000/quality/zenodo-degerlache_rim-r003-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r003-c000/quality/zenodo-degerlache_rim-r003-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r003-c000/quality/zenodo-degerlache_rim-r003-c000_valid_data.tif"
+    },
+    "sfs_support_count": 127593,
+    "site": "degerlache_rim",
+    "size": [
+      128,
+      1024
+    ],
+    "tile_id": "zenodo-degerlache_rim-r003-c000",
+    "transform": [
+      5.0,
+      0.0,
+      -45000.0,
+      0.0,
+      -5.0,
+      7640.0
+    ],
+    "valid_count": 131072,
+    "valid_data_count": 128898,
+    "working_dem": "tiles/zenodo-degerlache_rim-r003-c000/elevation/zenodo-degerlache_rim-r003-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r003-c001/quality/zenodo-degerlache_rim-r003-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r003-c001/quality/zenodo-degerlache_rim-r003-c001_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r003-c001/imagery/zenodo-degerlache_rim-r003-c001_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r003-c001/elevation/zenodo-degerlache_rim-r003-c001.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r003-c001/quality/zenodo-degerlache_rim-r003-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r003-c001/quality/zenodo-degerlache_rim-r003-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r003-c001/quality/zenodo-degerlache_rim-r003-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r003-c001/quality/zenodo-degerlache_rim-r003-c001_valid_data.tif"
+    },
+    "sfs_support_count": 128997,
+    "site": "degerlache_rim",
+    "size": [
+      128,
+      1024
+    ],
+    "tile_id": "zenodo-degerlache_rim-r003-c001",
+    "transform": [
+      5.0,
+      0.0,
+      -39880.0,
+      0.0,
+      -5.0,
+      7640.0
+    ],
+    "valid_count": 131072,
+    "valid_data_count": 129024,
+    "working_dem": "tiles/zenodo-degerlache_rim-r003-c001/elevation/zenodo-degerlache_rim-r003-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r003-c002/quality/zenodo-degerlache_rim-r003-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r003-c002/quality/zenodo-degerlache_rim-r003-c002_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r003-c002/imagery/zenodo-degerlache_rim-r003-c002_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r003-c002/elevation/zenodo-degerlache_rim-r003-c002.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r003-c002/quality/zenodo-degerlache_rim-r003-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r003-c002/quality/zenodo-degerlache_rim-r003-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r003-c002/quality/zenodo-degerlache_rim-r003-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r003-c002/quality/zenodo-degerlache_rim-r003-c002_valid_data.tif"
+    },
+    "sfs_support_count": 128250,
+    "site": "degerlache_rim",
+    "size": [
+      128,
+      1024
+    ],
+    "tile_id": "zenodo-degerlache_rim-r003-c002",
+    "transform": [
+      5.0,
+      0.0,
+      -34760.0,
+      0.0,
+      -5.0,
+      7640.0
+    ],
+    "valid_count": 131072,
+    "valid_data_count": 129024,
+    "working_dem": "tiles/zenodo-degerlache_rim-r003-c002/elevation/zenodo-degerlache_rim-r003-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "degerlache_rim",
+    "layers": {
+      "best_resolution": "tiles/zenodo-degerlache_rim-r003-c003/quality/zenodo-degerlache_rim-r003-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-degerlache_rim-r003-c003/quality/zenodo-degerlache_rim-r003-c003_image_count.tif",
+      "nac": "tiles/zenodo-degerlache_rim-r003-c003/imagery/zenodo-degerlache_rim-r003-c003_nac.tif",
+      "sfs": "tiles/zenodo-degerlache_rim-r003-c003/elevation/zenodo-degerlache_rim-r003-c003.tif",
+      "sfs_support": "tiles/zenodo-degerlache_rim-r003-c003/quality/zenodo-degerlache_rim-r003-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-degerlache_rim-r003-c003/quality/zenodo-degerlache_rim-r003-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-degerlache_rim-r003-c003/quality/zenodo-degerlache_rim-r003-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-degerlache_rim-r003-c003/quality/zenodo-degerlache_rim-r003-c003_valid_data.tif"
+    },
+    "sfs_support_count": 14994,
+    "site": "degerlache_rim",
+    "size": [
+      128,
+      128
+    ],
+    "tile_id": "zenodo-degerlache_rim-r003-c003",
+    "transform": [
+      5.0,
+      0.0,
+      -29640.0,
+      0.0,
+      -5.0,
+      7640.0
+    ],
+    "valid_count": 16384,
+    "valid_data_count": 15876,
+    "working_dem": "tiles/zenodo-degerlache_rim-r003-c003/elevation/zenodo-degerlache_rim-r003-c003.tif"
+  }
+]

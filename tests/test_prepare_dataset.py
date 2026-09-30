@@ -109,6 +109,18 @@ class PrepareDatasetTests(unittest.TestCase):
     def manifest(self):
         return prep.read_json(self.output / "manifest.json")
 
+    def test_zips_dropped_directly_into_raw_data_build_and_verify(self):
+        archive = self.archive()
+        archive.rename(self.raw / archive.name)
+        self.cli()
+        self.assertEqual(self.manifest()["tile_count"], 1)
+        self.cli("--verify")
+
+    def test_duplicate_regions_across_raw_and_legacy_folder_are_rejected(self):
+        archive = self.archive()
+        (self.raw / archive.name).write_bytes(archive.read_bytes())
+        self.cli(expected=1)
+
     def metadata(self, region="test_region"):
         return prep.read_json(self.output / region / f"metadata/{region}_metadata.json")
 

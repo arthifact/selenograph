@@ -1,0 +1,4 @@
+data/processed_data/**/*.tif filter=lfs diff=lfs merge=lfs -text
+models/*.joblib filter=lfs diff=lfs merge=lfs -text
+# Preserve the original dataset readmes byte-for-byte, including their formatting.
+data/processed_data/**/metadata/*_readme.txt -diff

@@ -84,6 +84,20 @@ class CleanStartTests(unittest.TestCase):
         self.write_json(manifest, records)
         return str(dem)
 
+    def test_unhydrated_lfs_data_or_model_shows_download_instructions(self):
+        dem = Path(self.public())
+        pointer = b"version https://git-lfs.github.com/spec/v1\noid sha256:" + b"0" * 64 + b"\nsize 1000\n"
+        original = dem.read_bytes()
+        for missing in (dem, paths.MODEL_DIR / "rf.joblib"):
+            with self.subTest(missing=missing.name):
+                dem.write_bytes(original)
+                missing.parent.mkdir(parents=True, exist_ok=True)
+                missing.write_bytes(pointer)
+                with patch.object(core, "build", side_effect=AssertionError("Do not read LFS pointers")):
+                    app = AppTest.from_file(str(smoke.ENTRYPOINT), default_timeout=45).run()
+                    self.assertFalse(app.exception)
+                    self.assertTrue(any("git lfs pull" in error.value for error in app.error))
+
     def bundled(self, name="bundled-map", section="mons-mouton(reference)", *,
                 left=40000, read_only=False):
         dem = Path(self.public(name, section, left=left))

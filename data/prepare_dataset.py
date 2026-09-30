@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Offline A3CLR22 public tiles (numpy + rasterio + standard library).
 
-Defaults: data/raw_data/essentials/*.zip -> data/processed_data/<region>/.
+Defaults: data/raw_data/*.zip -> data/processed_data/<region>/.
+The older data/raw_data/essentials/ layout is also accepted.
 Each region contains metadata/, tiles/<stable-id>/ and working_dems.json with
 region-relative paths. Tiles are 1024 square, with unpadded variable-sized edges;
 the full native SfS extent and all-nodata tiles are retained. Full-region aligned
@@ -135,14 +136,15 @@ def write_json(path, value):
 
 def discover(raw):
     found = {}
-    for path in sorted((raw / "essentials").glob("*.zip")):
+    archives = [*raw.glob("*.zip"), *(raw / "essentials").glob("*.zip")]
+    for path in sorted(archives):
         match = ARCHIVE_RE.fullmatch(path.name)
         if match:
             safe_path(path)
             region = match[2].lower()
             require(region not in found, f"Duplicate region: {region}")
             found[region] = path
-    require(found, f"No A3CLR22 archives in {raw / 'essentials'}")
+    require(found, f"No A3CLR22 archives in {raw}; download the regional ZIPs from Zenodo first")
     return found
 
 

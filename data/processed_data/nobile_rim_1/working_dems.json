@@ -1,0 +1,514 @@
+[
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r000-c000/quality/zenodo-nobile_rim_1-r000-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r000-c000/quality/zenodo-nobile_rim_1-r000-c000_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r000-c000/imagery/zenodo-nobile_rim_1-r000-c000_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r000-c000/elevation/zenodo-nobile_rim_1-r000-c000.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r000-c000/quality/zenodo-nobile_rim_1-r000-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r000-c000/quality/zenodo-nobile_rim_1-r000-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r000-c000/quality/zenodo-nobile_rim_1-r000-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r000-c000/quality/zenodo-nobile_rim_1-r000-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1015837,
+    "site": "nobile_rim_1",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r000-c000",
+    "transform": [
+      5.0,
+      0.0,
+      74000.0,
+      0.0,
+      -5.0,
+      120000.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1046529,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r000-c000/elevation/zenodo-nobile_rim_1-r000-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r000-c001/quality/zenodo-nobile_rim_1-r000-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r000-c001/quality/zenodo-nobile_rim_1-r000-c001_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r000-c001/imagery/zenodo-nobile_rim_1-r000-c001_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r000-c001/elevation/zenodo-nobile_rim_1-r000-c001.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r000-c001/quality/zenodo-nobile_rim_1-r000-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r000-c001/quality/zenodo-nobile_rim_1-r000-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r000-c001/quality/zenodo-nobile_rim_1-r000-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r000-c001/quality/zenodo-nobile_rim_1-r000-c001_valid_data.tif"
+    },
+    "sfs_support_count": 917992,
+    "site": "nobile_rim_1",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r000-c001",
+    "transform": [
+      5.0,
+      0.0,
+      79120.0,
+      0.0,
+      -5.0,
+      120000.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r000-c001/elevation/zenodo-nobile_rim_1-r000-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r000-c002/quality/zenodo-nobile_rim_1-r000-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r000-c002/quality/zenodo-nobile_rim_1-r000-c002_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r000-c002/imagery/zenodo-nobile_rim_1-r000-c002_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r000-c002/elevation/zenodo-nobile_rim_1-r000-c002.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r000-c002/quality/zenodo-nobile_rim_1-r000-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r000-c002/quality/zenodo-nobile_rim_1-r000-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r000-c002/quality/zenodo-nobile_rim_1-r000-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r000-c002/quality/zenodo-nobile_rim_1-r000-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1014094,
+    "site": "nobile_rim_1",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r000-c002",
+    "transform": [
+      5.0,
+      0.0,
+      84240.0,
+      0.0,
+      -5.0,
+      120000.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r000-c002/elevation/zenodo-nobile_rim_1-r000-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r000-c003/quality/zenodo-nobile_rim_1-r000-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r000-c003/quality/zenodo-nobile_rim_1-r000-c003_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r000-c003/imagery/zenodo-nobile_rim_1-r000-c003_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r000-c003/elevation/zenodo-nobile_rim_1-r000-c003.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r000-c003/quality/zenodo-nobile_rim_1-r000-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r000-c003/quality/zenodo-nobile_rim_1-r000-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r000-c003/quality/zenodo-nobile_rim_1-r000-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r000-c003/quality/zenodo-nobile_rim_1-r000-c003_valid_data.tif"
+    },
+    "sfs_support_count": 935568,
+    "site": "nobile_rim_1",
+    "size": [
+      1024,
+      928
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r000-c003",
+    "transform": [
+      5.0,
+      0.0,
+      89360.0,
+      0.0,
+      -5.0,
+      120000.0
+    ],
+    "valid_count": 950272,
+    "valid_data_count": 947298,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r000-c003/elevation/zenodo-nobile_rim_1-r000-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r001-c000/quality/zenodo-nobile_rim_1-r001-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r001-c000/quality/zenodo-nobile_rim_1-r001-c000_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r001-c000/imagery/zenodo-nobile_rim_1-r001-c000_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r001-c000/elevation/zenodo-nobile_rim_1-r001-c000.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r001-c000/quality/zenodo-nobile_rim_1-r001-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r001-c000/quality/zenodo-nobile_rim_1-r001-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r001-c000/quality/zenodo-nobile_rim_1-r001-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r001-c000/quality/zenodo-nobile_rim_1-r001-c000_valid_data.tif"
+    },
+    "sfs_support_count": 990922,
+    "site": "nobile_rim_1",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r001-c000",
+    "transform": [
+      5.0,
+      0.0,
+      74000.0,
+      0.0,
+      -5.0,
+      114880.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r001-c000/elevation/zenodo-nobile_rim_1-r001-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r001-c001/quality/zenodo-nobile_rim_1-r001-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r001-c001/quality/zenodo-nobile_rim_1-r001-c001_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r001-c001/imagery/zenodo-nobile_rim_1-r001-c001_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r001-c001/elevation/zenodo-nobile_rim_1-r001-c001.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r001-c001/quality/zenodo-nobile_rim_1-r001-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r001-c001/quality/zenodo-nobile_rim_1-r001-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r001-c001/quality/zenodo-nobile_rim_1-r001-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r001-c001/quality/zenodo-nobile_rim_1-r001-c001_valid_data.tif"
+    },
+    "sfs_support_count": 927937,
+    "site": "nobile_rim_1",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r001-c001",
+    "transform": [
+      5.0,
+      0.0,
+      79120.0,
+      0.0,
+      -5.0,
+      114880.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r001-c001/elevation/zenodo-nobile_rim_1-r001-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r001-c002/quality/zenodo-nobile_rim_1-r001-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r001-c002/quality/zenodo-nobile_rim_1-r001-c002_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r001-c002/imagery/zenodo-nobile_rim_1-r001-c002_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r001-c002/elevation/zenodo-nobile_rim_1-r001-c002.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r001-c002/quality/zenodo-nobile_rim_1-r001-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r001-c002/quality/zenodo-nobile_rim_1-r001-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r001-c002/quality/zenodo-nobile_rim_1-r001-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r001-c002/quality/zenodo-nobile_rim_1-r001-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1047589,
+    "site": "nobile_rim_1",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r001-c002",
+    "transform": [
+      5.0,
+      0.0,
+      84240.0,
+      0.0,
+      -5.0,
+      114880.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r001-c002/elevation/zenodo-nobile_rim_1-r001-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r001-c003/quality/zenodo-nobile_rim_1-r001-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r001-c003/quality/zenodo-nobile_rim_1-r001-c003_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r001-c003/imagery/zenodo-nobile_rim_1-r001-c003_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r001-c003/elevation/zenodo-nobile_rim_1-r001-c003.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r001-c003/quality/zenodo-nobile_rim_1-r001-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r001-c003/quality/zenodo-nobile_rim_1-r001-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r001-c003/quality/zenodo-nobile_rim_1-r001-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r001-c003/quality/zenodo-nobile_rim_1-r001-c003_valid_data.tif"
+    },
+    "sfs_support_count": 949248,
+    "site": "nobile_rim_1",
+    "size": [
+      1024,
+      928
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r001-c003",
+    "transform": [
+      5.0,
+      0.0,
+      89360.0,
+      0.0,
+      -5.0,
+      114880.0
+    ],
+    "valid_count": 950272,
+    "valid_data_count": 948224,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r001-c003/elevation/zenodo-nobile_rim_1-r001-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r002-c000/quality/zenodo-nobile_rim_1-r002-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r002-c000/quality/zenodo-nobile_rim_1-r002-c000_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r002-c000/imagery/zenodo-nobile_rim_1-r002-c000_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r002-c000/elevation/zenodo-nobile_rim_1-r002-c000.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r002-c000/quality/zenodo-nobile_rim_1-r002-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r002-c000/quality/zenodo-nobile_rim_1-r002-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r002-c000/quality/zenodo-nobile_rim_1-r002-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r002-c000/quality/zenodo-nobile_rim_1-r002-c000_valid_data.tif"
+    },
+    "sfs_support_count": 1047811,
+    "site": "nobile_rim_1",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r002-c000",
+    "transform": [
+      5.0,
+      0.0,
+      74000.0,
+      0.0,
+      -5.0,
+      109760.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1047552,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r002-c000/elevation/zenodo-nobile_rim_1-r002-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r002-c001/quality/zenodo-nobile_rim_1-r002-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r002-c001/quality/zenodo-nobile_rim_1-r002-c001_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r002-c001/imagery/zenodo-nobile_rim_1-r002-c001_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r002-c001/elevation/zenodo-nobile_rim_1-r002-c001.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r002-c001/quality/zenodo-nobile_rim_1-r002-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r002-c001/quality/zenodo-nobile_rim_1-r002-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r002-c001/quality/zenodo-nobile_rim_1-r002-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r002-c001/quality/zenodo-nobile_rim_1-r002-c001_valid_data.tif"
+    },
+    "sfs_support_count": 1043863,
+    "site": "nobile_rim_1",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r002-c001",
+    "transform": [
+      5.0,
+      0.0,
+      79120.0,
+      0.0,
+      -5.0,
+      109760.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r002-c001/elevation/zenodo-nobile_rim_1-r002-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r002-c002/quality/zenodo-nobile_rim_1-r002-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r002-c002/quality/zenodo-nobile_rim_1-r002-c002_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r002-c002/imagery/zenodo-nobile_rim_1-r002-c002_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r002-c002/elevation/zenodo-nobile_rim_1-r002-c002.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r002-c002/quality/zenodo-nobile_rim_1-r002-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r002-c002/quality/zenodo-nobile_rim_1-r002-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r002-c002/quality/zenodo-nobile_rim_1-r002-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r002-c002/quality/zenodo-nobile_rim_1-r002-c002_valid_data.tif"
+    },
+    "sfs_support_count": 1048126,
+    "site": "nobile_rim_1",
+    "size": [
+      1024,
+      1024
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r002-c002",
+    "transform": [
+      5.0,
+      0.0,
+      84240.0,
+      0.0,
+      -5.0,
+      109760.0
+    ],
+    "valid_count": 1048576,
+    "valid_data_count": 1048576,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r002-c002/elevation/zenodo-nobile_rim_1-r002-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r002-c003/quality/zenodo-nobile_rim_1-r002-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r002-c003/quality/zenodo-nobile_rim_1-r002-c003_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r002-c003/imagery/zenodo-nobile_rim_1-r002-c003_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r002-c003/elevation/zenodo-nobile_rim_1-r002-c003.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r002-c003/quality/zenodo-nobile_rim_1-r002-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r002-c003/quality/zenodo-nobile_rim_1-r002-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r002-c003/quality/zenodo-nobile_rim_1-r002-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r002-c003/quality/zenodo-nobile_rim_1-r002-c003_valid_data.tif"
+    },
+    "sfs_support_count": 949248,
+    "site": "nobile_rim_1",
+    "size": [
+      1024,
+      928
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r002-c003",
+    "transform": [
+      5.0,
+      0.0,
+      89360.0,
+      0.0,
+      -5.0,
+      109760.0
+    ],
+    "valid_count": 950272,
+    "valid_data_count": 948224,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r002-c003/elevation/zenodo-nobile_rim_1-r002-c003.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r003-c000/quality/zenodo-nobile_rim_1-r003-c000_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r003-c000/quality/zenodo-nobile_rim_1-r003-c000_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r003-c000/imagery/zenodo-nobile_rim_1-r003-c000_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r003-c000/elevation/zenodo-nobile_rim_1-r003-c000.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r003-c000/quality/zenodo-nobile_rim_1-r003-c000_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r003-c000/quality/zenodo-nobile_rim_1-r003-c000_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r003-c000/quality/zenodo-nobile_rim_1-r003-c000_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r003-c000/quality/zenodo-nobile_rim_1-r003-c000_valid_data.tif"
+    },
+    "sfs_support_count": 949185,
+    "site": "nobile_rim_1",
+    "size": [
+      928,
+      1024
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r003-c000",
+    "transform": [
+      5.0,
+      0.0,
+      74000.0,
+      0.0,
+      -5.0,
+      104640.0
+    ],
+    "valid_count": 950272,
+    "valid_data_count": 947298,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r003-c000/elevation/zenodo-nobile_rim_1-r003-c000.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r003-c001/quality/zenodo-nobile_rim_1-r003-c001_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r003-c001/quality/zenodo-nobile_rim_1-r003-c001_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r003-c001/imagery/zenodo-nobile_rim_1-r003-c001_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r003-c001/elevation/zenodo-nobile_rim_1-r003-c001.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r003-c001/quality/zenodo-nobile_rim_1-r003-c001_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r003-c001/quality/zenodo-nobile_rim_1-r003-c001_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r003-c001/quality/zenodo-nobile_rim_1-r003-c001_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r003-c001/quality/zenodo-nobile_rim_1-r003-c001_valid_data.tif"
+    },
+    "sfs_support_count": 947160,
+    "site": "nobile_rim_1",
+    "size": [
+      928,
+      1024
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r003-c001",
+    "transform": [
+      5.0,
+      0.0,
+      79120.0,
+      0.0,
+      -5.0,
+      104640.0
+    ],
+    "valid_count": 950272,
+    "valid_data_count": 948224,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r003-c001/elevation/zenodo-nobile_rim_1-r003-c001.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r003-c002/quality/zenodo-nobile_rim_1-r003-c002_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r003-c002/quality/zenodo-nobile_rim_1-r003-c002_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r003-c002/imagery/zenodo-nobile_rim_1-r003-c002_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r003-c002/elevation/zenodo-nobile_rim_1-r003-c002.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r003-c002/quality/zenodo-nobile_rim_1-r003-c002_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r003-c002/quality/zenodo-nobile_rim_1-r003-c002_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r003-c002/quality/zenodo-nobile_rim_1-r003-c002_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r003-c002/quality/zenodo-nobile_rim_1-r003-c002_valid_data.tif"
+    },
+    "sfs_support_count": 949248,
+    "site": "nobile_rim_1",
+    "size": [
+      928,
+      1024
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r003-c002",
+    "transform": [
+      5.0,
+      0.0,
+      84240.0,
+      0.0,
+      -5.0,
+      104640.0
+    ],
+    "valid_count": 950272,
+    "valid_data_count": 948224,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r003-c002/elevation/zenodo-nobile_rim_1-r003-c002.tif"
+  },
+  {
+    "collection": "public",
+    "group": "nobile_rim_1",
+    "layers": {
+      "best_resolution": "tiles/zenodo-nobile_rim_1-r003-c003/quality/zenodo-nobile_rim_1-r003-c003_best_resolution.tif",
+      "image_count": "tiles/zenodo-nobile_rim_1-r003-c003/quality/zenodo-nobile_rim_1-r003-c003_image_count.tif",
+      "nac": "tiles/zenodo-nobile_rim_1-r003-c003/imagery/zenodo-nobile_rim_1-r003-c003_nac.tif",
+      "sfs": "tiles/zenodo-nobile_rim_1-r003-c003/elevation/zenodo-nobile_rim_1-r003-c003.tif",
+      "sfs_support": "tiles/zenodo-nobile_rim_1-r003-c003/quality/zenodo-nobile_rim_1-r003-c003_sfs_support.tif",
+      "solar_bins": "tiles/zenodo-nobile_rim_1-r003-c003/quality/zenodo-nobile_rim_1-r003-c003_solar_bins.tif",
+      "uncertainty": "tiles/zenodo-nobile_rim_1-r003-c003/quality/zenodo-nobile_rim_1-r003-c003_uncertainty.tif",
+      "valid_data": "tiles/zenodo-nobile_rim_1-r003-c003/quality/zenodo-nobile_rim_1-r003-c003_valid_data.tif"
+    },
+    "sfs_support_count": 859320,
+    "site": "nobile_rim_1",
+    "size": [
+      928,
+      928
+    ],
+    "tile_id": "zenodo-nobile_rim_1-r003-c003",
+    "transform": [
+      5.0,
+      0.0,
+      89360.0,
+      0.0,
+      -5.0,
+      104640.0
+    ],
+    "valid_count": 861184,
+    "valid_data_count": 857476,
+    "working_dem": "tiles/zenodo-nobile_rim_1-r003-c003/elevation/zenodo-nobile_rim_1-r003-c003.tif"
+  }
+]

@@ -8,13 +8,12 @@ site folders. Choose a section and then a tile, or **All** for every available t
 there is no separate Location dropdown. Bundled labels and user paintings use the
 same generic loader. Private reference maps are optional,
 not a product requirement, and originals in `data/reference_data/` are never
-auto-loaded by the app. See the [catalog contract](../data/README.md#generic-catalog-contract)
+auto-loaded by the app. See the [catalog contract](DATASET.md#generic-catalog-contract)
 for annotation, geographic grouping and optional whole-input feature-context fields.
 
 Keep source datasets immutable. Painting drafts, saved labels, verification overrides
-and predictions go only to `output/`; models go to `models/`. In this workspace,
-30 imported rasters are hard links sharing source inodes, so editing either pathname
-in place would alter the source. Do not edit, reproject or change their permissions.
+and predictions go only to `output/`; models go to `models/`. Archived imported rasters may share hard links with their originals, so editing
+either pathname in place would alter the source. Do not edit, reproject or change their permissions.
 For authorized sharing, materialize the whole processed tree as regular copies,
 keeping linked feature inputs and provenance together. Private sources and derived
 models/figures still require permission. These workflows upload nothing.
@@ -32,8 +31,8 @@ replaces `id_labels.tif` (painted labels) and `id_map.tif` (model prediction) un
 `output/maps/<DEM parent>/`. Without a model, only labels are exported and the previous
 prediction at that path is removed. The GeoTIFFs retain georeferencing and NoData.
 There is no extra map folder. Reference maps follow the identical rule: a DEM at
-`data/processed_data/mons-mouton(reference)/tiles/id.tif` uses
-`mons-mouton(reference)/tiles/` inside each bucket, without inserting `elevation/`.
+`data/processed_data/survey-a/tiles/id.tif` uses
+`survey-a/tiles/` inside each bucket, without inserting `elevation/`.
 
 Changes in Paint or Gallery—including verification—persist as drafts. Only clicking
 **Save labels + map** in Paint updates saved paintings and exports. Save also commits
@@ -43,9 +42,10 @@ current prediction. It saves only the model, without evaluations or painting exp
 Separate output roots remove the old arbitrary reserved-site-name requirement.
 When relocating a site, move its matching painting, draft and map subtrees too.
 
-The six supplied paintings use the same explicit `core.seed_paintings()` bootstrap
-as any catalog's nonempty bundled paintings. Run it separately using the
-[bootstrap command](../data/README.md#per-map-output-layout); dataset preparation,
+For an unmerged installation, `core.seed_paintings()` can explicitly bootstrap
+a catalog's nonempty bundled paintings. The current public paintings already exist
+in output. Run the helper separately using the
+[bootstrap command](DATASET.md#per-map-output-layout); dataset preparation,
 importing and browsing never invoke it. It creates independent painting/flag arrays
 in **both** buckets, with no label TIFF or metadata copy. Metadata, including
 verification and provenance, remains inherited from the bundled manifest.
@@ -78,17 +78,17 @@ painting ignores padding and cells without terrain.
 
 **Verified is a user-trust flag, not independent scientific certification.** Only
 mark a map verified deliberately, preserving its actual review history in
-`label_status` and `provenance`. The six bundled reference tiles here were explicitly
-marked verified at the user's request; their metadata still says **“User-marked
-verified; preserved unreviewed historical snapshot; not independent certification”**.
-That does not retrospectively make the historical labels independently reviewed.
+`label_status` and `provenance`. The source paintings were explicitly marked verified at the user's request.
+Their original review metadata remains in the migration provenance and archive.
+Transferring paintings onto public tiles does not independently validate them.
 
 ## Train deliberately
 
-This workspace's installed **`models/rf.joblib`** is a reference-trained starter
-from **six tiles and 31,500 sampled pixels**. The dataset-layout and evaluation
-changes do not retrain or replace it. Ordinary processed maps can be used to paint
-and train without this private collection.
+This workspace uses one public catalog: **237 native 5 m SfS tiles in 13
+sections**, with paintings and verification on **13 tiles**. The active model was
+rebuilt from those merged paintings. The six original painting grids and duplicate
+map sections are archived outside the active catalog. Normal public tile names are
+used everywhere; source-map identities remain metadata only.
 
 - **Sure**, **Mostly** and **Unsure** paintings have different training weights.
 - Accepted model suggestions remain marked as accepted predictions and have reduced
@@ -99,7 +99,7 @@ and train without this private collection.
   currently verified paintings, including draft edits made on other maps, and trains
   a fresh model on every click. It refreshes the current prediction and saves only
   the model, without committing paintings or producing evaluation files.
-- Unverified, removed, cleared and held-out maps are excluded from rebuilt samples;
+- Unverified, removed and cleared maps are excluded from rebuilt samples;
   previous sample arrays are never reused by this action. A fit needs at least two
   labeled classes. Browsing, changing a background and painting alone do not train.
 - Effective paintings resolve **draft → user save → bundled painting**, with flags
@@ -121,6 +121,12 @@ features are calculated, removing artificial edges at tile joins. Features are
 then nearest-transported to the selected map's grid. Display geometry remains local;
 missing feature coverage remains missing. This supports consistent source context
 without duplicate rasters or a dataset-specific evaluator. It does not add predictors.
+
+All installed maps use their native **5 m public SfS inputs**. There is no
+per-map alternative terrain source. Imported paintings were geographically merged
+onto these public grids; areas beyond public SfS coverage have no destination.
+A destination painting cell needs at least 50% coverage and a strict majority label.
+Certainty and approval flags are combined conservatively, with originals preserved.
 
 **NAC is a viewing layer, not a trained feature.** PSR, radar, separate LOLA,
 quality channels, scene-relative height and hillshade are excluded from the default

@@ -1,0 +1,13 @@
+{
+  "missing_optional": [],
+  "warnings": [
+    "Full SfS extent retained, including nodata; no filling or normalization.",
+    "Nearest-neighbor alignment does not create native 5 m detail: inspect each native grid.",
+    "NAC may have a half-pixel offset; quality may be 15 m despite a _005 filename.",
+    "GLDSIGM/GLDISGM naming differs between some files and README uncertainty descriptions; consult preserved README.",
+    "NAC is a maximally-lit composite, not uniform-illumination calibrated reflectance.",
+    "Raw samples retained without applying scale/offset; float64 to float32 may round radiometry.",
+    "Count samples must be integral and exactly representable in float32; compression is lossless.",
+    "Zero support flags are not zero-valued annotation labels; no labels or ML products exist."
+  ]
+}

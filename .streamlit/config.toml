@@ -1,4 +1,4 @@
-# Keep the app local: reference maps may have private/CUI sharing restrictions.
+# Bind locally by default.
 [server]
 address = "localhost"
 

@@ -12,7 +12,7 @@ import numpy as np
 import streamlit as st
 from scipy import ndimage as ndi
 
-from app import core, assistant_model, canvas, evaluate, pictures
+from app import core, assistant_model, canvas, pictures
 
 from app.core import CMAP, CODES, GRID
 
@@ -24,7 +24,7 @@ UNDO = 30           # remembered paint steps
 PAINT = {n.replace("_", " "): c for c, n in CODES.items()}
 PAINT["erase"] = 0
 LAYERS = {"Prediction": ":material/auto_awesome: Prediction",
-          "Painting": ":material/brush: Painting",      # drawn in this order
+          "Painting": ":material/brush: Painting",
           "Confidence": ":material/equalizer: Confidence"}  # replaces the background
 TOOLS = {"paint": ":material/gesture: Paint", "smart": ":material/format_color_fill: Smart fill"}
 CERTAINTY = {core.SURE: "Sure", core.MOSTLY: "Mostly", core.UNSURE: "Unsure"}
@@ -166,10 +166,7 @@ ss = st.session_state
 ss.setdefault("layers", ["Painting"])
 ss.setdefault("tool", "paint")
 ss.setdefault("certainty", core.SURE)
-# Test maps and the maps touching them are not listed: the model is scored there, so
-# they are never painted or trained on. The Progress page chooses the test maps.
-hidden = core.held_out_maps()
-dems = [d for d in core.dem_files() if core.dem_name(d) not in hidden]
+dems = core.dem_files()
 catalog = {core.dem_name(r["working_dem"]): r for r in core.records()}
 
 
@@ -195,9 +192,6 @@ if not dems:
         "Each top-level dataset folder is a Section. Nested DEMs, display layers and "
         "bundled annotations are discovered through `working_dems.json`, not by "
         "dropping rasters into arbitrary folders.")
-    if hidden:
-        st.caption("Prepared maps may also be hidden because they are test maps or touch "
-                   "one. Review the test-map selection on the Progress page.")
     st.stop()
 
 try:
@@ -240,10 +234,6 @@ with st.sidebar:
         st.info("Choose an installed map from the current Section.")
         st.stop()
 
-    if hidden:
-        st.caption(f"{len(hidden)} maps are not listed: the test maps and the maps "
-                   "touching them. The model is scored there and never learns from them. "
-                   "Choose test maps on the Progress page.")
     name = core.dem_name(dem)
     record = catalog.get(name, {})
     metadata = core.meta_get(name)
@@ -264,12 +254,11 @@ tile_bounds = pictures.tile_bounds(name, shape, prof["transform"])
 terrain_valid = np.isfinite(X[names.index("zscene") if "zscene" in names else 0])
 valid_cells = paintable_cells(terrain_valid)
 
-if ss.get("cells") is None or not {"accepted", "confidence", "test_site", "locked"} <= ss.keys():
+if ss.get("cells") is None or not {"accepted", "confidence", "locked"} <= ss.keys():
     ss.cells = core.load_painting(name)
     ss.accepted = core.load_accepted(name)       # cells filled from a prediction
     ss.confidence = core.load_confidence(name)   # how sure you were of each cell
     ss.locked = bool(record.get("read_only"))
-    ss.test_site = name in hidden                # scored here, never trained on
     ss.assistant = run(assistant_model.load)
     with st.spinner("Generating a starting map..."):
         ss.pred = run(assistant_model.predict, ss.assistant, Xs, names)
@@ -283,7 +272,6 @@ if features_changed:
 assert ss.cells is not None
 # Provenance may be refreshed without changing a raster's revision.
 ss.locked = bool(record.get("read_only"))
-ss.test_site = name in hidden
 ss.accepted = ss.accepted & (ss.cells > 0)
 ss.confidence = np.where(ss.cells > 0, np.where(ss.confidence > 0, ss.confidence, core.SURE),
                          0).astype(np.uint8)
@@ -296,7 +284,7 @@ suggested = (core.labels_to_cells(ss.pred) if ss.pred is not None
              else np.zeros((GRID, GRID), np.uint8))
 fill = (ss.cells == 0) & (suggested > 0)
 pending = assistant_model.pending(ss.assistant, name, ss.cells, ss.confidence, ss.accepted)
-editable = not ss.locked and not ss.test_site
+editable = not ss.locked
 has_painting = bool(np.any(ss.cells))
 saved_cells, saved_source = core.painting_source(name, final=True)
 saved_accepted = core.load_accepted(name, final=True)
@@ -372,17 +360,6 @@ with st.sidebar:
     update = st.button(f":{update_color}[Update model]", key="update_model",
                        icon=":material/refresh:", width="stretch", disabled=not can_update,
                        help=update_help)
-    scores = evaluate.history()
-    now = next((i for i, e in enumerate(scores) if e["revision"] == ss.assistant["revision"]),
-               None)
-    if now is not None:
-        e = scores[now]
-        change = (e["accuracy"] - scores[now - 1]["accuracy"]) * 100 if now else None
-        st.metric(f"Test score ({len(e['maps'])} test maps)", f"{e['accuracy']:.0%} right",
-                  None if change is None else f"{change:+.0f} points since the last update",
-                  border=True,
-                  help="Agreement with the answer keys. See Progress for details.")
-
     st.subheader("5 · Finish")
     verified = st.checkbox("Verified",
                            value=bool(metadata.get("verified", False)),
@@ -490,15 +467,17 @@ else:
     base = backdrop(dem, feature_revision, background, X, names, hs)
     legend = LEGEND.get(background, "")
     peek = f"{BACKGROUNDS.get(background, background)}, no colours"
-# Both layers are drawn into the picture the same way, so flipping between them compares
-# like with like.
-painting = []
-if "Painting" in shown:
-    for level, drawn in hatching(base.shape).items():       # less sure painting is hatched
-        codes = core.cells_to_labels(np.where(ss.confidence == level, ss.cells, 0), base.shape)
-        codes[~drawn] = 0
-        painting.append((codes, alpha))
-img = pictures.render(base, [(ss.pred if "Prediction" in shown else None, alpha), *painting])
+if {"Prediction", "Painting"}.issubset(shown) and ss.pred is not None:
+    img = pictures.disagreement(base, ss.pred, ss.cells, alpha)
+    legend = "Yellow: disagreement" + (f" · {legend}" if legend else "")
+else:
+    painting = []
+    if "Painting" in shown:
+        for level, drawn in hatching(base.shape).items():   # less sure painting is hatched
+            codes = core.cells_to_labels(np.where(ss.confidence == level, ss.cells, 0), base.shape)
+            codes[~drawn] = 0
+            painting.append((codes, alpha))
+    img = pictures.render(base, [(ss.pred if "Prediction" in shown else None, alpha), *painting])
 missing = ~terrain_valid[::display_step(shape), ::display_step(shape)]
 if not confident and background in names:
     missing |= ~np.isfinite(X[names.index(background), ::display_step(shape), ::display_step(shape)])

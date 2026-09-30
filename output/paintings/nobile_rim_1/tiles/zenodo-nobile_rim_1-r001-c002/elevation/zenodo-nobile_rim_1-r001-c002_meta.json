@@ -1,0 +1,199 @@
+{
+  "name": "zenodo-nobile_rim_1-r001-c002",
+  "label_source": "Imported painting",
+  "restricted": true,
+  "verified": true,
+  "reference_maps": [
+    "Nobile1-MS1"
+  ],
+  "provenance": {
+    "operation": "painting_merge",
+    "sources": [
+      {
+        "tile_id": "nobile1-0002",
+        "map_id": "Nobile1-MS1",
+        "group": "nobile-1",
+        "verified_saved": true,
+        "verified_draft": true,
+        "saved_metadata": {
+          "verified": true,
+          "label_status": "User-marked verified; preserved unreviewed historical snapshot; not independent certification",
+          "restricted": true,
+          "provenance": {
+            "accepted_observed": {
+              "draft": false
+            },
+            "confidence_observed": false,
+            "confidence_status": "unknown",
+            "known_accepted_cells_union": 0,
+            "original_provenance": {
+              "labels_path": "sites/nobile1-ms1/tiles/nobile1-0002/annotations/seed/draft/nobile1-labels-0002.tif",
+              "labels_sha256": "3e50ac576205baac0a21663f6216be9ba98984e2ac1bd40823a7251b0aa3d1e8",
+              "provenance_path": "sites/nobile1-ms1/tiles/nobile1-0002/annotations/seed/draft/provenance.json",
+              "provenance_sha256": "660aaa6fd021df33ae8499d480150156b3a3947e8bb0a42cc9a41cec675477ce"
+            },
+            "snapshot": "draft",
+            "snapshots": {
+              "draft": {
+                "labels_path": "sites/nobile1-ms1/tiles/nobile1-0002/annotations/seed/draft/nobile1-labels-0002.tif",
+                "labels_sha256": "3e50ac576205baac0a21663f6216be9ba98984e2ac1bd40823a7251b0aa3d1e8",
+                "provenance_path": "sites/nobile1-ms1/tiles/nobile1-0002/annotations/seed/draft/provenance.json",
+                "provenance_sha256": "660aaa6fd021df33ae8499d480150156b3a3947e8bb0a42cc9a41cec675477ce"
+              }
+            },
+            "source_root": "/Users/torus/Desktop/Research/selenograph/data/reference_data/professor_geologic_maps",
+            "source_tile": {
+              "path": "sites/nobile1-ms1/tiles/nobile1-0002/tile.json",
+              "sha256": "94931735eaefbd11e3457d272136bbc3bc2e24b4d6324bee9a564ea41865ad22"
+            },
+            "verification": {
+              "basis": "user_requested",
+              "independent_certification": false,
+              "reason": "Explicit importer verified=True user request"
+            }
+          }
+        },
+        "draft_metadata": {
+          "verified": true,
+          "label_status": "User-marked verified; preserved unreviewed historical snapshot; not independent certification",
+          "restricted": true,
+          "provenance": {
+            "accepted_observed": {
+              "draft": false
+            },
+            "confidence_observed": false,
+            "confidence_status": "unknown",
+            "known_accepted_cells_union": 0,
+            "original_provenance": {
+              "labels_path": "sites/nobile1-ms1/tiles/nobile1-0002/annotations/seed/draft/nobile1-labels-0002.tif",
+              "labels_sha256": "3e50ac576205baac0a21663f6216be9ba98984e2ac1bd40823a7251b0aa3d1e8",
+              "provenance_path": "sites/nobile1-ms1/tiles/nobile1-0002/annotations/seed/draft/provenance.json",
+              "provenance_sha256": "660aaa6fd021df33ae8499d480150156b3a3947e8bb0a42cc9a41cec675477ce"
+            },
+            "snapshot": "draft",
+            "snapshots": {
+              "draft": {
+                "labels_path": "sites/nobile1-ms1/tiles/nobile1-0002/annotations/seed/draft/nobile1-labels-0002.tif",
+                "labels_sha256": "3e50ac576205baac0a21663f6216be9ba98984e2ac1bd40823a7251b0aa3d1e8",
+                "provenance_path": "sites/nobile1-ms1/tiles/nobile1-0002/annotations/seed/draft/provenance.json",
+                "provenance_sha256": "660aaa6fd021df33ae8499d480150156b3a3947e8bb0a42cc9a41cec675477ce"
+              }
+            },
+            "source_root": "/Users/torus/Desktop/Research/selenograph/data/reference_data/professor_geologic_maps",
+            "source_tile": {
+              "path": "sites/nobile1-ms1/tiles/nobile1-0002/tile.json",
+              "sha256": "94931735eaefbd11e3457d272136bbc3bc2e24b4d6324bee9a564ea41865ad22"
+            },
+            "verification": {
+              "basis": "user_requested",
+              "independent_certification": false,
+              "reason": "Explicit importer verified=True user request"
+            }
+          }
+        },
+        "source_refs": {
+          "download_allowed": false,
+          "restricted": true,
+          "root": "/Users/torus/Desktop/Research/selenograph/data/reference_data/professor_geologic_maps",
+          "sha256": "94931735eaefbd11e3457d272136bbc3bc2e24b4d6324bee9a564ea41865ad22",
+          "tile": "sites/nobile1-ms1/tiles/nobile1-0002/tile.json"
+        }
+      },
+      {
+        "tile_id": "nobile1-0003",
+        "map_id": "Nobile1-MS1",
+        "group": "nobile-1",
+        "verified_saved": true,
+        "verified_draft": true,
+        "saved_metadata": {
+          "verified": true,
+          "label_status": "User-marked verified; preserved unreviewed historical snapshot; not independent certification",
+          "restricted": true,
+          "provenance": {
+            "accepted_observed": {
+              "draft": false
+            },
+            "confidence_observed": false,
+            "confidence_status": "unknown",
+            "known_accepted_cells_union": 0,
+            "original_provenance": {
+              "labels_path": "sites/nobile1-ms1/tiles/nobile1-0003/annotations/seed/draft/nobile1-labels-0003.tif",
+              "labels_sha256": "7c764d181f7e682053eacf42e8f8cc3d4d7f4d04f82c89e57ab8e07d2428c681",
+              "provenance_path": "sites/nobile1-ms1/tiles/nobile1-0003/annotations/seed/draft/provenance.json",
+              "provenance_sha256": "2a13d0d7a3b6b413b1c44eeab12881bd80e48202ce6b2794ba24f5b016c1b039"
+            },
+            "snapshot": "draft",
+            "snapshots": {
+              "draft": {
+                "labels_path": "sites/nobile1-ms1/tiles/nobile1-0003/annotations/seed/draft/nobile1-labels-0003.tif",
+                "labels_sha256": "7c764d181f7e682053eacf42e8f8cc3d4d7f4d04f82c89e57ab8e07d2428c681",
+                "provenance_path": "sites/nobile1-ms1/tiles/nobile1-0003/annotations/seed/draft/provenance.json",
+                "provenance_sha256": "2a13d0d7a3b6b413b1c44eeab12881bd80e48202ce6b2794ba24f5b016c1b039"
+              }
+            },
+            "source_root": "/Users/torus/Desktop/Research/selenograph/data/reference_data/professor_geologic_maps",
+            "source_tile": {
+              "path": "sites/nobile1-ms1/tiles/nobile1-0003/tile.json",
+              "sha256": "316dd2f7bbc35baa34556f57381604bc2e7f8ac4183ce5d33406f3b686bbef76"
+            },
+            "verification": {
+              "basis": "user_requested",
+              "independent_certification": false,
+              "reason": "Explicit importer verified=True user request"
+            }
+          }
+        },
+        "draft_metadata": {
+          "verified": true,
+          "label_status": "User-marked verified; preserved unreviewed historical snapshot; not independent certification",
+          "restricted": true,
+          "provenance": {
+            "accepted_observed": {
+              "draft": false
+            },
+            "confidence_observed": false,
+            "confidence_status": "unknown",
+            "known_accepted_cells_union": 0,
+            "original_provenance": {
+              "labels_path": "sites/nobile1-ms1/tiles/nobile1-0003/annotations/seed/draft/nobile1-labels-0003.tif",
+              "labels_sha256": "7c764d181f7e682053eacf42e8f8cc3d4d7f4d04f82c89e57ab8e07d2428c681",
+              "provenance_path": "sites/nobile1-ms1/tiles/nobile1-0003/annotations/seed/draft/provenance.json",
+              "provenance_sha256": "2a13d0d7a3b6b413b1c44eeab12881bd80e48202ce6b2794ba24f5b016c1b039"
+            },
+            "snapshot": "draft",
+            "snapshots": {
+              "draft": {
+                "labels_path": "sites/nobile1-ms1/tiles/nobile1-0003/annotations/seed/draft/nobile1-labels-0003.tif",
+                "labels_sha256": "7c764d181f7e682053eacf42e8f8cc3d4d7f4d04f82c89e57ab8e07d2428c681",
+                "provenance_path": "sites/nobile1-ms1/tiles/nobile1-0003/annotations/seed/draft/provenance.json",
+                "provenance_sha256": "2a13d0d7a3b6b413b1c44eeab12881bd80e48202ce6b2794ba24f5b016c1b039"
+              }
+            },
+            "source_root": "/Users/torus/Desktop/Research/selenograph/data/reference_data/professor_geologic_maps",
+            "source_tile": {
+              "path": "sites/nobile1-ms1/tiles/nobile1-0003/tile.json",
+              "sha256": "316dd2f7bbc35baa34556f57381604bc2e7f8ac4183ce5d33406f3b686bbef76"
+            },
+            "verification": {
+              "basis": "user_requested",
+              "independent_certification": false,
+              "reason": "Explicit importer verified=True user request"
+            }
+          },
+          "name": "nobile1-0003"
+        },
+        "source_refs": {
+          "download_allowed": false,
+          "restricted": true,
+          "root": "/Users/torus/Desktop/Research/selenograph/data/reference_data/professor_geologic_maps",
+          "sha256": "316dd2f7bbc35baa34556f57381604bc2e7f8ac4183ce5d33406f3b686bbef76",
+          "tile": "sites/nobile1-ms1/tiles/nobile1-0003/tile.json"
+        }
+      }
+    ],
+    "archive": "/Users/torus/Desktop/Research/selenograph/data/processed_data/.reference-merge-backups/20260929T215002.758181Z",
+    "coverage_threshold": 0.5,
+    "label_rule": "strict majority of known pixels",
+    "flags": "weakest contributing certainty; any accepted contribution remains accepted"
+  }
+}

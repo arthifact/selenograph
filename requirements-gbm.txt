@@ -1,0 +1,3 @@
+# Optional LightGBM backend. macOS also needs: brew install libomp
+-r requirements.txt
+lightgbm==4.7.0

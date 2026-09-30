@@ -17,6 +17,33 @@ from tests import test_clean_start as fixtures
 
 
 class TileDisplayTests(unittest.TestCase):
+    def test_disagreement_only_highlights_different_known_painted_units(self):
+        base = np.full((120, 120), .5, np.float32)
+        cells = np.zeros((core.GRID, core.GRID), np.uint8)
+        cells[0, [0, 2, 4, 6, 8]] = [1, 2, 3, 2, 1]
+        prediction = np.ones((60, 60), np.uint8)
+        prediction[0, 3:5] = [255, 0]
+        before = cells.copy(), prediction.copy()
+        result = np.asarray(pictures.disagreement(base, prediction, cells, .5))
+        coloured = result[:, :, 0] != result[:, :, 2]
+        expected = np.zeros(base.shape, bool)
+        expected[0, [2, 4]] = True
+        np.testing.assert_array_equal(coloured, expected)
+        self.assertTrue((result[coloured, 0] > result[coloured, 2]).all())
+        self.assertEqual(pictures.disagreement(base, prediction, cells, 0).tobytes(),
+                         pictures.render(base, []).tobytes())
+        np.testing.assert_array_equal(cells, before[0])
+        np.testing.assert_array_equal(prediction, before[1])
+
+    def test_disagreement_preserves_floor_cell_edges_on_non_square_grids(self):
+        base = np.full((123, 241), .5, np.float32)
+        cells = np.zeros((core.GRID, core.GRID), np.uint8)
+        cells[1, 1] = 2
+        result = np.asarray(pictures.disagreement(base, np.ones((1, 1), np.uint8), cells, 1))
+        expected = np.zeros(base.shape, bool)
+        expected[1:2, 2:4] = True
+        np.testing.assert_array_equal(result[:, :, 0] != result[:, :, 2], expected)
+
     def bounds(self, size, origin, *, peer=True):
         record = dict(working_dem="edge.tif", section="survey", size=size,
                       transform=list(Affine(5, 0, origin[0], 0, -5, origin[1]))[:6])
@@ -142,7 +169,8 @@ class TileDisplayAppTests(unittest.TestCase):
         thumb = core.output_file("hole", "thumb.png")
         with Image.open(thumb) as img:
             self.assertTrue((np.asarray(img)[-30:] == 0).all())
-        # Older saves used white missing areas. Browsing corrects them in memory.
+        # Older saves used white missing areas. Current paintings replace that
+        # stale preview in memory, with missing terrain still black.
         Image.new("RGB", (360, 360), "white").save(thumb)
         before = Path(thumb).read_bytes()
         images = []
@@ -155,7 +183,8 @@ class TileDisplayAppTests(unittest.TestCase):
         self.f.assert_ok(app)
         with Image.open(io.BytesIO(images[-1])) as img:
             self.assertTrue((np.asarray(img)[180:] == 0).all())
-            self.assertTrue((np.asarray(img)[:170] == 255).all())
+            pixels = np.asarray(img)
+            self.assertTrue((pixels[:170, :, 2] > pixels[:170, :, 0]).all())  # current blue painting
         self.assertEqual(Path(thumb).read_bytes(), before)
 
 

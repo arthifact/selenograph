@@ -58,12 +58,14 @@ def thumbnail(name, dem, revision, saved_only=False):
     z, transform, _, px = core.read(dem, max_side=240)
     filled, missing = core.fill_nan(z)
     thumb = core.output_file(name, "thumb.png", existing=True)
-    if os.path.isfile(thumb):
+    cells, source = core.painting_source(name, final=True if saved_only else None)
+    # A saved screenshot can contain an old prediction or an older painting.
+    # Render current cells whenever available, including an explicitly empty draft.
+    if source is None and os.path.isfile(thumb):
         with Image.open(thumb) as saved:
             image = saved.convert("RGB")
     else:
         base = core.hillshade(filled, px)
-        cells = (core.painting_source(name, final=True)[0] if saved_only else core.load_painting(name))
         image = pictures.render(base, [(cells, 0.6)])
     bounds = pictures.tile_bounds(name, z.shape, transform)
     return pictures.png(pictures.gallery_preview(image, bounds=bounds, missing=missing))
@@ -111,7 +113,6 @@ visible = maps[start:start + PAGE_SIZE]
 n_ok = sum(m.get("verified") is True for m in maps)
 st.caption(f"Showing {start + 1}–{start + len(visible)} of {len(maps)} maps · {n_ok} verified")
 
-held_out = core.held_out_maps()
 for row in range(0, len(visible), COLS):
     for col, m in zip(st.columns(COLS), visible[row:row + COLS]):
         name = m["name"]
@@ -129,13 +130,11 @@ for row in range(0, len(visible), COLS):
             st.caption(f"{m['_section']} · {state}")
 
             read_only = bool(record.get("read_only"))
-            editable = not read_only and name not in held_out
+            editable = not read_only
             verified = st.checkbox("Verified",
                                    value=bool(m.get("verified")), key=f"v_{name}",
                                    disabled=not editable,
                                    help=("This map is read only." if read_only else
-                                         "Held out for evaluation; verification is locked."
-                                         if name in held_out else
                                          "Use this map for training. Save in Paint to commit."))
             if editable and verified != bool(m.get("verified")):
                 core.meta_set(name, final=False, verified=verified)

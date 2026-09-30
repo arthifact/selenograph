@@ -222,7 +222,7 @@ class DatasetPagesTests(PageFixture):
             self.assertEqual(app.selectbox(key="map_section").options, ["All", "atlas", "survey"])
         self.fixture.assert_no_artifacts()
 
-    def test_all_sections_still_exclude_geographic_holdouts(self):
+    def test_all_sections_ignore_legacy_test_selection(self):
         self.dataset()
         self.dataset("held-out", "atlas", "east")
         third = self.dataset("tile-three", "survey", "ridge")
@@ -230,13 +230,13 @@ class DatasetPagesTests(PageFixture):
         self.assertEqual(core.held_out_maps(), {"held-out"})
         with self.browsing():
             app = self.app()
-            self.assertEqual(set(app.selectbox(key="selected_map").options), {"tile-one", "tile-three"})
+            self.assertEqual(set(app.selectbox(key="selected_map").options), {"tile-one", "held-out", "tile-three"})
             app.selectbox(key="map_section").select("atlas").run()
             self.assert_ok(app)
-            self.assertEqual(app.selectbox(key="selected_map").options, ["tile-one"])
+            self.assertEqual(app.selectbox(key="selected_map").options, ["tile-one", "held-out"])
             app.selectbox(key="map_section").select("All").run()
             self.assert_ok(app)
-            self.assertEqual(set(app.selectbox(key="selected_map").options), {"tile-one", "tile-three"})
+            self.assertEqual(set(app.selectbox(key="selected_map").options), {"tile-one", "held-out", "tile-three"})
             app.selectbox(key="selected_map").select(third).run()
             self.assert_ok(app)
             self.assertEqual(app.selectbox(key="selected_map").value, third)
@@ -408,31 +408,43 @@ class DatasetPagesTests(PageFixture):
         self.assertFalse(np.load(saved_path, allow_pickle=False).any())
         self.assertFalse(paths.MODEL_DIR.exists())
 
-    def test_gallery_cannot_stage_verification_for_held_out_maps_or_neighbours(self):
+    def test_gallery_verification_ignores_legacy_test_selection(self):
         for name in ("held", "neighbour", "editable"):
             self.dataset(name, bundled=True)
-        with patch.object(core, "held_out_maps", return_value={"held", "neighbour"}):
+        core.set_test_maps(["held"])
+        with patch.object(core, "held_out_maps", side_effect=AssertionError("No persistent holdouts")), \
+                patch.object(evaluate, "history", side_effect=AssertionError("No legacy scores in Paint")):
             with self.browsing():
                 app = self.gallery()
-                for name in ("held", "neighbour"):
-                    self.assertTrue(app.checkbox(key=f"v_{name}").disabled)
-                self.assertFalse(app.checkbox(key="v_editable").disabled)
-                original = st.checkbox
-
-                def force_held(label, *args, **kwargs):
-                    value = original(label, *args, **kwargs)
-                    return False if kwargs.get("key") in ("v_held", "v_neighbour") else value
-
-                with patch.object(st, "checkbox", side_effect=force_held):
-                    app.run()
-                    self.assert_ok(app)
-            app.checkbox(key="v_editable").uncheck().run()
+                for name in ("held", "neighbour", "editable"):
+                    self.assertFalse(app.checkbox(key=f"v_{name}").disabled)
+            app.checkbox(key="v_held").uncheck().run()
             self.assert_ok(app)
-            self.assertFalse(core.meta_get("editable")["verified"])
-            self.assertTrue(core.meta_get("editable", final=True)["verified"])
+            self.assertFalse(core.meta_get("held")["verified"])
+            self.assertTrue(core.meta_get("held", final=True)["verified"])
             self.assertFalse(Path(core.OUT_DIR).exists())
-            for name in ("held", "neighbour"):
-                self.assertFalse(Path(core.output_file(name, "meta.json", final=False)).exists())
+
+    def test_gallery_preview_uses_current_cells_instead_of_old_saved_thumbnail(self):
+        self.dataset("painted", bundled=True, verified=False)
+        saved = np.full((core.GRID, core.GRID), 1, np.uint8)
+        draft = np.full_like(saved, 3)
+        core.save_painting("painted", saved, final=True)
+        core.save_painting("painted", draft, final=False)
+        Image.new("RGB", (12, 12), "blue").save(core.output_file("painted", "thumb.png"))
+        app = self.app()
+        with self.browsing(), patch.object(pictures, "render", wraps=pictures.render) as render:
+            self.gallery(app)
+            np.testing.assert_array_equal(render.call_args.args[1][0][0], draft)
+            render.reset_mock()
+            app.segmented_control(key="gallery_status").set_value("Saved, unverified").run()
+            self.assert_ok(app)
+            np.testing.assert_array_equal(render.call_args.args[1][0][0], saved)
+        # Clearing the draft must also clear the preview, even while an old save exists.
+        core.save_painting("painted", np.zeros_like(draft), final=False)
+        with self.browsing(), patch.object(pictures, "render", wraps=pictures.render) as render:
+            app.segmented_control(key="gallery_status").set_value("All maps").run()
+            self.assert_ok(app)
+            self.assertFalse(render.call_args.args[1][0][0].any())
 
     def test_paint_edit_undo_clear_and_save_leave_all_source_bytes_unchanged(self):
         self.dataset(bundled=True)
@@ -535,7 +547,7 @@ class DatasetPagesTests(PageFixture):
         dem = self.dataset(bundled=True)
         app = self.app()
         with patch.object(core, "read", wraps=core.read) as read, \
-                patch.object(core, "load_painting", wraps=core.load_painting) as painting:
+                patch.object(core, "painting_source", wraps=core.painting_source) as painting:
             with self.browsing():
                 self.gallery(app)
                 app.run()
@@ -549,7 +561,7 @@ class DatasetPagesTests(PageFixture):
                 app.run()
                 self.assert_ok(app)
                 self.assertEqual(read.call_count, 2)
-                painting.assert_called_with("tile-one")
+                painting.assert_called_with("tile-one", final=None)
             stat = os.stat(dem)
             os.utime(dem, ns=(stat.st_atime_ns, stat.st_mtime_ns + 1_000_000))
             with self.browsing():

@@ -9,6 +9,7 @@ from app import core
 
 LUMA = np.array([0.2126, 0.7152, 0.0722])          # brightness of an RGB colour
 LIFT = 0.2          # keeps a unit's colour visible even in the darkest shadow
+DISAGREEMENT = np.array([255, 212, 59], dtype=np.float32)
 
 
 def floor():
@@ -35,6 +36,22 @@ def render(base, layers):
                 tint = np.clip(shade[m] * colour / (colour @ LUMA), 0, 1)
                 rgb[m] = (1 - alpha) * rgb[m] + alpha * tint
     return Image.fromarray((np.clip(rgb, 0, 1) * 255).astype(np.uint8))
+
+
+def disagreement(base, prediction, cells, alpha):
+    """Highlight differing known units in yellow, only where there is a painting.
+
+    Use the painter's floor cell edges and the same nearest-neighbour prediction
+    display as the individual layer. Unpainted and missing predictions are ignored.
+    """
+    predicted = prediction if prediction.shape == base.shape else np.asarray(
+        Image.fromarray(prediction).resize(base.shape[::-1], Image.Resampling.NEAREST))
+    painted = core.cells_to_labels(cells, base.shape)
+    different = (np.isin(predicted, list(core.CODES)) & np.isin(painted, list(core.CODES))
+                 & (predicted != painted))
+    rgb = np.repeat(np.clip(base, 0, 1)[:, :, None], 3, axis=2).astype(np.float32) * 255
+    rgb[different] = (1 - alpha) * rgb[different] + alpha * DISAGREEMENT
+    return Image.fromarray(np.clip(rgb, 0, 255).astype(np.uint8))
 
 
 def terrain(base):
