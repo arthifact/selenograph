@@ -1,9 +1,8 @@
-"""Generic live training and persistent checks; disposable data, no estimator fitting."""
+"""Generic training and dataset isolation; disposable data, no estimator fitting."""
 import hashlib
 import json
 import tempfile
 import unittest
-from contextlib import ExitStack
 from pathlib import Path
 from typing import Any
 from unittest.mock import patch
@@ -15,7 +14,7 @@ from rasterio.transform import from_origin
 from rasterio.warp import transform_bounds
 
 from app import assistant_model as assistant
-from app import core, evaluate, import_reference_maps
+from app import core
 
 
 class GenericTrainingTests(unittest.TestCase):
@@ -43,7 +42,6 @@ class GenericTrainingTests(unittest.TestCase):
         self.cells = np.ones((core.GRID, core.GRID), np.uint8)
         self.cells[:, core.GRID // 2:] = 2
         self.X = np.ones((len(core.BASE_FEATS), core.GRID, core.GRID), np.float32)
-        self.addCleanup(evaluate._features.cache_clear)
 
     def publish(self):
         (self.processed / "working_dems.json").write_text(json.dumps(self.records), encoding="utf-8")
@@ -80,13 +78,6 @@ class GenericTrainingTests(unittest.TestCase):
         self.publish()
         return path, folder
 
-    def forbid_importer(self):
-        stack = ExitStack()
-        for name in ("vector_reference_for", "reference_pixels", "source_map", "tiles", "paint"):
-            stack.enter_context(patch.object(import_reference_maps, name,
-                                             side_effect=AssertionError("offline importer called")))
-        return stack
-
     def snapshot(self, folder):
         return {str(p.relative_to(folder)): (hashlib.sha256(p.read_bytes()).hexdigest(), p.stat().st_mtime_ns)
                 for p in folder.rglob("*") if p.is_file()}
@@ -100,11 +91,6 @@ class GenericTrainingTests(unittest.TestCase):
             return assistant.update(name, self.X, core.BASE_FEATS, self.cells, self.X,
                                     name, "new-revision", **kwargs)[0]
 
-    def key(self, name):
-        result = evaluate.answer_key(name)
-        assert result is not None
-        return result
-
     def footprint(self, path) -> dict[str, Any]:
         with rasterio.open(path) as src:
             return dict(crs_wkt=src.crs.to_wkt() if src.crs else None, bounds=list(src.bounds))
@@ -116,15 +102,14 @@ class GenericTrainingTests(unittest.TestCase):
         accepted[:, 80:] = True
         cells = self.cells.copy()
         cells[:10] = 0
-        with self.forbid_importer():
-            for name in ("tile-001", "MM026", "unregistered"):
-                lab, weights, strata = assistant.training_pixels(
-                    name, (240, 240), cells, confidence, "not-opened.tif", accepted)
-                np.testing.assert_array_equal(lab, core.cells_to_labels(cells, (240, 240)))
-                np.testing.assert_array_equal(strata, lab)
-                self.assertTrue((weights[lab == 255] == 0).all())
-                self.assertTrue((weights[core.per_pixel(accepted & (cells > 0), lab.shape)] == core.APPROVED).all())
-                self.assertTrue(np.allclose(weights[30:, :40], core.CONFIDENCE[core.UNSURE][1]))
+        for name in ("tile-001", "MM026", "unregistered"):
+            lab, weights, strata = assistant.training_pixels(
+                name, (240, 240), cells, confidence, "not-opened.tif", accepted)
+            np.testing.assert_array_equal(lab, core.cells_to_labels(cells, (240, 240)))
+            np.testing.assert_array_equal(strata, lab)
+            self.assertTrue((weights[lab == 255] == 0).all())
+            self.assertTrue((weights[core.per_pixel(accepted & (cells > 0), lab.shape)] == core.APPROVED).all())
+            self.assertTrue(np.allclose(weights[30:, :40], core.CONFIDENCE[core.UNSURE][1]))
         self.assertFalse(hasattr(assistant, "reference"))
 
     def test_update_preserves_source_identity_but_replaces_label_dependent_memory(self):
@@ -139,7 +124,7 @@ class GenericTrainingTests(unittest.TestCase):
                    confidence_counts={"1": 123}, weight_policy="obsolete", painting_hash="old")
         assistant.save(self.fitted({name: old}))
         before = self.snapshot(self.processed)
-        with self.forbid_importer(), patch.object(core, "manifest_files", wraps=core.manifest_files) as discover:
+        with patch.object(core, "manifest_files", wraps=core.manifest_files) as discover:
             result = self.update(name, dem_path=str(dem))
         self.assertEqual(discover.call_count, 1)
         sample = result["samples"][name]
@@ -290,113 +275,6 @@ class GenericTrainingTests(unittest.TestCase):
                 self.assertEqual(assistant.refit()["samples"], {})
         self.assertEqual(self.snapshot(self.processed), before)
         self.assertFalse(Path(core.OUT_DIR).exists())
-
-    def test_candidates_and_folds_use_only_verified_processed_maps_without_importer(self):
-        self.bundle("bundled", "alpha")
-        self.tile("saved", "beta", left=20000)
-        self.tile("unverified", "gamma", left=40000, verified=False)
-        self.tile("draft", "delta", left=60000)
-        for name in ("saved", "unverified", "orphan"):
-            core.save_painting(name, self.cells, final=True)
-        for name in ("saved", "draft", "orphan"):
-            core.meta_set(name, verified=True)
-        core.save_painting("draft", self.cells)
-        before = self.snapshot(self.processed)
-        with self.forbid_importer(), patch.object(core, "manifest_files", wraps=core.manifest_files) as discover:
-            self.assertEqual(evaluate.candidates(), {"bundled": "verified bundled labels", "saved": "your verified labels"})
-            self.assertEqual(discover.call_count, 1)
-            self.assertEqual(evaluate.folds(), {"alpha": ["bundled"], "beta": ["saved"]})
-            self.assertIsNone(evaluate.answer_key("orphan"))
-            self.assertIsNone(evaluate.answer_key("draft"))
-        core.meta_set("bundled", verified=False)
-        self.assertIsNone(evaluate.key_source("bundled"))
-        self.assertIsNone(evaluate.answer_key("bundled"))
-        self.assertEqual(self.snapshot(self.processed), before)
-
-    def test_bundled_key_masks_accepted_uncertain_unknown_and_dem_nodata(self):
-        dem, folder = self.bundle()
-        cells = self.cells.copy()
-        cells[:, :10] = 0
-        np.save(folder / "painting.npy", cells)
-        confidence = np.full(cells.shape, core.SURE, np.uint8)
-        confidence[10:20] = core.UNSURE
-        accepted = np.zeros(cells.shape, bool)
-        accepted[20:30] = True
-        for kind, values in (("confidence", confidence), ("accepted", accepted)):
-            path = folder / f"{kind}.npy"
-            np.save(path, values)
-            self.records[-1]["annotations"][kind] = str(path.relative_to(self.processed))
-        self.publish()
-        values = np.ones(cells.shape, np.float32)
-        values[30:40] = -9999
-        values[40:50] = np.nan
-        self.raster(dem, values)
-        # Neither draft labels nor draft flags may contaminate a persistent key.
-        core.save_painting(dem.stem, np.full_like(cells, 3), accepted=np.ones(cells.shape, bool))
-        with self.forbid_importer():
-            codes, small = self.key(dem.stem)
-        expected = core.cells_to_labels(cells, cells.shape)
-        expected[10:50] = 255
-        np.testing.assert_array_equal(codes, expected)
-        self.assertIsNone(small)
-
-    def test_saved_painting_overrides_bundle_without_inheriting_its_flags(self):
-        dem, folder = self.bundle(labels=True)
-        np.save(folder / "accepted.npy", np.ones(self.cells.shape, bool))
-        self.records[-1]["annotations"]["accepted"] = str((folder / "accepted.npy").relative_to(self.processed))
-        self.publish()
-        core.save_painting(dem.stem, np.full_like(self.cells, 3), final=True)
-        self.assertEqual(evaluate.key_source(dem.stem), "your verified labels")
-        self.assertTrue((self.key(dem.stem)[0] == 3).all())
-        core.save_painting(dem.stem, np.zeros_like(self.cells), final=True)
-        self.assertIsNone(evaluate.answer_key(dem.stem))
-
-    def test_labels_only_saved_export_is_supported_with_its_own_flags_and_nodata(self):
-        dem, _ = self.bundle()
-        labels = self.cells.copy()
-        labels[:10] = 99
-        labels[10:20] = 0
-        labels[20:30] = 255
-        path = Path(core.output_file(dem.stem, "labels.tif"))
-        self.raster(path, labels, nodata=2)
-        core.meta_set(dem.stem, verified=True)
-        accepted = np.zeros(self.cells.shape, bool)
-        accepted[30:40] = True
-        confidence = np.full(self.cells.shape, core.SURE, np.uint8)
-        confidence[40:50] = core.MOSTLY
-        np.save(core.output_file(dem.stem, "accepted.npy"), accepted)
-        np.save(core.output_file(dem.stem, "confidence.npy"), confidence)
-        codes, _ = self.key(dem.stem)
-        expected = labels.copy()
-        expected[:50] = 255
-        expected[expected == 2] = 255
-        np.testing.assert_array_equal(codes, expected)
-        self.assertEqual(evaluate.candidates(), {dem.stem: "your verified labels"})
-
-    def test_bundled_labels_only_and_misaligned_raster_rejection(self):
-        dem, folder = self.bundle(painting=False, labels=True)
-        codes, _ = self.key(dem.stem)
-        np.testing.assert_array_equal(codes, self.cells)
-        self.raster(folder / "labels.tif", self.cells, left=20000, nodata=255)
-        with self.assertRaisesRegex(ValueError, "must match the DEM grid"):
-            evaluate.answer_key(dem.stem)
-
-    def test_bulk_candidate_and_fold_discovery_scan_243_records_once(self):
-        for index in range(243):
-            group = f"location-{index % 17}"
-            name = f"stable-tile-{index}"
-            folder = self.processed / group
-            folder.mkdir(exist_ok=True)
-            (folder / f"{name}.tif").touch()
-            (folder / f"{name}.npy").touch()
-            self.records.append(dict(working_dem=f"{group}/{name}.tif", group=group,
-                                     annotations=dict(verified=index < 6, painting=f"{group}/{name}.npy")))
-        self.publish()
-        with self.forbid_importer():
-            for operation in (evaluate.candidates, evaluate.folds):
-                with patch.object(core, "manifest_files", wraps=core.manifest_files) as discover:
-                    self.assertEqual(len(operation()), 6)
-                    self.assertEqual(discover.call_count, 1)
 
 
 if __name__ == "__main__":

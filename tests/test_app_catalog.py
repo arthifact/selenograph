@@ -15,8 +15,7 @@ from rasterio.transform import from_origin
 from streamlit.testing.v1 import AppTest
 
 from app import assistant_model as assistant
-from app import core, evaluate, paths
-from app import import_reference_maps as reference
+from app import core, paths
 
 
 class CatalogTests(unittest.TestCase):
@@ -43,8 +42,6 @@ class CatalogTests(unittest.TestCase):
             (paths, "LEGACY_DRAFT_DIR", self.root / "output/drafts"),
             (paths, "LEGACY_MIRRORED_DIR", self.root / "output"),
             (paths, "POSTER_DIR", self.root / "poster"),
-            (reference, "REFERENCE_ROOT", self.root / "references"),
-            (reference, "EXTRA", {"Nobile1-MS1": self.root / "missing.gpkg"}),
         ):
             patcher = patch.object(module, attr, value)
             patcher.start()
@@ -300,10 +297,10 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(core.model_files(), ["gbm", "rf", "unet"])
 
     def reference_snapshot(self, name="MM026_dem_5m"):
-        self.json(Path(reference.REFERENCE_ROOT) / "sites/mons-mouton/site.json",
+        self.json(self.root / "references/sites/mons-mouton/site.json",
                   {"site_id": "mons-mouton", "map_id": "MM026",
                    "original_vector": {"status": "not_bundled"}})
-        self.json(Path(reference.REFERENCE_ROOT) /
+        self.json(self.root / "references" /
                   "sites/mons-mouton/tiles/ref-0001/tile.json",
                   {"site_id": "mons-mouton", "legacy_name": name,
                    "layers": {"nac": {"path": "sites/mons-mouton/image.tif"}}})
@@ -312,44 +309,18 @@ class CatalogTests(unittest.TestCase):
         name = "MM026_dem_5m"
         dem, _ = self.public(name=name)
         self.reference_snapshot(name)
-        self.assertEqual(reference.reference_for(name), "MM026")
-        self.assertIn(name, reference.locked_maps())
-        self.assertIsNone(reference.vector_reference_for(name))
         cells = np.ones((core.GRID, core.GRID), np.uint8)
-        with patch.object(reference, "reference_pixels", side_effect=AssertionError("no polygons")):
-            labels, weights, _ = assistant.training_pixels(name, (120, 120), cells,
-                                                           dem_path=str(dem))
-            np.testing.assert_array_equal(labels, core.cells_to_labels(cells, (120, 120)))
-            self.assertTrue((weights == 1).all())
-            self.assertIsNone(evaluate.key_source(name))
-            self.assertIsNone(evaluate.answer_key(name))
+        labels, weights, _ = assistant.training_pixels(name, (120, 120), cells,
+                                                       dem_path=str(dem))
+        np.testing.assert_array_equal(labels, core.cells_to_labels(cells, (120, 120)))
+        self.assertTrue((weights == 1).all())
         # The old site field is also provenance, not a requirement for a vector file.
         self.json(self.dem_root / "working_dems.json", [{"site": "MM026", "working_dem": "a.tif"}])
-        self.assertIn("a", reference.locked_maps())
         app = AppTest.from_file(str(paths.PROJECT_ROOT / "selenograph.py"), default_timeout=60).run()
         self.assertFalse(app.exception)
         self.assertFalse(app.session_state.locked)
         self.assertFalse(app.radio[0].disabled)
         self.assertEqual(app.selectbox(key="selected_map").options, [name])
-
-    def test_source_reference_paths_are_not_live_catalog_companions(self):
-        self.reference_snapshot()
-        image = Path(reference.REFERENCE_ROOT) / "sites/mons-mouton/image.tif"
-        image.touch()
-        self.assertEqual(reference.reference_layer("MM026_dem_5m", "nac"), str(image))
-        self.assertIsNone(core.companion(core.dem_path("MM026_dem_5m"), "nac"))
-        self.assertEqual(core.dem_files(), [])
-        self.assertEqual(core.records(), [])
-        vector = Path(reference.REFERENCE_ROOT) / "sites/mons-mouton/original.gpkg"
-        vector.touch()
-        self.json(Path(reference.REFERENCE_ROOT) / "sites/mons-mouton/site.json",
-                  {"map_id": "MM026", "original_vector": {
-                      "status": "available", "path": "sites/mons-mouton/original.gpkg"}})
-        self.assertEqual(reference.source_map("MM026"), vector)
-        self.assertEqual(reference.vector_reference_for("MM026_dem_5m"), "MM026")
-        dem, _ = self.public(name="MM026_dem_5m")
-        self.assertEqual(core.companion(str(dem), "nac"),
-                         str(self.dem_root / "south/imagery/MM026_dem_5m-nac.tif"))
 
     def test_legacy_paintings_and_serialized_memory_keep_ids_after_catalog_move(self):
         name = "MM026_dem_5m"
@@ -403,16 +374,6 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual(json.loads(output.read_text()), ["public-dem"])
             self.assertEqual(core.test_maps(), ["public-dem"])
 
-    def test_evaluation_resolves_manifest_dem_not_flat_filename(self):
-        dem, _ = self.public()
-        labels = np.ones((120, 120), np.uint8)
-        features = np.ones((len(core.BASE_FEATS), 120, 120), np.float32)
-        with patch.object(evaluate, "answer_key", return_value=(labels, None)), \
-                patch.object(evaluate, "_features", return_value=(features, core.BASE_FEATS)) as build:
-            result = evaluate.inputs_for(["public-dem"])
-        self.assertEqual(result[0][0], "public-dem")
-        self.assertEqual(build.call_args.args[0], str(dem))
-
     def test_empty_catalog_explains_processed_dataset_installation(self):
         app = AppTest.from_file(str(paths.PROJECT_ROOT / "selenograph.py"), default_timeout=60).run()
         self.assertFalse(app.exception)
@@ -422,14 +383,6 @@ class CatalogTests(unittest.TestCase):
         self.assertIn("top-level dataset folder is a Section", instructions)
         self.assertIn("working_dems.json", instructions)
         self.assertNotIn("Put an elevation GeoTIFF", instructions)
-
-    def test_vector_coverage_without_painting_provenance_does_not_lock_public_maps(self):
-        self.public()
-        self.reference_snapshot("legacy-original")
-        reference.EXTRA["Nobile1-MS1"].touch()
-        with patch.object(reference, "_covered", return_value=("public-dem",)):
-            self.assertIn("public-dem", reference.tiles("Nobile1-MS1"))
-            self.assertEqual(reference.locked_maps(), {"legacy-original"})
 
     def test_all_backgrounds_are_visible_without_changing_training(self):
         self.public()

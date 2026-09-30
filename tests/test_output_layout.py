@@ -2,7 +2,6 @@
 
 Run: .venv/bin/python -B -m unittest tests.test_output_layout -v
 """
-import io
 import json
 import tempfile
 import unittest
@@ -17,8 +16,7 @@ from PIL import Image
 from rasterio.transform import from_origin
 
 from app import assistant_model as assistant
-from app import canvas, core, evaluate, evaluation, paths, pictures
-from app import import_reference_maps as importer
+from app import canvas, core, evaluation, paths, pictures
 from tests.test_dataset_pages import PageFixture
 
 
@@ -211,9 +209,8 @@ class OutputLayoutTests(unittest.TestCase):
                 core.write_map(core.output_file(name, "labels.tif"), labels, profile)
                 core.meta_set(name, verified=True)
                 self.assertEqual(Path(core.output_file(name, "labels.tif", existing=True)), expected_labels)
-                key = evaluate.answer_key(name)
-                assert key is not None
-                np.testing.assert_array_equal(key[0], labels)
+                with rasterio.open(expected_labels) as saved_labels:
+                    np.testing.assert_array_equal(saved_labels.read(1), labels)
         self.assertEqual(snapshot(self.processed), before)
         self.assertEqual({p.relative_to(self.saved) for p in self.saved.rglob("*") if p.is_file()},
                          {Path("site/alpha.v1_meta.json"), Path("other-site/alpha_meta.json")})
@@ -317,12 +314,12 @@ class OutputLayoutTests(unittest.TestCase):
         self.assertEqual(Path(core.output_file(self.name, "labels.tif", existing=True)), old_labels)
         self.assertEqual(Path(core.output_file(self.name, "map.tif", existing=True)), old_prediction)
         self.assertIsNone(core.painting_source(self.name, final=True)[1])
-        np.testing.assert_array_equal(evaluate.answer_key(self.name)[0], np.full_like(self.cells, 3))
+        self.assertTrue(core.has_saved_labels(self.name))
         self.assertEqual(core.seed_paintings(), [])
         self.assertEqual(snapshot(self.root), before)
         self.raster(self.canonical("labels.tif"), np.full_like(self.cells, 2))
         self.assertEqual(Path(core.output_file(self.name, "labels.tif", existing=True)), self.canonical("labels.tif"))
-        np.testing.assert_array_equal(evaluate.answer_key(self.name)[0], np.full_like(self.cells, 2))
+        self.assertTrue(core.has_saved_labels(self.name))
         prediction = Path(core.output_file(self.name, "map.tif", existing=True))
         self.assertEqual(prediction, self.canonical("map.tif"))
         self.assertFalse(prediction.exists())  # No stale prediction from the former folder.
@@ -380,19 +377,6 @@ class OutputLayoutTests(unittest.TestCase):
         self.assertEqual(core.meta_get(self.name)["label_status"], "reviewed")
         self.assertEqual(core.meta_get(self.name), core.meta_get(self.name, final=True))
 
-    def test_persistent_answer_keys_ignore_draft_verification_but_general_evaluation_uses_it(self):
-        self.install(bundled=True)
-        core.save_painting(self.name, self.cells, final=True)
-        for saved_verified in (True, False):
-            with self.subTest(saved_verified=saved_verified):
-                core.meta_set(self.name, verified=saved_verified)
-                saved_before = snapshot(self.saved)
-                core.meta_set(self.name, final=False, verified=not saved_verified)
-                self.assertEqual(evaluate.answer_key(self.name) is not None, saved_verified)
-                self.assertTrue(evaluation.catalog()[self.name]["available"])
-                self.assertEqual(evaluation.catalog()[self.name]["verified"], not saved_verified)
-                self.assertEqual(snapshot(self.saved), saved_before)
-
     def test_partial_metadata_overlays_legacy_then_canonical_over_bundled_defaults(self):
         self.install(bundled=True)
         self.json(self.legacy / self.name / "meta.json",
@@ -428,7 +412,6 @@ class OutputLayoutTests(unittest.TestCase):
         self.assertEqual(metadata["provenance"], {"origin": ["fixture"]})
         metadata["provenance"]["origin"].clear()
         self.assertEqual(core.meta_get(self.name)["provenance"], {"origin": ["fixture"]})
-        self.assertIsNone(evaluate.answer_key(self.name))
         self.assertEqual(snapshot(self.legacy), legacy_before)
         self.assertEqual(snapshot(self.processed), source_before)
 
@@ -477,7 +460,6 @@ class OutputLayoutTests(unittest.TestCase):
         self.assertFalse(core.load_accepted(self.name).any())
         self.assertFalse(core.load_confidence(self.name, final=True).any())
         self.assertEqual(core.painted_maps(), (set(), set()))
-        self.assertIsNone(evaluate.answer_key(self.name))
 
     def test_canonical_final_does_not_inherit_legacy_or_bundled_flags(self):
         self.install(bundled=True)
@@ -487,9 +469,9 @@ class OutputLayoutTests(unittest.TestCase):
         self.assertFalse(core.load_accepted(self.name).any())
         np.testing.assert_array_equal(core.load_confidence(self.name, final=True),
                                       np.where(self.cells > 0, core.SURE, 0))
-        key = evaluate.answer_key(self.name)
-        assert key is not None
-        np.testing.assert_array_equal(key[0], core.cells_to_labels(self.cells, self.cells.shape))
+        cells, eligible, _ = evaluation._painting(self.name)
+        np.testing.assert_array_equal(cells, self.cells)
+        np.testing.assert_array_equal(eligible, self.cells > 0)
 
     def test_orphan_canonical_draft_flags_do_not_attach_to_legacy_draft(self):
         self.install(bundled=True)
@@ -516,28 +498,6 @@ class OutputLayoutTests(unittest.TestCase):
             self.assertEqual((snapshot(self.legacy), snapshot(self.legacy_drafts)), before)
         self.assertFalse(core.load_accepted(self.name).any())
         np.testing.assert_array_equal(core.load_confidence(self.name), np.where(self.cells > 0, core.SURE, 0))
-
-    def test_legacy_tiff_only_key_uses_legacy_flags_despite_metadata_only_override(self):
-        self.install(bundled=True)
-        labels = np.full_like(self.cells, 3)
-        labels[:5] = 255
-        self.raster(self.legacy / self.name / "labels.tif", labels)
-        accepted = np.zeros(self.cells.shape, bool)
-        accepted[10:20] = True
-        confidence = np.full_like(self.cells, core.SURE)
-        confidence[30:40] = core.MOSTLY
-        self.array(self.legacy / self.name / "accepted.npy", accepted)
-        self.array(self.legacy / self.name / "confidence.npy", confidence)
-        core.meta_set(self.name, verified=True)
-        before = snapshot(self.root)
-        self.assertEqual(evaluate.key_source(self.name), "your verified labels")
-        key = evaluate.answer_key(self.name)
-        assert key is not None
-        expected = labels.copy()
-        expected[accepted | (confidence != core.SURE)] = 255
-        np.testing.assert_array_equal(key[0], expected)
-        self.assertEqual(evaluate.candidates(), {self.name: "your verified labels"})
-        self.assertEqual(snapshot(self.root), before)
 
     def check_tiff_only_saved_override(self, *, legacy):
         self.install(bundled=True)
@@ -567,12 +527,6 @@ class OutputLayoutTests(unittest.TestCase):
         self.assertFalse(cells.any())
         self.assertFalse(eligible.any())
         self.assertEqual(source, "none")
-        self.assertEqual(evaluate.key_source(self.name), "your verified labels")
-        key = evaluate.answer_key(self.name)
-        assert key is not None
-        expected = labels.copy()
-        expected[accepted | (confidence != core.SURE)] = 255
-        np.testing.assert_array_equal(key[0], expected)
         self.assertEqual(snapshot(self.root), before)
 
     def test_canonical_tiff_only_override_suppresses_bundled_cell_painting(self):
@@ -598,7 +552,7 @@ class OutputLayoutTests(unittest.TestCase):
                 core.painted_maps()
                 core.output_file(self.name, "thumb.png", existing=True)
                 core.painting_files(self.name, existing=True)
-                evaluate.answer_key(self.name)
+                evaluation.catalog()
         self.assertEqual(snapshot(self.root), before)
         self.assertFalse((self.output / self.parent).exists())
         self.assertFalse(self.saved.exists())
@@ -773,43 +727,6 @@ class OutputLayoutTests(unittest.TestCase):
             pass  # A rejected invalid bundle may be reported or skipped, but never copied.
         self.assertEqual(snapshot(self.root), before)
 
-    def test_importer_backup_and_new_draft_are_canonical_without_mutating_legacy(self):
-        self.install()
-        self.legacy_painting()
-        vector = self.root / "reference.gpkg"
-        vector.touch()
-        new_cells = np.full_like(self.cells, 3)
-        before = snapshot(self.legacy_drafts), snapshot(self.processed)
-        with patch("sys.argv", ["import_reference_maps", "--map", "MM026"]), \
-                patch.object(importer, "tiles", return_value=[self.name]), \
-                patch.object(importer, "source_map", return_value=vector), \
-                patch.object(importer, "paint", return_value=(new_cells, {})), \
-                redirect_stdout(io.StringIO()):
-            importer.main()
-        backups = list((self.drafts / self.parent).glob(f"{self.name}_*before-reference*.npy"))
-        self.assertEqual(len(backups), 1)
-        np.testing.assert_array_equal(np.load(backups[0], allow_pickle=False), self.cells)
-        np.testing.assert_array_equal(np.load(self.canonical("painting.npy", final=False), allow_pickle=False), new_cells)
-        self.assertFalse(core.load_accepted(self.name).any())
-        np.testing.assert_array_equal(core.load_confidence(self.name), np.full_like(self.cells, core.SURE))
-        self.assertEqual((snapshot(self.legacy_drafts), snapshot(self.processed)), before)
-        self.assertFalse(self.legacy.exists())
-        self.assertFalse(self.saved.exists())
-
-    def test_importer_dry_run_creates_no_backup_or_mirrored_directory(self):
-        self.install()
-        self.legacy_painting()
-        vector = self.root / "reference.gpkg"
-        vector.touch()
-        before = snapshot(self.root)
-        with patch("sys.argv", ["import_reference_maps", "--map", "MM026", "--dry-run"]), \
-                patch.object(importer, "tiles", return_value=[self.name]), \
-                patch.object(importer, "source_map", return_value=vector), \
-                patch.object(importer, "paint", return_value=(np.full_like(self.cells, 3), {})), \
-                redirect_stdout(io.StringIO()):
-            importer.main()
-        self.assertEqual(snapshot(self.root), before)
-
 
 class GalleryOutputLayoutTests(PageFixture):
     def test_save_replaces_gis_exports_separately_from_paintings(self):
@@ -923,7 +840,6 @@ class GalleryOutputLayoutTests(PageFixture):
         unchanged()
         self.assertFalse(core.meta_get("tile-one")["verified"])
         self.assertTrue(core.meta_get("tile-one", final=True)["verified"])
-        self.assertIsNotNone(evaluate.answer_key("tile-one"))
         self.gallery(app)
         self.assertFalse(app.checkbox(key="v_tile-one").value)
         app.checkbox(key="v_tile-one").check().run()
@@ -959,7 +875,6 @@ class GalleryOutputLayoutTests(PageFixture):
             np.testing.assert_array_equal(labels.read(1), core.cells_to_labels(expected, cells.shape))
         self.assertFalse(core.meta_get("tile-one", final=True)["verified"])
         self.assertFalse(Path(core.output_file("tile-one", "meta.json", final=False)).exists())
-        self.assertIsNone(evaluate.answer_key("tile-one"))
         self.assertEqual(snapshot(paths.MODEL_DIR), model_before_save)
         self.assertEqual(snapshot(self.processed), source_before)
         self.assertFalse((paths.LEGACY_OUT_DIR / "tile-one").exists())

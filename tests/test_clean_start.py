@@ -1,6 +1,6 @@
 """Clean-start UI and smoke regressions, using only disposable catalogs and artifacts.
 
-Run: uv run --no-project python -B -m unittest tests.test_clean_start -v
+Run: python -B -m unittest tests.test_clean_start -v
 """
 from contextlib import ExitStack, redirect_stdout
 import io
@@ -20,8 +20,7 @@ from PIL import Image
 from streamlit.testing.v1 import AppTest
 
 from app import assistant_model as assistant
-from app import canvas, core, evaluate, evaluation, paths
-from app import import_reference_maps as reference
+from app import canvas, core, evaluation, paths
 from tests import smoke_app_layout as smoke
 
 
@@ -54,7 +53,6 @@ class CleanStartTests(unittest.TestCase):
             (core, "LEGACY_MIRRORED_DIR", paths.LEGACY_MIRRORED_DIR),
             (core, "DRAFT_DIR", paths.DRAFT_DIR), (core, "TEST_MAPS_FILE", paths.TEST_MAPS_FILE),
             (core, "MODEL", "rf"), (assistant, "MODEL_DIR", paths.MODEL_DIR),
-            (reference, "REFERENCE_ROOT", paths.PROFESSOR_MAPS_DIR),
         ):
             self.stack.enter_context(patch.object(module, attr, value))
 
@@ -300,33 +298,6 @@ class CleanStartTests(unittest.TestCase):
         self.assertEqual(source_before, {str(p): p.read_bytes()
                                          for p in paths.DATA_DIR.rglob("*") if p.is_file()})
 
-    def test_selfcontained_vector_fallback_and_site_override(self):
-        fallback = paths.PROFESSOR_MAPS_DIR / reference.EXTRA["Nobile1-MS1"]
-        fallback.parent.mkdir(parents=True, exist_ok=True)
-        fallback.touch()
-        self.assertEqual(reference.source_map("Nobile1-MS1"), fallback)
-        original = fallback.with_name("relocated.gpkg")
-        original.touch()
-        site_json = fallback.parents[1] / "site.json"
-        self.write_json(site_json, {"map_id": "Nobile1-MS1", "original_vector": {
-            "path": str(original.relative_to(paths.PROFESSOR_MAPS_DIR))}})
-        self.assertEqual(reference.source_map("Nobile1-MS1"), original)
-        original.unlink()
-        self.assertEqual(reference.source_map("Nobile1-MS1"), fallback)
-        self.assertFalse(reference.source_map("MM026").is_file())
-
-    def test_import_skips_private_tiles_without_working_dems(self):
-        self.reference_snapshot()
-        vector = paths.PROFESSOR_MAPS_DIR / "original.gpkg"
-        vector.touch()
-        with patch("sys.argv", ["import_reference_maps", "--map", "MM026", "--dry-run"]), \
-                patch.object(reference, "source_map", return_value=vector), \
-                patch.object(reference, "paint", side_effect=AssertionError("No working DEM")), \
-                redirect_stdout(io.StringIO()) as output:
-            reference.main()
-        self.assertIn("no working DEM installed", output.getvalue())
-        self.assert_no_artifacts()
-
     def test_erase_on_blank_canvas_is_not_an_autosave(self):
         self.public()
         with smoke.read_only():
@@ -376,11 +347,8 @@ class CleanStartTests(unittest.TestCase):
         entry = dict(at="2026-01-01T12:00:00", backend="rf", trained_on=["old-map"],
                      maps={"public-a": 0.7}, **score)
 
-        with smoke.read_only(), \
-                patch.object(evaluate, "key_source", return_value="your verified labels"), \
-                patch.object(evaluate, "candidates", return_value={"public-a": "your verified labels"}), \
-                patch.object(evaluate, "history", return_value=[entry]), \
-                patch.object(evaluate, "inputs_for", side_effect=AssertionError("No model to predict")):
+        self.write_json(paths.OUTPUT_DIR / "test_scores.json", [entry])
+        with smoke.read_only():
             app = self.app()
             app.switch_page("app/app_pages/progress.py").run()
             self.assert_ok(app)
@@ -529,7 +497,7 @@ class CleanStartTests(unittest.TestCase):
                        lambda: existing.write_text("changed", encoding="utf-8"),
                        existing.unlink,
                        lambda: core.save_painting("public-a", np.zeros((core.GRID, core.GRID))),
-                       lambda: assistant.fit({}), lambda: evaluate.record(assistant.load()),
+                       lambda: assistant.fit({}),
                        lambda: evaluation.run(assistant.load(), ["public-a"]),
                        lambda: paths.POSTER_DIR.mkdir()):
             with self.subTest(action=action), self.assertRaisesRegex(AssertionError, "Read-only"):

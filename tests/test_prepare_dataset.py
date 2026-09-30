@@ -1,6 +1,6 @@
 """Offline synthetic tests; all filesystem fixtures live in TemporaryDirectory.
 
-Run: uv --cache-dir .uv-cache run --no-project python -m unittest discover -s tests -p test_prepare_dataset.py
+Run: python -m unittest discover -s tests -p test_prepare_dataset.py
 The preparation program and its interprocess-lock tests require Unix.
 """
 import hashlib

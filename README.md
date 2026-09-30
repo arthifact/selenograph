@@ -10,32 +10,60 @@ collections, poster work and historical backups stay outside Git.
 
 ## Start
 
-Install [Git LFS](https://git-lfs.com/) and [uv](https://docs.astral.sh/uv/).
-On macOS, Git LFS is available with `brew install git-lfs`.
-Then run:
+Install **[Python 3.12](https://www.python.org/downloads/)**.
+
+Download **`selenograph-working-dataset.zip`** from the
+[release page](https://github.com/arthifact/selenograph/releases/latest), extract it,
+and open a terminal in the `selenograph` folder. This ZIP includes the actual
+rasters and trained model; the original source ZIPs are not needed.
+
+Create and activate a Python environment:
+
+**Windows (PowerShell):**
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+**macOS / Linux:**
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+With that environment active, install the packages and start the app:
+
+```sh
+python -m pip install -r requirements.txt
+python -m streamlit run selenograph.py
+```
+
+Open **http://localhost:8501**. On later visits, activate the same environment and
+run the last command again. If you already use a Python 3.12 environment, you can
+install the requirements there instead.
+
+Random Forest is the default. The optional LightGBM backend uses
+`python -m pip install -r requirements-gbm.txt`; macOS also needs
+`brew install libomp`.
+
+### Get the project with Git
+
+For syncing work between computers, install [Git LFS](https://git-lfs.com/)
+and clone instead of downloading the ZIP. On macOS, Git LFS is available with
+`brew install git-lfs`.
 
 ```sh
 git lfs install
 git clone https://github.com/arthifact/selenograph.git
 cd selenograph
 git lfs pull
-uv venv --python 3.12
-uv pip install -r requirements.txt
-uv run --no-project streamlit run selenograph.py
 ```
 
-Open **http://localhost:8501**. The initial dataset download is about **1.4 GB**;
-Git LFS downloads the terrain rasters and trained model. Original source ZIPs are
-not needed to use the app. GitHub's ordinary source ZIP may contain LFS pointers;
-use the clone instructions above to get the complete working dataset.
-
-For a download without Git, use **`selenograph-working-dataset.zip`** from the
-[release page](https://github.com/arthifact/selenograph/releases/latest). It contains
-the actual rasters and model. Extract it, open the `selenograph` folder, and run the
-three `uv` setup commands above. Use Git when syncing work between computers.
-
-Random Forest is the default. To use the optional LightGBM backend, install
-`requirements-gbm.txt`; macOS also needs `brew install libomp`.
+Then follow the Python setup above. The processed dataset and model download is
+about **1.6 GB**. Use the complete release ZIP or Git LFS; GitHub's ordinary source
+ZIP may contain pointers instead of the large data files.
 
 ## Paint, save and train
 
@@ -75,12 +103,12 @@ git commit -m "Save mapping progress"
 git push
 ```
 
-On the other computer, pull before starting work:
+On the other computer, activate your Python environment and pull before starting work:
 
 ```sh
 git pull --ff-only
 git lfs pull
-uv run --no-project streamlit run selenograph.py
+python -m streamlit run selenograph.py
 ```
 
 Training status compares relative paths and file contents, so changing computers
@@ -121,8 +149,8 @@ Rebuilding is optional. Download the regional ZIPs into `data/raw_data/` as
 explained in [data/sources.md](data/sources.md), then run:
 
 ```sh
-uv run --no-project python data/prepare_dataset.py
-uv run --no-project python data/prepare_dataset.py --verify
+python data/prepare_dataset.py
+python data/prepare_dataset.py --verify
 ```
 
 The preparation script creates the processed layout and reuses completed regions.
@@ -130,12 +158,12 @@ Verification checks against the original downloads. To check the installed app
 without those downloads:
 
 ```sh
-uv run --no-project python -B -m tests.smoke_app_layout
+python -B -m tests.smoke_app_layout
 ```
 
 The smoke check browses the app without editing paintings, exporting files or
 training. Run the test suite with:
 
 ```sh
-uv run --no-project python -B -m unittest discover -s tests -q
+python -B -m unittest discover -s tests -q
 ```

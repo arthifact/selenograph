@@ -64,7 +64,7 @@ Follow [data/sources.md](../data/sources.md): download the regional ZIPs into
 `data/raw_data/` without extracting them, then run:
 
 ```sh
-uv run --no-project python data/prepare_dataset.py
+python data/prepare_dataset.py
 ```
 
 The script creates missing processed directories, aligns companion layers to the
@@ -75,7 +75,7 @@ same command. Preparation does not alter your paintings or train a model.
 To verify against the original ZIPs:
 
 ```sh
-uv run --no-project python data/prepare_dataset.py --verify
+python data/prepare_dataset.py --verify
 ```
 
 The older `raw_data/essentials/` input layout is also accepted. Raw preparation

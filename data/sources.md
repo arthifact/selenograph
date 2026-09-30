@@ -6,7 +6,7 @@ If you want to rebuild the processed data, download all regional ZIPs and put th
 directly in `data/raw_data/`, without extracting them. Then run from the project root:
 
 ```sh
-uv run --no-project python data/prepare_dataset.py
+python data/prepare_dataset.py
 ```
 
 The script creates `data/processed_data/` and organizes the rasters into site

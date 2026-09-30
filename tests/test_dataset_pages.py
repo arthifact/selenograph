@@ -20,8 +20,7 @@ from PIL import Image
 from streamlit.testing.v1 import AppTest
 
 from app import assistant_model as assistant
-from app import canvas, core, evaluate, paths, pictures
-from app import import_reference_maps as private_catalog
+from app import canvas, core, paths, pictures
 from tests import test_clean_start as clean
 from tests.smoke_app_layout import ENTRYPOINT, read_only
 
@@ -89,7 +88,6 @@ class PageFixture(unittest.TestCase):
             return app.button(key="update_model")
         return next(b for b in app.button if b.label == label)
 
-
     def app(self, section=None):
         app = AppTest.from_file(str(ENTRYPOINT), default_timeout=30)
         if section is not None:
@@ -132,10 +130,7 @@ class DatasetPagesTests(PageFixture):
         third = self.dataset("tile-three", "survey", "ridge", bundled=True)
         outside = self.root / "data/reference_data/working_dems.json"
         self.fixture.write_json(outside, [{"working_dem": first, "section": "private-only"}])
-        with self.browsing(), patch.object(st, "navigation", wraps=st.navigation) as navigation, \
-                patch.object(private_catalog, "locked_maps", side_effect=AssertionError("No private locks")), \
-                patch.object(private_catalog, "reference_records", side_effect=AssertionError("No private catalog")), \
-                patch.object(private_catalog, "vector_reference_for", side_effect=AssertionError("No private lookup")):
+        with self.browsing(), patch.object(st, "navigation", wraps=st.navigation) as navigation:
             app = self.app("Reference data")  # Stale values cannot reopen the removed branch.
             self.assertEqual([p.title for p in navigation.call_args.args[0]], ["Paint", "Gallery", "Progress"])
             self.assertEqual(app.selectbox(key="map_section").options, ["All", "atlas", "survey"])
@@ -376,7 +371,6 @@ class DatasetPagesTests(PageFixture):
         self.assert_ok(app)
         self.assertFalse(core.meta_get("tile-one")["verified"])
         self.assertTrue(core.meta_get("tile-one", final=True)["verified"])
-        self.assertIsNotNone(evaluate.answer_key("tile-one"))
         self.assertEqual(list(Path(core.out_dir("tile-one", final=False)).iterdir()),
                          [Path(core.output_file("tile-one", "meta.json", final=False))])
         app.switch_page("app/app_pages/paint.py").run()
@@ -412,8 +406,7 @@ class DatasetPagesTests(PageFixture):
         for name in ("held", "neighbour", "editable"):
             self.dataset(name, bundled=True)
         core.set_test_maps(["held"])
-        with patch.object(core, "held_out_maps", side_effect=AssertionError("No persistent holdouts")), \
-                patch.object(evaluate, "history", side_effect=AssertionError("No legacy scores in Paint")):
+        with patch.object(core, "held_out_maps", side_effect=AssertionError("No persistent holdouts")):
             with self.browsing():
                 app = self.gallery()
                 for name in ("held", "neighbour", "editable"):

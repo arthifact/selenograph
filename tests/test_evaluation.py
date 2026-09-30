@@ -16,7 +16,7 @@ from rasterio.crs import CRS
 from rasterio.warp import transform_bounds
 
 from app import assistant_model as assistant
-from app import core, evaluate, evaluation, paths
+from app import core, evaluation, paths
 from tests.raster_fixtures import TRANSFORM, raster, sha, write_json
 
 
@@ -514,8 +514,6 @@ class ReportDiscoveryTests(unittest.TestCase):
                 patch.object(core, "test_maps", return_value=[]), \
                 patch.object(core, "held_out_maps", return_value=set()), \
                 patch.object(core, "painted_maps", return_value=(set(), set())), \
-                patch.object(evaluate, "history", return_value=[]), \
-                patch.object(evaluate, "candidates", return_value={}), \
                 patch.object(evaluation, "latest_report", wraps=evaluation.latest_report) as latest:
             app = AppTest.from_string(entry, default_timeout=30).run()
 

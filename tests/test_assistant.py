@@ -14,7 +14,7 @@ from rasterio.transform import from_origin
 from streamlit.testing.v1 import AppTest
 
 from app import assistant_model as assistant
-from app import core, evaluate, paths, pictures
+from app import core, evaluation, paths, pictures
 from app.paths import PROJECT_ROOT
 
 
@@ -46,10 +46,7 @@ class AssistantTests(unittest.TestCase):
                                     (paths, "LEGACY_MIRRORED_DIR", self.root / "output"),
                                     (paths, "POSTER_DIR", self.root / "poster"),
                                     (core, "MODEL", "rf"),
-                                    (assistant, "MODEL_DIR", str(self.root / "models")),
-                                    (evaluate.reference, "REFERENCE_ROOT", self.root / "references"),
-                                    (evaluate.reference, "EXTRA", {
-                                        "Nobile1-MS1": self.root / "missing.gpkg"})):
+                                    (assistant, "MODEL_DIR", str(self.root / "models"))):
             context = patch.object(module, key, value)
             context.start()
             self.addCleanup(context.stop)
@@ -225,36 +222,12 @@ class AssistantTests(unittest.TestCase):
         self.assertTrue(assistant.pending(bundle, "a", self.cells))   # now all sure: changed
 
     def test_imported_maps_teach_only_their_painting_without_vector_lookup(self):
-        from app import import_reference_maps
-
         mine = self.cells.copy()
         mine[0:10, 0:10] = 3
-        with patch.object(import_reference_maps, "vector_reference_for") as lookup, \
-                patch.object(import_reference_maps, "reference_pixels") as pixels, \
-                patch.object(import_reference_maps, "paint") as paint:
-            lab, w, strata = assistant.training_pixels("a", (240, 240), mine, dem_path="a.tif")
-        lookup.assert_not_called()
-        pixels.assert_not_called()
-        paint.assert_not_called()
+        lab, w, strata = assistant.training_pixels("a", (240, 240), mine, dem_path="a.tif")
         np.testing.assert_array_equal(lab, core.cells_to_labels(mine, (240, 240)))
         np.testing.assert_array_equal(strata, lab)
         np.testing.assert_array_equal(w, (lab != 255).astype(np.float32))
-
-    def test_small_craters_are_scored_against_false_alarms(self):
-        key = np.full((240, 240), 1, np.uint8)                # plain smooth highlands...
-        small = np.zeros((240, 240), bool)
-        small[100:110, 100:110] = True                        # ...with one small crater
-        key[small] = 3
-        pred = key.copy()
-        pred[100:105, 100:110] = 1                            # finds half the crater,
-        pred[:24] = 3                                         # and calls a tenth shadowed
-        maps = [("t", self.X, core.BASE_FEATS, key, small)]
-        with patch.object(evaluate, "test_inputs", return_value=maps), \
-                patch.object(evaluate.assistant_model, "predict", return_value=pred):
-            result = evaluate.score({"model": object(), "samples": {}})
-        self.assertEqual(result["small_craters"]["found"], 0.5)
-        self.assertEqual(result["small_craters"]["on_highlands"],
-                         round(24 * 240 / (240 * 240 - 100), 3))
 
     def test_painted_maps_are_found_for_the_map_list(self):
         core.save_painting("a", self.cells)
@@ -304,29 +277,6 @@ class AssistantTests(unittest.TestCase):
             self.assertEqual(sorted(refitted["samples"]), ["a", "b"])
             self.assertNotEqual(refitted["revision"], bundle["revision"])
             self.assertEqual(assistant.refit()["revision"], refitted["revision"])
-
-    def test_scores_on_the_test_maps_are_logged(self):
-        bundle, _ = self.update("a", self.cells)
-        pred = assistant.predict(bundle, self.X, core.BASE_FEATS)
-        wrong = np.where(pred == 1, 2, pred).astype(np.uint8)  # its unit 1 is really unit 2
-        maps = [("t1", self.X, core.BASE_FEATS, pred, None),
-                ("t2", self.X, core.BASE_FEATS, wrong, None)]
-        with patch.object(core, "test_maps", return_value=["t1", "t2"]), \
-                patch.object(evaluate, "test_inputs", return_value=maps):
-            entry = evaluate.record(bundle)
-            self.assertEqual(entry["maps"]["t1"], 1.0)
-            self.assertLess(entry["maps"]["t2"], 1.0)
-            self.assertAlmostEqual(entry["accuracy"], (1 + entry["maps"]["t2"]) / 2, places=2)
-            self.assertEqual(entry["trained_on"], ["a"])
-            self.assertEqual([e["accuracy"] for e in evaluate.history()], [entry["accuracy"]])
-            self.assertEqual(json.loads(next((paths.OUTPUT_DIR / "evaluations").glob("*.json")).read_text()), entry)
-            evaluate.record(bundle)
-            reports = list((paths.OUTPUT_DIR / "evaluations").iterdir())
-            self.assertEqual(len(reports), 2)
-            self.assertTrue(all(p.suffix == ".json" for p in reports))
-            self.assertEqual({p.name for p in Path(assistant.MODEL_DIR).iterdir()}, {f"{core.MODEL}.joblib"})
-        with patch.object(core, "test_maps", return_value=["t1"]):   # other test maps:
-            self.assertEqual(evaluate.history(), [])                  # not comparable
 
     def test_smart_fill_takes_the_model_outline(self):
         g = core.GRID
@@ -535,7 +485,7 @@ class AssistantTests(unittest.TestCase):
         app = open_app()
         app.selectbox(key="selected_map").select(core.dem_path("unverified")).run()
         self.assertFalse(app.checkbox(key="verified_unverified").value)
-        with patch.object(evaluate, "record", side_effect=AssertionError("Training must not evaluate")), \
+        with patch.object(evaluation, "run", side_effect=AssertionError("Training must not evaluate")), \
                 patch.object(core, "save_painting", side_effect=AssertionError("Training must not save paintings")), \
                 patch.object(assistant, "retrain", wraps=assistant.retrain) as retrain:
             for _ in range(2):
@@ -550,7 +500,7 @@ class AssistantTests(unittest.TestCase):
                 self.assertFalse(app.button(key="update_model").disabled)
                 self.assertFalse(app.success)
             self.assertEqual(retrain.call_count, 2)
-        self.assertEqual(evaluate.history(), [])
+        self.assertFalse((paths.OUTPUT_DIR / "evaluations").exists())
         self.assertFalse(Path(core.output_file("a", "labels.tif")).exists())
 
     def test_evaluation_selection_and_run_leave_active_training_unchanged(self):
@@ -568,7 +518,6 @@ class AssistantTests(unittest.TestCase):
         self.assertEqual([w.key for w in progress.multiselect], ["evaluation_maps"])
         self.assertEqual(core.test_maps(), [])
         self.assertEqual(self.artifact(), before)
-        self.assertEqual(evaluate.history(), [])
         next(b for b in progress.button if b.label == "Evaluate").click().run()
         self.assertFalse(progress.exception)
         self.assertFalse(progress.error)
@@ -576,7 +525,6 @@ class AssistantTests(unittest.TestCase):
         self.assertEqual(core.test_maps(), [])
         self.assertEqual(sorted(assistant.load()["samples"]), ["a", "b"])
         self.assertEqual(self.artifact(), before)
-        self.assertEqual(evaluate.history(), [])
         reports = list((paths.OUTPUT_DIR / "evaluations").glob("evaluation-*.json"))
         self.assertEqual(len(reports), 1)
         report = json.loads(reports[0].read_text())

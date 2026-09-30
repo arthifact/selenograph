@@ -1,7 +1,7 @@
 """
 Selenograph — a lunar geologic unit mapper.
 
-  uv run --no-project streamlit run selenograph.py
+  python -m streamlit run selenograph.py
 
 Selenography is the mapping of the Moon's surface. Paint and review installed
 processed datasets, browse bundled and saved annotations, and follow held-out

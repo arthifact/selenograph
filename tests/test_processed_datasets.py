@@ -340,12 +340,9 @@ class ProcessedDatasetTests(unittest.TestCase):
         self.raster("nested/unlisted.tif")
         dem = self.raster("local.tif")
         self.assertEqual(core.dem_files(), [str(dem)])
-        from app import import_reference_maps
-        with patch.object(import_reference_maps, "reference_layer",
-                          side_effect=AssertionError("Must not auto-discover reference_data")):
-            self.assertIsNone(core.companion(str(dem), "nac"))
-            image = self.raster("local_nac.tif")
-            self.assertEqual(core.companion(str(dem), "nac"), str(image))
+        self.assertIsNone(core.companion(str(dem), "nac"))
+        image = self.raster("local_nac.tif")
+        self.assertEqual(core.companion(str(dem), "nac"), str(image))
         self.assertEqual(core.dem_files(), [str(dem)])
 
     def test_annotation_paths_metadata_and_records_are_independent_copies(self):

@@ -26,8 +26,7 @@ import streamlit as st
 from streamlit.testing.v1 import AppTest
 
 from app import assistant_model as assistant
-from app import canvas, core, evaluate, evaluation, paths
-from app import import_reference_maps as reference
+from app import canvas, core, evaluation, paths
 
 
 ENTRYPOINT = Path(__file__).resolve().parents[1] / "selenograph.py"
@@ -62,7 +61,7 @@ def read_only():
         paths.PROJECT_ROOT, core.DEM_DIR, paths.OUTPUT_DIR, core.OUT_DIR, core.MAP_DIR, core.LEGACY_OUT_DIR, core.DRAFT_DIR,
         core.LEGACY_DRAFT_DIR, core.LEGACY_MIRRORED_DIR,
         assistant.MODEL_DIR, paths.POSTER_DIR, paths.REFERENCE_DIR,
-        paths.PROFESSOR_MAPS_DIR, reference.REFERENCE_ROOT, core.test_maps_path())]
+        paths.PROFESSOR_MAPS_DIR, core.test_maps_path())]
     attempts = []
 
     def refuse(action):
@@ -111,9 +110,7 @@ def read_only():
         for module, names in (
             (core, ("save_painting", "seed_paintings", "write_map", "meta_set", "set_test_maps", "train")),
             (assistant, ("update", "retrain", "save", "fit", "refit")),
-            (evaluate, ("record",)),
             (evaluation, ("run",)),
-            (reference, ("main",)),
             (core.backend(), ("fit", "fit_rows")),
             (np, ("save", "savez", "savez_compressed")),
             (assistant.joblib, ("dump",)),
@@ -130,7 +127,6 @@ def read_only():
             guards.enter_context(patch.object(os, name, mutation(getattr(os, name), count)))
         yield attempts
         assert not attempts, attempts
-
 
 
 def main(*, expected_sections=None, expected_verified_bundles=None):
