@@ -200,10 +200,16 @@ def manifest_files():
     return sorted(found, key=lambda p: (len(p.relative_to(root).parts), str(p)))
 
 
+def _within(path, root):
+    """path.is_relative_to(root) for resolved paths, without building every parent."""
+    path, root = Path(path).parts, Path(root).parts
+    return path[:len(root)] == root
+
+
 def _catalog_path(root, value, parent=None):
     """Resolve paths before checking containment, including symlink and ../ escapes."""
     path = ((parent or root) / value).resolve()
-    if not path.is_relative_to(root):
+    if not _within(path, root):
         raise ValueError(f"Catalog path {value!r} resolves outside DEM_DIR: {path}")
     if any(part.startswith(".") for part in path.relative_to(root).parts):
         raise ValueError(f"Catalog path {value!r} refers to hidden/unpublished data: {path}")
@@ -518,7 +524,7 @@ def _output_path(root, relative):
     root = Path(root).resolve()
     target = root / relative
     resolved = target.resolve()
-    if not resolved.is_relative_to(root) or resolved.is_relative_to(Path(DEM_DIR).resolve()):
+    if not _within(resolved, root) or _within(resolved, Path(DEM_DIR).resolve()):
         raise ValueError(f"Output path must stay under its output root and outside processed data: {target}")
     return str(target)
 
@@ -551,7 +557,7 @@ def _mirrored_output_file(name, filename, final=True):
     folder = root / _output_relative_dir(name)
     for reserved in (OUT_DIR, DRAFT_DIR, MAP_DIR, LEGACY_OUT_DIR, LEGACY_DRAFT_DIR):
         reserved = Path(reserved).resolve()
-        if reserved.is_relative_to(root) and folder.resolve().is_relative_to(reserved):
+        if _within(reserved, root) and _within(folder.resolve(), reserved):
             return None
     if not final:
         filename = {"painting.npy": "draft.npy", "accepted.npy": "draft.accepted.npy",
@@ -715,7 +721,7 @@ def seed_paintings(names=None):
 
 def _painting_source(name, final=None):
     """Resolve once, retaining bundle identity even though its public final flag is True."""
-    candidates = [(painting_files(name, saved, existing=True)[0], saved, False)
+    candidates = [(output_file(name, "painting.npy", existing=True, final=saved), saved, False)
                   for saved in ((False, True) if final is None else (final,))]
     # A user's raster-only save must not silently resurrect the bundle's cell labels.
     if final is not False and not os.path.isfile(output_file(name, "labels.tif", existing=True)):

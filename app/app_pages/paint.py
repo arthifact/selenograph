@@ -6,6 +6,7 @@ the model's own unit): they stay marked as approved and teach the model at half 
 """
 import datetime
 import os
+from pathlib import Path
 
 
 import numpy as np
@@ -210,19 +211,79 @@ if assistant_changed:
     ss.assistant = run(assistant_model.load)
     ss.assistant_stamp = model_stamp
     ss.pop("conf_for", None)
-painted, _ = core.painted_maps()
 
+
+def disk_files():
+    """(path, revision, output?) for every dataset and output file.
+
+    Statting a few thousand files takes milliseconds; resolving every map's status
+    or training inputs takes seconds. Any change here refreshes those caches.
+    """
+    outputs = {os.fspath(root) for root in (core.OUT_DIR, core.DRAFT_DIR, core.MAP_DIR,
+                                             core.LEGACY_OUT_DIR, core.LEGACY_DRAFT_DIR,
+                                             core.LEGACY_MIRRORED_DIR)}
+    found = {}
+    for root in (os.fspath(core.DEM_DIR), *outputs):
+        for directory, _, names in os.walk(root):
+            for n in names:
+                path = os.path.join(directory, n)
+                try:
+                    stat = os.stat(path)
+                    revision = (stat.st_mtime_ns, stat.st_ctime_ns, stat.st_size, stat.st_ino)
+                except FileNotFoundError:
+                    revision = None
+                found[path] = (revision, root in outputs)
+    return [(path, revision, output) for path, (revision, output) in sorted(found.items())]
+
+
+def disk_stamp(files, skip=None):
+    """A key for `files`, leaving out map `skip`'s outputs: each stroke rewrites them."""
+    def own(path):
+        return skip and (skip in Path(path).parts[:-1] or
+                         os.path.basename(path).startswith((f"{skip}_", f"{skip}.")))
+    return hash(tuple((path, revision) for path, revision, output in files
+                      if not (output and own(path))))
+
+
+def status(name, painted):
+    labels = []
+    if painted:
+        labels.append("painted")
+    if core.meta_get(name).get("verified"):
+        labels.append("verified")
+    return labels
+
+
+@st.cache_data(show_spinner=False, max_entries=4)
+def statuses(dems, stamp):
+    """Status labels for the map list, recomputed only when a file changes."""
+    painted, _ = core.painted_maps()
+    return {path: status(core.dem_name(path), core.dem_name(path) in painted) for path in dems}
+
+
+@st.cache_data(show_spinner=False, max_entries=4)
+def training_status(model_stamp, model_revision, open_verified, stamp, _bundle):
+    """Verified maps and whether Update would change the model, keyed on the model and
+    the files it reads (`open_verified` and `stamp`); `_bundle` is the model itself.
+    An unverified open map cannot teach the model, so its strokes keep this cached."""
+    maps = assistant_model.verified_maps()
+    return maps, assistant_model.training_changed(_bundle, maps)
+
+
+# The open map's label is read live instead, so painting it does not refresh the list.
+open_map = ss.get("selected_map")
+files = disk_files()
+map_status = statuses(tuple(dems), disk_stamp(files, open_map and core.dem_name(open_map)))
+if open_map in map_status:
+    open_name = core.dem_name(open_map)
+    map_status = dict(map_status)
+    map_status[open_map] = status(open_name, bool(core.load_painting(open_name).any()))
 
 
 def marked(path):
     """Keep the DEM path as the value and append metadata-only status labels."""
     n = core.dem_name(path)
-    labels = []
-    if n in painted:
-        labels.append("painted")
-    if core.meta_get(n).get("verified"):
-        labels.append("verified")
-    return f"{n} — {', '.join(labels)}" if labels else n
+    return f"{n} — {', '.join(map_status[path])}" if map_status[path] else n
 
 
 with st.sidebar:
@@ -299,9 +360,10 @@ has_existing_labels = any(path and os.path.isfile(path) for path in (
     core.annotation_path(name, "painting"), core.annotation_path(name, "labels")))
 has_staged_metadata = os.path.isfile(core.output_file(name, "meta.json", final=False))
 is_verified = metadata.get("verified") is True
-verified_training_maps = assistant_model.verified_maps()
+verified_training_maps, training_changed = run(
+    training_status, ss.assistant_stamp, ss.assistant["revision"], is_verified,
+    disk_stamp(files, None if is_verified else name), ss.assistant)
 can_update = bool(verified_training_maps or ss.assistant["samples"])
-training_changed = run(assistant_model.training_changed, ss.assistant, verified_training_maps)
 can_save = editable and (has_painting or has_existing_labels or has_staged_metadata
                          or ss.assistant["model"] is not None)
 smart_off = not editable or ss.pred is None
