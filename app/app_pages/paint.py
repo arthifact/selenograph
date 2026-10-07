@@ -167,7 +167,7 @@ ss = st.session_state
 ss.setdefault("layers", ["Painting"])
 ss.setdefault("tool", "paint")
 ss.setdefault("certainty", core.SURE)
-dems = core.dem_files()
+dems = all_dems = core.dem_files()
 catalog = {core.dem_name(r["working_dem"]): r for r in core.records()}
 
 
@@ -236,54 +236,70 @@ def disk_files():
     return [(path, revision, output) for path, (revision, output) in sorted(found.items())]
 
 
-def disk_stamp(files, skip=None):
-    """A key for `files`, leaving out map `skip`'s outputs: each stroke rewrites them."""
-    def own(path):
-        return skip and (skip in Path(path).parts[:-1] or
-                         os.path.basename(path).startswith((f"{skip}_", f"{skip}.")))
-    return hash(tuple((path, revision) for path, revision, output in files
-                      if not (output and own(path))))
+def disk_keys(files, maps):
+    """One revision key per map for its own output files, and one for everything else
+    (the dataset, manifests and shared outputs). A file is a map's own when a folder
+    or the start of its name is that map's ID, so a stroke changes only that key."""
+    own, shared = {name: [] for name in maps}, []
+    for path, revision, output in files:
+        owners = set()
+        if output:
+            base = os.path.basename(path)
+            owners = {part for part in Path(path).parts[:-1] if part in own}
+            owners |= {base[:i] for i, ch in enumerate(base) if ch in "_." and base[:i] in own}
+        for name in owners:
+            own[name].append((path, revision))
+        if not owners:
+            shared.append((path, revision))
+    return {name: hash(tuple(v)) for name, v in own.items()}, hash(tuple(shared))
 
 
-def status(name, painted):
-    labels = []
-    if painted:
-        labels.append("painted")
-    if core.meta_get(name).get("verified"):
-        labels.append("verified")
-    return labels
+@st.cache_resource
+def map_store():
+    """(map ID, what) -> (revision key, value), shared by sessions and kept between reruns."""
+    return {}
+
+
+def per_map(what, name, key, compute):
+    """`compute()` for one map, re-read only when that map's files (or shared ones) change."""
+    store = map_store()
+    cached = store.get((what, name))
+    if cached is None or cached[0] != key:
+        store[(what, name)] = cached = (key, compute())
+    return cached[1]
+
+
+def map_status(name, key):
+    """(list labels, verified for training) for one map."""
+    def compute():
+        verified = core.meta_get(name).get("verified")
+        labels = ["painted"] if core.load_painting(name).any() else []
+        return labels + ["verified"] * bool(verified), verified is True
+    return per_map("status", name, key, compute)
 
 
 @st.cache_data(show_spinner=False, max_entries=4)
-def statuses(dems, stamp):
-    """Status labels for the map list, recomputed only when a file changes."""
-    painted, _ = core.painted_maps()
-    return {path: status(core.dem_name(path), core.dem_name(path) in painted) for path in dems}
+def training_status(model_stamp, model_revision, maps, key, _bundle):
+    """Whether Update would change the model, keyed on the model and on the files of
+    verified maps only; `_bundle` is the model itself. Unchanged maps are not re-read."""
+    return assistant_model.training_changed(_bundle, maps, lambda name, path: per_map(
+        "training", name, (map_keys[name], shared_key, path),
+        lambda: assistant_model.current_training_input(name, path)))
 
 
-@st.cache_data(show_spinner=False, max_entries=4)
-def training_status(model_stamp, model_revision, open_verified, stamp, _bundle):
-    """Verified maps and whether Update would change the model, keyed on the model and
-    the files it reads (`open_verified` and `stamp`); `_bundle` is the model itself.
-    An unverified open map cannot teach the model, so its strokes keep this cached."""
-    maps = assistant_model.verified_maps()
-    return maps, assistant_model.training_changed(_bundle, maps)
-
-
-# The open map's label is read live instead, so painting it does not refresh the list.
-open_map = ss.get("selected_map")
-files = disk_files()
-map_status = statuses(tuple(dems), disk_stamp(files, open_map and core.dem_name(open_map)))
-if open_map in map_status:
-    open_name = core.dem_name(open_map)
-    map_status = dict(map_status)
-    map_status[open_map] = status(open_name, bool(core.load_painting(open_name).any()))
+all_maps = {core.dem_name(d): d for d in all_dems}
+map_keys, shared_key = disk_keys(disk_files(), all_maps)
+statuses = {n: map_status(n, (map_keys[n], shared_key)) for n in all_maps}
+# Only verified maps teach the model; painting any other map keeps this key.
+verified_training_maps = {n: d for n, d in all_maps.items() if statuses[n][1]}
+training_key = hash((shared_key, *((n, map_keys[n]) for n in verified_training_maps)))
 
 
 def marked(path):
     """Keep the DEM path as the value and append metadata-only status labels."""
     n = core.dem_name(path)
-    return f"{n} — {', '.join(map_status[path])}" if map_status[path] else n
+    labels = statuses[n][0]
+    return f"{n} — {', '.join(labels)}" if labels else n
 
 
 with st.sidebar:
@@ -320,7 +336,6 @@ if ss.get("cells") is None or not {"accepted", "confidence", "locked"} <= ss.key
     ss.accepted = core.load_accepted(name)       # cells filled from a prediction
     ss.confidence = core.load_confidence(name)   # how sure you were of each cell
     ss.locked = bool(record.get("read_only"))
-    ss.assistant = run(assistant_model.load)
     with st.spinner("Generating a starting map..."):
         ss.pred = run(assistant_model.predict, ss.assistant, Xs, names)
     ss.hist = []                     # (cells, accepted, confidence) before each step
@@ -360,9 +375,8 @@ has_existing_labels = any(path and os.path.isfile(path) for path in (
     core.annotation_path(name, "painting"), core.annotation_path(name, "labels")))
 has_staged_metadata = os.path.isfile(core.output_file(name, "meta.json", final=False))
 is_verified = metadata.get("verified") is True
-verified_training_maps, training_changed = run(
-    training_status, ss.assistant_stamp, ss.assistant["revision"], is_verified,
-    disk_stamp(files, None if is_verified else name), ss.assistant)
+training_changed = run(training_status, ss.assistant_stamp, ss.assistant["revision"],
+                       verified_training_maps, training_key, ss.assistant)
 can_update = bool(verified_training_maps or ss.assistant["samples"])
 can_save = editable and (has_painting or has_existing_labels or has_staged_metadata
                          or ss.assistant["model"] is not None)

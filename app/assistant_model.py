@@ -240,17 +240,25 @@ def _training_input(path, cells, confidence, accepted):
                                for p, children in dependencies.items()})
 
 
+def current_training_input(name, path):
+    """What a verified map would teach now, or None while it has no painting."""
+    cells = core.load_painting(name)
+    if not cells.any():
+        return None
+    return _training_input(path, cells, core.load_confidence(name), core.load_accepted(name))
+
+
 @core.catalog_snapshot()
-def training_changed(bundle, maps=None):
-    """Check all current training inputs without building features or fitting a model."""
+def training_changed(bundle, maps=None, current_input=current_training_input):
+    """Check all current training inputs without building features or fitting a model.
+    `current_input` may be a cached current_training_input."""
     maps = verified_maps() if maps is None else maps
     samples = bundle.get("samples", {})
     current = {}
-    for name in _training_sources(samples, maps):
-        cells = core.load_painting(name)
-        if cells.any():
-            current[name] = _training_input(maps[name], cells, core.load_confidence(name),
-                                             core.load_accepted(name))
+    for name, path in maps.items():
+        state = current_input(name, path)
+        if state is not None:
+            current[name] = state
     if bundle.get("schema") != schema():
         return bool(current or samples)
     if "training_inputs" in bundle:

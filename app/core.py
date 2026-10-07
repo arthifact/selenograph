@@ -838,7 +838,12 @@ def load_confidence(name, final=None):
 def _feature_plan(dem_path):
     """Iterative dependency ordering: reject cycles before any heavy terrain builds."""
     root = Path(DEM_DIR).resolve()
-    records_by_path = {record_path(r): r for r in records()}
+
+    def record_at(path):
+        # Map IDs are unique, so look up by ID and confirm the path, not every record.
+        record = map_record(dem_name(path))
+        return record if record and record_path(record) == path else {}
+
     target = str(Path(dem_path).resolve())
     dependencies, state, order = {}, {}, []
     pending = [(target, False)]
@@ -853,7 +858,7 @@ def _feature_plan(dem_path):
         if state.get(path) == 2:
             continue
         state[path] = 1
-        sources = records_by_path.get(path, {}).get("feature_sources", [])
+        sources = record_at(path).get("feature_sources", [])
         dependencies[path] = [str(_catalog_path(root, p)) for p in sources]
         pending.append((path, True))
         pending.extend((p, False) for p in reversed(dependencies[path]))

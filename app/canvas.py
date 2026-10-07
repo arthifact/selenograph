@@ -5,6 +5,7 @@ A Streamlit custom component rather than a chart, so the view stays where you le
 while the picture underneath is redrawn after every stroke.
 """
 import base64
+import hashlib
 import io
 
 import streamlit as st
@@ -258,10 +259,19 @@ export default function (component) {
 }
 """
 
+_ENCODED = {}                    # recent pictures by pixel hash -> PNG data URL
+
+
 def png(image):
-    buf = io.BytesIO()
-    image.save(buf, format="PNG")
-    return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
+    """Most reruns redraw the same picture: hashing its pixels is far cheaper than PNG."""
+    key = (image.mode, image.size, hashlib.blake2b(image.tobytes(), digest_size=16).digest())
+    if key not in _ENCODED:
+        buf = io.BytesIO()
+        image.save(buf, format="PNG")
+        while len(_ENCODED) >= 8:
+            _ENCODED.pop(next(iter(_ENCODED)))
+        _ENCODED[key] = "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
+    return _ENCODED[key]
 
 
 def map_canvas(image, *, terrain, grid, height, key, legend="", peek="Bare terrain",
